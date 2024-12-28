@@ -1,0 +1,48 @@
+Bent Paddle
+Fair State
+Indeed
+Surly
+Barrel Theory
+BlackStack
+Junkyard
+Steel Toe
+
+Pryes
+Summit
+
+Categories
+BEER Beer Name
+BREWERY Brewery Name
+STYLE Style
+ORIGINCraft/Domestic/Import
+REGION State/Country
+VALUE Budget/Premium/Luxury
+
+Hamm's
+Hamm's Brewing Co.
+Domestic Lager
+Domestic
+Wisconsin
+Budget
+
+Venture Pils
+Bent Paddle Brewery
+Pilsner
+Craft
+Minnesota
+Premium
+
+Local 755
+BlackStack Brewing
+IPA
+Craft
+Minnesota
+Premium
+
+Modelo Especial
+Modelo Brewery
+International Lager
+Import
+Mexico
+Premium
+
