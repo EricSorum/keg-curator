@@ -1,4 +1,6 @@
 import MainForm from './components/main-form/mainform'
+import { TestForm } from './components/test-form/testform'
+
 
 function App() {
   return (
@@ -10,6 +12,7 @@ function App() {
       <ExampleSelect /> */}
       <hr></hr>
       <MainForm />
+      <TestForm />
     </>
   )
 }
