@@ -41,10 +41,7 @@ export async function BeerList() {
     );
     beers.push(newBeer);
   }
-  let json = JSON.stringify(beers);
-  return json;
-  // return rawBeerList; this works btw
-
+  return beers;
 }
 
 
