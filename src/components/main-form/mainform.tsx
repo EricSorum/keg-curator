@@ -1,5 +1,5 @@
 "use client"
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { useForm } from "react-hook-form"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { z } from "zod"
@@ -15,9 +15,10 @@ import {
 } from "@/components/ui/form"
 import { Input } from "@/components/ui/input"
 
-/* Custom components */
+/* Custom files */
 /*********************/
 import Results from './results'
+
 /*********************/
 
 const formSchema = z.object({
@@ -30,13 +31,13 @@ const formSchema = z.object({
    })
 })
 
-type FormProps = {
-  beerList: Promise<object[]>;
-}
+// Need logic to prioritize breweries.
+// First just send down beer name from beerlist in arbitrary order.
 
-export function MainForm({beerList}: FormProps) {
-  console.log(beerList);
+// Not sure if beerList needs to be passed down or just imported into this component?
+export function MainForm() {
   const [ numberOfHandles, setHandles ] = useState(6);
+
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -47,19 +48,16 @@ export function MainForm({beerList}: FormProps) {
   })
 
   function onSubmit(values: z.infer<typeof formSchema>) {
-    setHandles(0);
-    const parsedValues = {
-      ...values,
-      beernumber: Number(values.beernumber),
-    };
-    console.log(parsedValues);
-    setHandles(values.beernumber);
+    if (values.beernumber) {
+      setHandles(values.beernumber);
+    } else {
+      setHandles(0);
+    }
   }
 
   return (
     <div>
       <Form {...form}>
-        <h1>{numberOfHandles}</h1>  {/* testing props on this line */}
         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
           <FormField
             control={form.control}
