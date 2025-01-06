@@ -1,6 +1,15 @@
 import { useState, useEffect } from 'react'
 import BeerCard from '../beer/beercard'
 import { Beer, BeerList } from '@/data/beers'
+import sortBeer from '@/lib/sortbeer'
+
+/*
+Next steps
+add more beers
+filter according to style...?
+
+*/
+
 
 type ResultsProps = {
   numberOfHandles: number;
@@ -24,8 +33,18 @@ export default function Results({numberOfHandles}: ResultsProps) {
     for (let i = 0; i < numberOfHandles && i < beerList.length; i++) {
       loopArr.push(beerList[i]);
     }
-    setBeerArr(loopArr);
+    setBeerArr(beerList.slice(0, numberOfHandles));
+    // need further logic to return the right number of handles.
+    // maybe sortBeer is run first, then setBeerArr takes the results? or
+    // sortBeer returns the array of beers, and so what we do here
+    // is setBeerArr(sortBeer(numberOf Handles?))?
+    // Or maybe beerList is actually only imported into sortbeer.ts?
+    sortBeer(loopArr, numberOfHandles);
   }, [numberOfHandles, beerList]); 
+
+  // useEffect(() => {
+  //   sortBeer(beerArr);
+  // }, [beerArr]);
 
   return(
     <div>     
@@ -33,7 +52,6 @@ export default function Results({numberOfHandles}: ResultsProps) {
       <h1>Beer List</h1>
       <ul>
         {beerArr.map((beer, index) => {
-          index++;
           return (
             <li key={index}><BeerCard index={index} beer={beer} /></li>
           )

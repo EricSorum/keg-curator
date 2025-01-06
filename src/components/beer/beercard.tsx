@@ -6,7 +6,7 @@ type BeerCardProps = {
 };
 
 const BeerCard = ({index, beer}: BeerCardProps) => { // Destructure beer from props
-  console.log(beer)
+  index++;
   return (
     <div>
       <h2>{index}. {beer.name}</h2> 
