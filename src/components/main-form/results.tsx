@@ -1,55 +1,43 @@
 import { useState, useEffect } from 'react'
-
+import BeerCard from '../beer/beercard'
 import { Beer, BeerList } from '@/data/beers'
 
 type ResultsProps = {
   numberOfHandles: number;
 }
 
-/*
-SO
-Here we will write logic to determine which beers to show, taking into account the
-request object passed down from mainform.  The request will have all the information the user
-requests.  But in this component we write logic that I want to choose beers for them.
-Basically choosing best brewery?
-
-Choose how many of each style for them.Or actually maybe not..? For example maybe 
-they can enter how many of each style they want
-
-FIRST use mainform to try something with logic. Get the beerlist and render a certain number
-of beer names.
-
-*/
-
-// type Beer = {
-//   name: string;
-// }
-
 export default function Results({numberOfHandles}: ResultsProps) {
-  const [ beers, setBeers ] = useState<Beer[]>([]);
+  const [ beerList, setBeerList ] = useState<Beer[]>([]);
+  const [ beerArr, setBeerArr ] = useState<Beer[]>([]);
+
 
   useEffect(() => {
     const fetchBeerList = async () => {
-      const beers2 = await BeerList(); // Await the Promise to get the resolved array
-      setBeers(beers2); // Set the state with the resolved array
+      const awaitList = await BeerList();
+      setBeerList(awaitList);
     };
+    fetchBeerList()
+  }, []);
 
-    fetchBeerList(); // Call the function to fetch the beer list
-  }, []); // Empty dependency array to run once on mount
-  // will need to import beer type here...? no just write beer type in this component.
-  let beerArr: number[] = [];
-  for (let i = 0; i < numberOfHandles; i++) {
-    beerArr.push(i)
-  }
+  useEffect(() => {
+    let loopArr = [];
+    for (let i = 0; i < numberOfHandles && i < beerList.length; i++) {
+      loopArr.push(beerList[i]);
+    }
+    setBeerArr(loopArr);
+  }, [numberOfHandles, beerList]); 
 
   return(
     <div>     
-      <h1>number of handles: {numberOfHandles}</h1>
+      <h1>Number of handles: {numberOfHandles}</h1>
       <h1>Beer List</h1>
       <ul>
-        {beers.map((beer, index) => (
-          <li key={index}>{beer.name}</li> // Access the name of each beer
-        ))}
+        {beerArr.map((beer, index) => {
+          index++;
+          return (
+            <li key={index}><BeerCard index={index} beer={beer} /></li>
+          )
+        })}
       </ul>
     </div>
   )

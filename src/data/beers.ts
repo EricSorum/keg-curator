@@ -1,20 +1,15 @@
 // only use Beer class to construct the beerlist.json.
 // use state to deal with data in React itself.
+
 export class Beer {
-  constructor(name: string, brewery: string, style: string, origin: string, region: string, value: string) {
-    this.name = name;
-    this.brewery = brewery;
-    this.style = style;
-    this.origin = origin;
-    this.region = region;
-    this.value = value;
-  }
-  name: string;
-  brewery: string;
-  style: string;
-  origin: string;
-  region: string;
-  value: string;
+  constructor(
+    public name: string,
+    public brewery: string,
+    public style: string,
+    public origin: string,
+    public region: string,
+    public value: string
+  ) {}
 }
 
 // Get the list of beers from beerlist.txt and return as json
