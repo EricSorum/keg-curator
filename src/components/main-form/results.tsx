@@ -50,7 +50,7 @@ export default function Results({numberOfHandles}: ResultsProps) {
     <div>     
       <h1>Number of handles: {numberOfHandles}</h1>
       <h1>Beer List</h1>
-      <ul>
+      <ul className="grid grid-cols-4 gap-4 m-6">
         {beerArr.map((beer, index) => {
           return (
             <li key={index}><BeerCard index={index} beer={beer} /></li>

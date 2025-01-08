@@ -6,6 +6,8 @@ Barrel Theory
 BlackStack
 Junkyard
 Steel Toe
+Modist
+
 
 Pryes
 Summit

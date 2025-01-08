@@ -19,6 +19,11 @@ export default function sortBeer(arr: Beer[], numberOfHandles: number) {
     numberOfLagers = Math.floor(numberOfHandles*.40);
     numberOfMisc = numberOfHandles - numberOfIpas - numberOfLagers;
   }
-  console.log(numberOfIpas + '...' + numberOfLagers)
+  console.log(numberOfIpas + '...' + numberOfLagers);
+
+  // So now decide preferred order of IPAs and Lagers
+  // I'll need a ranking system... maybe just rank breweries...?
+  // Make another object where breweries are ranked.
+  // then decide how to choose misc beers.
 
 }

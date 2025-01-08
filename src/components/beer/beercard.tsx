@@ -1,21 +1,25 @@
 import { Beer } from '@/data/beers';
+import { Card } from '../ui/card';
 
 type BeerCardProps = {
   index: number;
-  beer: Beer; // Define the prop type
+  beer: Beer;
 };
 
-const BeerCard = ({index, beer}: BeerCardProps) => { // Destructure beer from props
+const BeerCard = ({index, beer}: BeerCardProps) => {
+  // Increase index so it's not zero-indexed.
   index++;
   return (
-    <div>
-      <h2>{index}. {beer.name}</h2> 
-      <p>Brewery: {beer.brewery}</p>
-      <p>Style: {beer.style}</p>
-      <p>Origin: {beer.origin}</p>
-      <p>Region: {beer.region}</p>
-      <p>Value: {beer.value}</p>
-    </div>
+    <Card>
+      <div className="m-3">
+        <h2>{index}. {beer.name}</h2> 
+        <p>Brewery: {beer.brewery}</p>
+        <p>Style: {beer.style}</p>
+        <p>Origin: {beer.origin}</p>
+        <p>Region: {beer.region}</p>
+        <p>Value: {beer.value}</p>
+      </div>
+    </Card>
   );
 };
 

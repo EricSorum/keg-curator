@@ -74,3 +74,241 @@ IPA
 Craft
 Minnesota
 Premium
+
+Blue Moon Belgian White
+Blue Moon
+Belgian White
+Craft
+Colorado
+Premium
+
+Guinness Draught
+Guinness
+Stout
+Import
+Ireland
+Premium
+
+Stella Artois
+Stella Artois
+International Lager
+Import
+Belgium
+Premium
+
+Tecate Original
+Tecate
+International Lager
+Import
+Mexico
+Budget
+
+Hooey
+Lupulin Brewing
+Hazy IPA
+Craft
+Minnesota
+Premium
+
+Blissful Ignorance
+Lupulin Brewing
+Hazy IPA
+Craft
+Minnesota
+Premium
+
+Axe Man
+Surly Brewing
+IPA
+Craft
+Minnesota
+Prestige
+
+Fashion Mullet
+Lupulin Brewing
+Hazy IPA
+Craft
+Minnesota
+Premium
+
+Tropical Fun Pants
+Lupulin Brewing
+Sour
+Craft
+Minnesota
+Premium
+
+Pseudo Sue
+Toppling Goliath
+Pale Ale
+Craft
+Minnesota
+Premium
+
+King Sue
+Toppling Goliath
+IPA
+Craft
+Minnesota
+Prestige
+
+Miller High Life
+Miller
+Lager
+Domestic
+Wisconsin
+Budget
+
+Coors Light
+Coors
+Lager
+Domestic
+Colorado
+Premium
+
+Michelob Golden Light
+Michelob
+Light Lager
+Domestic
+Missouri
+Premium
+
+Miller Lite
+Miller
+Light Lager
+Domestic
+Wisconsin
+Premium
+
+Busch Light
+Anheuser-Busch
+Light Lager
+Domestic
+Missouri
+Budget
+
+Montucky Cold Snacks
+Montucky
+Lager
+Domestic
+Montana
+Budget
+
+Supra Deluxe
+Modist
+Lager
+Craft
+Minnesota
+Premium
+
+Sapporo
+Sapporo
+International Lager
+Import
+Japan
+Premium
+
+Asahi Super Dry
+Asahi Breweries
+International Lager
+Import
+Japan
+Budget
+
+Big Doinks
+Fair State Brewing
+IPA
+Craft
+Minnesota
+Premium
+
+Verbal Tip
+Falling Knife
+Hazy IPA
+Craft
+Minnesota
+Premium
+
+Kirin Ichiban
+Kirin 
+International Lager
+Import
+Japan
+Premium
+
+Ectogasm
+Drekker
+Hazy IPA
+Craft
+North Dakota
+Prestige
+
+Kold
+Fair State Brewing
+Kolsch
+Craft
+Minnesota
+Premium
+
+Pils
+Fair State Brewing
+Pilsner
+Craft
+Minnesota
+Premium
+
+Mirror Universe
+Fair State Brewing
+Hazy IPA
+Craft
+Minnesota
+Premium
+
+Party Forward
+Fair State Brewing
+Hazy IPA
+Craft
+Minnesota
+Premium
+
+Roselle
+Fair State Brewing
+Sour
+Craft
+Minnesota
+Premium
+
+Day Tripper
+Indeed Brewing
+Pale Ale
+Craft
+Minnesota
+Premium
+
+Mexican Honey Imperial Lager
+Indeed Brewing
+Lager
+Craft
+Minnesota
+Premium
+
+Mexican Honey Light
+Indeed Brewing
+Light Lager
+Craft
+Minnesota
+Premium
+
+Pistachio Cream Ale
+Indeed Brewing
+Cream Ale
+Craft
+Minnesota
+Premium
+
+Flavorwave
+Indeed Brewing
+IPA
+Craft
+Minnesota
+Premium
