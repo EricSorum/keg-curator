@@ -1,7 +1,16 @@
-import { Beer } from "../data/beers"
+import { Beer, FormResultsClass } from "./beers"
 
-export default function sortBeer(arr: Beer[], numberOfHandles: number) {
-  console.log('sortbeer ' + arr);
+function chooseIpa(currentSelections: Beer[], beerList: Beer[]) {
+  
+  const ipas = beerList.filter((beer) => beer.style = "IPA");
+  const ipas2 = ipas.filter((beer) => currentSelections.includes(beer))
+  const randomIndex = Math.floor(Math.random()) * ipas2.length
+  return ipas2[randomIndex];
+}
+
+
+export default function sortBeer(formResults: FormResultsClass, beerSelection: Beer[], beerList: Beer[]) {
+  const { numberOfHandles } = formResults;
   // put logic here to prioritize lagers and ipas
   // create a function to make proper ratio between beers
   // up to 3 lagers and 3 ipas... then misc..?
@@ -26,4 +35,20 @@ export default function sortBeer(arr: Beer[], numberOfHandles: number) {
   // Make another object where breweries are ranked.
   // then decide how to choose misc beers.
 
+ // for now I'll try to just get a random selection going.
+  for (let i = 0; i < numberOfIpas+1; i++) {
+    beerSelection.push(chooseIpa(beerSelection, beerList))
+  }
+  return 
 }
+
+// write a few functions that return a beer of a certain kind
+// for example, a misc beer randomly selects a beer that is not ipa/lager
+// each function takes in the current selection so far as a list 
+// it then subtracts the current selection from the main array of beers
+// and so it won't select something that's already selected.
+
+// the form object tells it which functions to run.
+
+// initially decide how many of each style to get 
+// then just run each function for each star that many times.

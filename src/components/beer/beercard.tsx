@@ -1,4 +1,4 @@
-import { Beer } from '@/data/beers';
+import { Beer } from '@/lib/beers';
 import { Card } from '../ui/card';
 
 type BeerCardProps = {
