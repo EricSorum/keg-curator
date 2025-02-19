@@ -1,5 +1,5 @@
 "use client"
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { useForm } from "react-hook-form"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { z } from "zod"
@@ -18,14 +18,15 @@ import { Input } from "@/components/ui/input"
 /* Custom files */
 /*********************/
 import Results from './results'
+import { FormResultsClass } from '@/lib/beers'
 
 /*********************/
 
 const formSchema = z.object({
-  restaurant: z.string().min(2, {
+  businessName: z.string().min(2, {
     message: "Username must be at least 2 characters.",
   }),
-  beernumber: z.number()
+  numberOfHandles: z.number()
   .max(300, { 
     message: "Beer number must be lower than 300.",
    })
@@ -35,41 +36,44 @@ const formSchema = z.object({
 // First just send down beer name from beerlist in arbitrary order.
 
 // Not sure if beerList needs to be passed down or just imported into this component?
-export function MainForm() {
-  const [ numberOfHandles, setHandles ] = useState(6);
 
+const defaultResults = new FormResultsClass("My Restaurant", 6);
+
+export function MainForm() {
+  // const [ numberOfHandles, setHandles ] = useState(6);
+  const [ formResults, setFormResults ] = useState(defaultResults);
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
-      restaurant: "My Restaurant",
-      beernumber: 6,
+      businessName: "My Restaurant",
+      numberOfHandles: 6,
     },
   })
 
   function onSubmit(values: z.infer<typeof formSchema>) {
-    if (values.beernumber) {
-      setHandles(values.beernumber);
-    } else {
-      setHandles(0);
+    if (values) {
+      setFormResults(formResults);  // Needs to be set to actual values from form
+    // } else {
+    //   setHandles(0);
     }
   }
 
   return (
-    <div>
+    <div className="flex flex-col gap-6">
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
           <FormField
             control={form.control}
-            name="restaurant"
+            name="businessName"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Restaurant</FormLabel>
+                <FormLabel>Your Business</FormLabel>
                 <FormControl>
                   <Input placeholder="placeholder text" {...field} />
                 </FormControl>
                 <FormDescription>
-                  The name of your business.
+                  The name of your bar or restaurant.
                 </FormDescription>
                 <FormMessage />
               </FormItem>
@@ -77,7 +81,7 @@ export function MainForm() {
           />
           <FormField
             control={form.control}
-            name="beernumber"
+            name="numberOfHandles"
             render={({ field }) => (
               <FormItem>
                 <FormLabel>Number of Draft Beers</FormLabel>
@@ -99,7 +103,7 @@ export function MainForm() {
           <Button type="submit">Submit</Button>
         </form>
       </Form>
-      <Results numberOfHandles={numberOfHandles} />
+      <Results formResults={formResults} />
     </div>
   )
 }

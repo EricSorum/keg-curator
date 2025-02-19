@@ -1,4 +1,4 @@
-import { Beer, FormResultsClass } from "./beers"
+import { Beer, FormResultsClass, BeerList } from "./beers"
 
 function chooseIpa(currentSelections: Beer[], beerList: Beer[]) {
   
@@ -9,9 +9,29 @@ function chooseIpa(currentSelections: Beer[], beerList: Beer[]) {
 }
 
 
-export default function sortBeer(formResults: FormResultsClass, beerSelection: Beer[], beerList: Beer[]) {
-  const { numberOfHandles } = formResults;
-  // put logic here to prioritize lagers and ipas
+// Start over writing a function to 
+
+// export function sort(formResults: FormResultsClass) {
+//   const { businessName, numberOfHandles } = formResults;
+
+  
+// }
+
+export function sortBeer(formResults: FormResultsClass, beerMenu: Beer[]/*is this needed? */, beerList: Beer[]) {
+  const { businessName, numberOfHandles } = formResults;
+  console.log(numberOfHandles)
+  
+
+  // // I need to await beerList.
+  //   const fetchBeerList = async () => {
+  //     const awaitList = await beerList;
+  //     return awaitList
+  //     // setBeerList(awaitList);
+  //   };
+  //   const list = fetchBeerList();
+  //   console.log(beerList);
+
+    // put logic here to prioritize lagers and ipas
   // create a function to make proper ratio between beers
   // up to 3 lagers and 3 ipas... then misc..?
   let numberOfIpas: number = 0;
@@ -28,7 +48,9 @@ export default function sortBeer(formResults: FormResultsClass, beerSelection: B
     numberOfLagers = Math.floor(numberOfHandles*.40);
     numberOfMisc = numberOfHandles - numberOfIpas - numberOfLagers;
   }
-  console.log(numberOfIpas + '...' + numberOfLagers);
+  // console.log(numberOfHandles)
+  // console.log(numberOfIpas)
+  // console.log(numberOfLagers)
 
   // So now decide preferred order of IPAs and Lagers
   // I'll need a ranking system... maybe just rank breweries...?
@@ -37,9 +59,13 @@ export default function sortBeer(formResults: FormResultsClass, beerSelection: B
 
  // for now I'll try to just get a random selection going.
   for (let i = 0; i < numberOfIpas+1; i++) {
-    beerSelection.push(chooseIpa(beerSelection, beerList))
+    beerMenu.push(chooseIpa(beerMenu, beerList))
   }
-  return 
+
+  // return beerMenu;
+  beerMenu = beerList.slice(0, numberOfHandles);
+  // Temporary return value
+  return beerMenu;
 }
 
 // write a few functions that return a beer of a certain kind

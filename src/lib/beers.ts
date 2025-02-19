@@ -14,12 +14,13 @@ export class Beer {
 
 export class FormResultsClass {
   constructor(
+    public businessName: string,
     public numberOfHandles: number,
   ) {}
 }
 
 
-// Get the list of beers from beerlist.txt and return as json
+// Get the list of beers from beerlist.txt and return as JSON
 export async function BeerList(): Promise<Beer[]> {
   const beerListSrc = 'src/data/beerlist.txt';
   const response = await fetch(beerListSrc);

@@ -1,23 +1,22 @@
 import { useState, useEffect } from 'react'
 import BeerCard from '../beer/beercard'
-import { Beer, BeerList } from '@/data/beers'
-import sortBeer from '@/lib/sortbeer'
-
+import { Beer, BeerList, FormResultsClass } from '@/lib/beers'
+import {sortBeer} from '@/lib/sortbeer'
 /*
 Next steps
 add more beers
 filter according to style...?
-
 */
 
-
 type ResultsProps = {
-  numberOfHandles: number;
+  formResults: FormResultsClass
 }
 
-export default function Results({numberOfHandles}: ResultsProps) {
+export default function Results({formResults} : ResultsProps) {
   const [ beerList, setBeerList ] = useState<Beer[]>([]);
-  const [ beerArr, setBeerArr ] = useState<Beer[]>([]);
+  const [ beerMenu, setBeerMenu ] = useState<Beer[]>([]);
+  // const [ currentResults, setCurrentResults ] = formResults;
+  // const { businessName, numberOfHandles } = formResults;
 
 
   useEffect(() => {
@@ -25,33 +24,20 @@ export default function Results({numberOfHandles}: ResultsProps) {
       const awaitList = await BeerList();
       setBeerList(awaitList);
     };
-    fetchBeerList()
+    fetchBeerList();
   }, []);
 
   useEffect(() => {
-    let loopArr = [];
-    for (let i = 0; i < numberOfHandles && i < beerList.length; i++) {
-      loopArr.push(beerList[i]);
-    }
-    setBeerArr(beerList.slice(0, numberOfHandles));
-    // need further logic to return the right number of handles.
-    // maybe sortBeer is run first, then setBeerArr takes the results? or
-    // sortBeer returns the array of beers, and so what we do here
-    // is setBeerArr(sortBeer(numberOf Handles?))?
-    // Or maybe beerList is actually only imported into sortbeer.ts?
-    sortBeer(loopArr, numberOfHandles);
-  }, [numberOfHandles, beerList]); 
-
-  // useEffect(() => {
-  //   sortBeer(beerArr);
-  // }, [beerArr]);
+    setBeerMenu(sortBeer(formResults, beerMenu, beerList))
+    // setBeerMenu(beerList.slice(0, 6));
+  }, [beerList]);
 
   return(
-    <div>     
-      <h1>Number of handles: {numberOfHandles}</h1>
+    <div className="flex flex-col gap-6">     
+      <h1>Number of handles: {formResults.numberOfHandles}</h1>
       <h1>Beer List</h1>
-      <ul className="grid grid-cols-4 gap-4 m-6">
-        {beerArr.map((beer, index) => {
+      <ul className="grid md:grid-cols-4 gap-4">
+        {beerMenu.map((beer, index) => {
           return (
             <li key={index}><BeerCard index={index} beer={beer} /></li>
           )
