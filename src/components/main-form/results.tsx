@@ -30,7 +30,7 @@ export default function Results({formResults} : ResultsProps) {
   useEffect(() => {
     setBeerMenu(sortBeer(formResults, beerMenu, beerList))
     // setBeerMenu(beerList.slice(0, 6));
-  }, [beerList]);
+  }, [beerList, formResults]);
 
   return(
     <div className="flex flex-col gap-6">     

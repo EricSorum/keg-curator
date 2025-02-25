@@ -24,7 +24,7 @@ import { FormResultsClass } from '@/lib/beers'
 
 const formSchema = z.object({
   businessName: z.string().min(2, {
-    message: "Username must be at least 2 characters.",
+    message: "Business name must be at least 2 characters.",
   }),
   numberOfHandles: z.number()
   .max(300, { 
@@ -49,13 +49,14 @@ export function MainForm() {
       businessName: "My Restaurant",
       numberOfHandles: 6,
     },
-  })
+  });
 
   function onSubmit(values: z.infer<typeof formSchema>) {
     if (values) {
-      setFormResults(formResults);  // Needs to be set to actual values from form
-    // } else {
-    //   setHandles(0);
+      setFormResults(values);  // Needs to be set to actual values from form
+      console.log(values)
+    } else {
+      setFormResults(defaultResults);
     }
   }
 
