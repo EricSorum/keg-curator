@@ -1,14 +1,25 @@
 import { Beer, FormResultsClass } from "./beers"
+import { selectBeers } from "./utils"
 
 export function createMenu(formResults: FormResultsClass, beerList: Beer[]) {
   const { numberOfHandles } = formResults;
   // Start off by choosing a few basic lagers and IPAs.
   let menu: Beer[] = [];
-  const numberOfBasics = numberOfHandles/2; 
-  const ipas = beerList.filter((beer) => beer.style = "IPA");
+  const numberOfBasics = Math.floor(numberOfHandles/4);
 
 
 
-  menu = beerList.slice(0, numberOfHandles);
+  menu = menu.concat(selectBeers("IPA", numberOfBasics, beerList))
+  menu = menu.concat(selectBeers("Hazy IPA", numberOfBasics, beerList))
+  menu = menu.concat(selectBeers("Lager", numberOfBasics, beerList))
+
+  const numberOfMiscBeers = numberOfHandles - menu.length;
+  menu = menu.concat(selectBeers("misc", numberOfMiscBeers, beerList));
+
+
+  // menu = beerList.slice(0, numberOfHandles); // temporary
+  
+  // Sort menu
+
   return menu;
 }
