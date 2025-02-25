@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import BeerCard from '../beer/beercard'
 import { Beer, BeerList, FormResultsClass } from '@/lib/beers'
 import {sortBeer} from '@/lib/sortbeer'
+import {createMenu} from '@/lib/createmenu'
 /*
 Next steps
 add more beers
@@ -15,9 +16,6 @@ type ResultsProps = {
 export default function Results({formResults} : ResultsProps) {
   const [ beerList, setBeerList ] = useState<Beer[]>([]);
   const [ beerMenu, setBeerMenu ] = useState<Beer[]>([]);
-  // const [ currentResults, setCurrentResults ] = formResults;
-  // const { businessName, numberOfHandles } = formResults;
-
 
   useEffect(() => {
     const fetchBeerList = async () => {
@@ -28,8 +26,7 @@ export default function Results({formResults} : ResultsProps) {
   }, []);
 
   useEffect(() => {
-    setBeerMenu(sortBeer(formResults, beerMenu, beerList))
-    // setBeerMenu(beerList.slice(0, 6));
+    setBeerMenu(createMenu(formResults, beerList))
   }, [beerList, formResults]);
 
   return(

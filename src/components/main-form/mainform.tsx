@@ -53,10 +53,9 @@ export function MainForm() {
 
   function onSubmit(values: z.infer<typeof formSchema>) {
     if (values) {
-      setFormResults(values);  // Needs to be set to actual values from form
-      console.log(values)
+      setFormResults(values);
     } else {
-      setFormResults(defaultResults);
+      setFormResults(defaultResults); // or should it not change results?
     }
   }
 

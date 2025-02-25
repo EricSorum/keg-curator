@@ -1,4 +1,15 @@
+// THIS FILE MAY BE OBSOLETE
+
 import { Beer, FormResultsClass, BeerList } from "./beers"
+
+// function that takes in a number... then simply uses formula to add certain number of beers...?
+
+export function createBeerMenu(num: number) {
+  // Start off by choosing a few basic lagers and IPAs.
+  const numberOfBasics = num/2; 
+
+}
+
 
 function chooseIpa(currentSelections: Beer[], beerList: Beer[]) {
   
