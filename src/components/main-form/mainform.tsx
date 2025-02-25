@@ -14,6 +14,7 @@ import {
   FormMessage,
 } from "@/components/ui/form"
 import { Input } from "@/components/ui/input"
+import { Checkbox } from "@/components/ui/checkbox"
 
 /* Custom files */
 /*********************/
@@ -29,7 +30,8 @@ const formSchema = z.object({
   numberOfHandles: z.number()
   .max(300, { 
     message: "Beer number must be lower than 300.",
-   })
+   }),
+   minnesotaOnly: z.boolean() 
 })
 
 // Need logic to prioritize breweries.
@@ -37,7 +39,7 @@ const formSchema = z.object({
 
 // Not sure if beerList needs to be passed down or just imported into this component?
 
-const defaultResults = new FormResultsClass("My Restaurant", 6);
+const defaultResults = new FormResultsClass("My Restaurant", 6, false);
 
 export function MainForm() {
   // const [ numberOfHandles, setHandles ] = useState(6);
@@ -48,6 +50,7 @@ export function MainForm() {
     defaultValues: {
       businessName: "My Restaurant",
       numberOfHandles: 6,
+      minnesotaOnly: false,
     },
   });
 
@@ -100,6 +103,27 @@ export function MainForm() {
               </FormItem>
             )}
           />
+
+          <FormField
+            control={form.control}
+            name="minnesotaOnly"
+            render={({ field }) => (
+              <FormItem>
+                <FormControl>
+                  <Checkbox
+                    checked={field.value}
+                    onCheckedChange={field.onChange}  
+                  />
+                </FormControl>
+                <FormLabel>Only choose Minnesota-made beer</FormLabel>
+                {/* <FormDescription>
+                  Enter the number of draft beers to choose.
+                </FormDescription> */}
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+
           <Button type="submit">Submit</Button>
         </form>
       </Form>

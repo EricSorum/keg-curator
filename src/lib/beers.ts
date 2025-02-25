@@ -16,6 +16,7 @@ export class FormResultsClass {
   constructor(
     public businessName: string,
     public numberOfHandles: number,
+    public minnesotaOnly: boolean,
   ) {}
 }
 

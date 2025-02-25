@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import BeerCard from '../beer/beercard'
 import { Beer, BeerList, FormResultsClass } from '@/lib/beers'
-import {sortBeer} from '@/lib/sortbeer'
+// import {sortBeer} from '@/lib/sortbeer'
 import {createMenu} from '@/lib/createmenu'
 /*
 Next steps
@@ -31,7 +31,7 @@ export default function Results({formResults} : ResultsProps) {
 
   return(
     <div className="flex flex-col gap-6">     
-      <h1>Number of handles: {formResults.numberOfHandles}</h1>
+      <h1>Number of Draft Beers: {formResults.numberOfHandles}</h1>
       <h1>Beer List</h1>
       <ul className="grid md:grid-cols-4 gap-4">
         {beerMenu.map((beer, index) => {
