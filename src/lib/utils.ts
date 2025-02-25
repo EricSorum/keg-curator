@@ -15,17 +15,14 @@ export function shuffle(arr: Beer[]) {
   return arr;
 }
 
-export function chooseBeer(arr: Beer[]) {
-  // need to pass in: beer style, number, 
-}
-
-export function selectBeers(style: string, num: number, beerList: Beer[]) {
+export function selectBeers(style: string, num: number, beerList: Beer[], menu: Beer[]) {
+  // Selects a certain number of beers of a certain style, or miscellaneous beers.
   let styleList: Beer[] = [];
   if (style === "misc") {
-    const standardStyles: String[] = ["IPA", "Hazy IPA", "Lager"]
-    styleList = beerList.filter((beer) => !standardStyles.includes(style));
+    const standardStyles: String[] = ["IPA", "Hazy IPA", "Lager", "Light Lager"]
+    styleList = beerList.filter((beer) => !standardStyles.includes(beer.style) && !menu.includes(beer));
   } else {
-    styleList = beerList.filter((beer) => beer.style === style);
+    styleList = beerList.filter((beer) => beer.style === style && !menu.includes(beer));
   }
   const shuffleList: Beer[] = shuffle(styleList);
   const selections: Beer[] = shuffleList.slice(0, num);

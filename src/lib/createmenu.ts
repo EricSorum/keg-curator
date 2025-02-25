@@ -9,12 +9,12 @@ export function createMenu(formResults: FormResultsClass, beerList: Beer[]) {
 
 
 
-  menu = menu.concat(selectBeers("IPA", numberOfBasics, beerList))
-  menu = menu.concat(selectBeers("Hazy IPA", numberOfBasics, beerList))
-  menu = menu.concat(selectBeers("Lager", numberOfBasics, beerList))
+  menu = menu.concat(selectBeers("IPA", numberOfBasics, beerList, menu))
+  menu = menu.concat(selectBeers("Hazy IPA", numberOfBasics, beerList, menu))
+  menu = menu.concat(selectBeers("Lager", numberOfBasics, beerList, menu))
 
   const numberOfMiscBeers = numberOfHandles - menu.length;
-  menu = menu.concat(selectBeers("misc", numberOfMiscBeers, beerList));
+  menu = menu.concat(selectBeers("misc", numberOfMiscBeers, beerList, menu));
 
 
   // menu = beerList.slice(0, numberOfHandles); // temporary
