@@ -3,6 +3,8 @@ import { useState } from 'react'
 import { useForm } from "react-hook-form"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { z } from "zod"
+import { cn } from "@/lib/utils"
+
 import { Button } from "@/components/ui/button"
 import {
   Form,
@@ -15,6 +17,7 @@ import {
 } from "@/components/ui/form"
 import { Input } from "@/components/ui/input"
 import { Checkbox } from "@/components/ui/checkbox"
+import { Slider } from "@/components/ui/slider"
 
 /* Custom files */
 /*********************/
@@ -31,7 +34,8 @@ const formSchema = z.object({
   .max(300, { 
     message: "Beer number must be lower than 300.",
    }),
-   minnesotaOnly: z.boolean() 
+   minnesotaOnly: z.boolean(),
+   fanciness: z.number() 
 })
 
 // Need logic to prioritize breweries.
@@ -90,14 +94,32 @@ export function MainForm() {
                 <FormLabel>Number of Draft Beers</FormLabel>
                 <FormControl>
                   <Input type="number" {...field} 
-                    onChange={(e) => {
                       // Convert the input value to a number
-                      field.onChange(Number(e.target.value));
-                    }}
+                    
+                    onChange={(e) => field.onChange(Number(e.target.value))}
                   />
                 </FormControl>
                 <FormDescription>
                   Enter the number of draft beers to choose.
+                </FormDescription>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+          <FormField
+            control={form.control}
+            name="fanciness"
+            render={({ field }) => (
+              <FormItem>
+                <FormControl>
+                <Slider defaultValue={[33]} max={100} step={1} className={cn("w-[10%]")}
+                  // value={[field.value]}
+                  onValueChange={(e) => field.onChange(e[0])}
+                />
+                </FormControl>
+                <FormLabel>Fanciness</FormLabel>
+                <FormDescription>
+                  How fancy is the restaurant?
                 </FormDescription>
                 <FormMessage />
               </FormItem>
@@ -115,10 +137,10 @@ export function MainForm() {
                     onCheckedChange={field.onChange}  
                   />
                 </FormControl>
-                <FormLabel>Only choose Minnesota-made beer</FormLabel>
-                {/* <FormDescription>
-                  Enter the number of draft beers to choose.
-                </FormDescription> */}
+                <FormLabel>Local only</FormLabel>
+                <FormDescription>
+                  Choose only Minnesota-made beer.
+                </FormDescription>
                 <FormMessage />
               </FormItem>
             )}
