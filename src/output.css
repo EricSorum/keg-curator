@@ -664,6 +664,11 @@ body {
   margin-bottom: 0.25rem;
 }
 
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .block {
   display: block;
 }
@@ -754,6 +759,22 @@ body {
 
 .max-w-96 {
   max-width: 24rem;
+}
+
+.max-w-\[900\] {
+  max-width: 900;
+}
+
+.max-w-xl {
+  max-width: 36rem;
+}
+
+.max-w-lg {
+  max-width: 32rem;
+}
+
+.max-w-3xl {
+  max-width: 48rem;
 }
 
 .shrink-0 {
