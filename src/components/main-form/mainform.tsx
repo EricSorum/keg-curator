@@ -34,19 +34,13 @@ const formSchema = z.object({
   .max(300, { 
     message: "Beer number must be lower than 300.",
    }),
-   minnesotaOnly: z.boolean(),
-   fanciness: z.number() 
+  minnesotaOnly: z.boolean(),
+  fanciness: z.number()
 })
 
-// Need logic to prioritize breweries.
-// First just send down beer name from beerlist in arbitrary order.
-
-// Not sure if beerList needs to be passed down or just imported into this component?
-
-const defaultResults = new FormResultsClass("My Restaurant", 6, false);
+const defaultResults = new FormResultsClass("My Restaurant", 6, false, 30);
 
 export function MainForm() {
-  // const [ numberOfHandles, setHandles ] = useState(6);
   const [ formResults, setFormResults ] = useState(defaultResults);
 
   const form = useForm<z.infer<typeof formSchema>>({
@@ -55,6 +49,7 @@ export function MainForm() {
       businessName: "My Restaurant",
       numberOfHandles: 6,
       minnesotaOnly: false,
+      fanciness: 30,
     },
   });
 
@@ -95,7 +90,6 @@ export function MainForm() {
                 <FormControl>
                   <Input type="number" {...field} 
                       // Convert the input value to a number
-                    
                     onChange={(e) => field.onChange(Number(e.target.value))}
                   />
                 </FormControl>
@@ -112,8 +106,8 @@ export function MainForm() {
             render={({ field }) => (
               <FormItem>
                 <FormControl>
-                <Slider defaultValue={[33]} max={100} step={1} className={cn("w-[10%]")}
-                  // value={[field.value]}
+                <Slider defaultValue={[30]} max={100} step={1} className={cn("w-[10%]")}
+                  value={[field.value]}
                   onValueChange={(e) => field.onChange(e[0])}
                 />
                 </FormControl>

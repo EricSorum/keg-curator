@@ -17,6 +17,7 @@ export class FormResultsClass {
     public businessName: string,
     public numberOfHandles: number,
     public minnesotaOnly: boolean,
+    public fanciness: number
   ) {}
 }
 
