@@ -21,6 +21,14 @@ export class FormResultsClass {
   ) {}
 }
 
+export const emptyBeer: Beer = {
+  name: "No beer selection could be found",
+  brewery: "",
+  style: "",
+  origin: "",
+  region: "",
+  value: "",
+}
 
 // Get the list of beers from beerlist.txt and return as JSON
 export async function BeerList(): Promise<Beer[]> {
