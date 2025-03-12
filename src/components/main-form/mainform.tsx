@@ -35,10 +35,11 @@ const formSchema = z.object({
     message: "Beer number must be lower than 300.",
    }),
   minnesotaOnly: z.boolean(),
+  craftOnly: z.boolean(),
   fanciness: z.number()
 })
 
-const defaultResults = new FormResultsClass("My Restaurant", 6, false, 30);
+const defaultResults = new FormResultsClass("My Restaurant", 6, false, false, 30);
 
 export function MainForm() {
   const [ formResults, setFormResults ] = useState(defaultResults);
@@ -49,7 +50,9 @@ export function MainForm() {
       businessName: "My Restaurant",
       numberOfHandles: 6,
       minnesotaOnly: false,
+      craftOnly: false,
       fanciness: 30,
+      
     },
   });
 
@@ -134,6 +137,26 @@ export function MainForm() {
                 <FormLabel>Local only</FormLabel>
                 <FormDescription>
                   Choose only Minnesota-made beer.
+                </FormDescription>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+
+          <FormField
+            control={form.control}
+            name="craftOnly"
+            render={({ field }) => (
+              <FormItem>
+                <FormControl>
+                  <Checkbox
+                    checked={field.value}
+                    onCheckedChange={field.onChange}  
+                  />
+                </FormControl>
+                <FormLabel>Craft only</FormLabel>
+                <FormDescription>
+                  Choose only craft beer.
                 </FormDescription>
                 <FormMessage />
               </FormItem>
