@@ -15,29 +15,29 @@ export function shuffle(arr: Beer[]) {
   return arr;
 }
 
-export function chooseBeer(style: string, beerList: Beer[], menu: Beer[], fanciness: number) : Beer {
-  // alternate to using selectbeers
-  // make  a function that chooses only one beer at a time
-  // then we can make sure there's always a beer chosen.
+// export function chooseBeer(style: string, beerList: Beer[], menu: Beer[], fanciness: number) : Beer {
+//   // alternate to using selectbeers
+//   // make  a function that chooses only one beer at a time
+//   // then we can make sure there's always a beer chosen.
 
-  // Filter out all beers that are already in the menu
-  let styleList: Beer[] = beerList.filter((beer) => !menu.includes(beer));
+//   // Filter out all beers that are already in the menu
+//   let styleList: Beer[] = beerList.filter((beer) => !menu.includes(beer));
   
-  const standardStyles: String[] = ["IPA", "Hazy IPA", "Lager", "Light Lager", "International Lager"]
-  if (style === "misc") {
-    styleList = beerList.filter((beer) => !standardStyles.includes(beer.style));
-  } else {
-    styleList = beerList.filter((beer) => beer.style === style);
-  }
-  const shuffleList: Beer[] = shuffle(styleList);
+//   const standardStyles: String[] = ["IPA", "Hazy IPA", "Lager", "Light Lager", "International Lager"]
+//   if (style === "misc") {
+//     styleList = beerList.filter((beer) => !standardStyles.includes(beer.style));
+//   } else {
+//     styleList = beerList.filter((beer) => beer.style === style);
+//   }
+//   const shuffleList: Beer[] = shuffle(styleList);
 
-  // Return one beer from the selected list or return empty beer
-  // need to add condition to check that we're not repeating beers
-  return shuffleList.length ? shuffleList[0] : emptyBeer;
+//   // Return one beer from the selected list or return empty beer
+//   // need to add condition to check that we're not repeating beers
+//   return shuffleList.length ? shuffleList[0] : emptyBeer;
 
-  // return default beer object that basically shows empty beer if no beer.
+//   // return default beer object that basically shows empty beer if no beer.
 
-}
+// }
 
 export function selectBeers(style: string, num: number, beerList: Beer[], menu: Beer[], fanciness: number) : Beer[] {
   // Selects a certain number of beers of a certain style, or miscellaneous beers.
@@ -50,10 +50,10 @@ export function selectBeers(style: string, num: number, beerList: Beer[], menu: 
   }
 
   // Filter out all budget/prestige/premium based on results of fancinessFunc
-  const value = fancinessFunc(fanciness);
-  if (value) {
-    styleList = styleList.filter((beer) => beer.value === value);
-  }
+  // const value = fancinessFunc(fanciness);
+  // if (value) {
+  //   styleList = styleList.filter((beer) => beer.value === value);
+  // }
   //or maybe put fancinessfunc after 
 
   const shuffleList: Beer[] = shuffle(styleList);
