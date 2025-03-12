@@ -33,7 +33,7 @@ export default function Results({formResults} : ResultsProps) {
     <div className="flex flex-col gap-6">     
       <h1>Number of Draft Beers: {formResults.numberOfHandles}</h1>
       <h1>Beer List</h1>
-      <ul className="grid md:grid-cols-4 gap-4">
+      <ul className="grid md:grid-cols-3 gap-4">
         {beerMenu.map((beer, index) => {
           return (
             <li key={index}><BeerCard index={index} beer={beer} /></li>
