@@ -49,6 +49,17 @@ export function selectBeers(style: string, num: number, beerList: Beer[], menu: 
     styleList = beerList.filter((beer) => beer.style === style);
   }
 
+  // write a function that turns list into certain percentage of budget/premium/presitge
+
+
+  
+
+  if (fanciness < 30) {
+    styleList = beerList.filter((beer) => beer.value === "Prestige");
+  } else if (fanciness > 80) {
+    styleList = beerList.filter((beer) => beer.value === "Budget");
+  }
+
   // Filter out all budget/prestige/premium based on results of fancinessFunc
   // const value = fancinessFunc(fanciness);
   // if (value) {
@@ -61,6 +72,33 @@ export function selectBeers(style: string, num: number, beerList: Beer[], menu: 
   console.log("style: " + style + "...");
   selections.forEach((e) => console.log(e.name))
   return selections;
+}
+
+  // turn number 1-100 into three pie sections/percentages
+function fancinessConversion(fanciness: number) : number[] {
+  // pie is three numbers, representing 3 sections of the pie
+  // let pie: number[] = [];
+  // let fraction: number = fanciness/3;
+  
+  // what times fraction will give us three numbers that add up to 100?
+
+  // so we have two numbers, fanciness and 100-fanciness
+  let numberOfBudget = fanciness/2;
+  let numberOfPrestige = fanciness/2;
+  let numberOfPremium = 100 - numberOfBudget - numberOfPrestige;
+
+
+  // use a window, but make window shirnk/grow compared to fanciness
+  // if 
+  // let window = fanciness * 0.70;
+
+
+  // oorrrrrr
+  // make fanciness into a window of 20 spaces above and below
+  // everything above is budget, everything below is prestige.
+
+  // pie = [fanciness-20; ]
+  return [numberOfBudget, numberOfPremium, numberOfPrestige];
 }
 
 export function fancinessFunc(fanciness: number) : string {
