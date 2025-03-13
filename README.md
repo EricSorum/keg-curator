@@ -1,5 +1,7 @@
 The Keg Curator
 
+STATUS: Currently building back end to store data.
+
 Some restaurans and bars struggle when it comes to choosing the best available beer to serve.  Many restauranteurs specialize in wine or cocktails, but not beer, and don't have the time to carefully curate a beer selection.
 
 Nevertheless, good beer is a key area of profit, and an expectation for many customers.  Even a small beer selection of just the right beer can 
