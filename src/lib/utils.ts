@@ -1,6 +1,6 @@
 import { clsx, type ClassValue } from "clsx"
 import { twMerge } from "tailwind-merge"
-import { Beer, emptyBeer } from '@/lib/beers'
+import { Beer } from '@/lib/beers'
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs))
@@ -48,25 +48,11 @@ export function selectBeers(style: string, num: number, beerList: Beer[], menu: 
   } else {
     styleList = beerList.filter((beer) => beer.style === style);
   }
-
-  // write a function that turns list into certain percentage of budget/premium/presitge
-
-
-  
-
   if (fanciness < 30) {
     styleList = beerList.filter((beer) => beer.value === "Prestige");
   } else if (fanciness > 80) {
     styleList = beerList.filter((beer) => beer.value === "Budget");
   }
-
-  // Filter out all budget/prestige/premium based on results of fancinessFunc
-  // const value = fancinessFunc(fanciness);
-  // if (value) {
-  //   styleList = styleList.filter((beer) => beer.value === value);
-  // }
-  //or maybe put fancinessfunc after 
-
   const shuffleList: Beer[] = shuffle(styleList);
   const selections: Beer[] = shuffleList.slice(0, num);
   console.log("style: " + style + "...");
@@ -75,31 +61,14 @@ export function selectBeers(style: string, num: number, beerList: Beer[], menu: 
 }
 
   // turn number 1-100 into three pie sections/percentages
-function fancinessConversion(fanciness: number) : number[] {
-  // pie is three numbers, representing 3 sections of the pie
-  // let pie: number[] = [];
-  // let fraction: number = fanciness/3;
-  
-  // what times fraction will give us three numbers that add up to 100?
+// function fancinessConversion(fanciness: number) : number[] {
+ 
+//   let numberOfBudget = fanciness/2;
+//   let numberOfPrestige = fanciness/2;
+//   let numberOfPremium = 100 - numberOfBudget - numberOfPrestige;
 
-  // so we have two numbers, fanciness and 100-fanciness
-  let numberOfBudget = fanciness/2;
-  let numberOfPrestige = fanciness/2;
-  let numberOfPremium = 100 - numberOfBudget - numberOfPrestige;
-
-
-  // use a window, but make window shirnk/grow compared to fanciness
-  // if 
-  // let window = fanciness * 0.70;
-
-
-  // oorrrrrr
-  // make fanciness into a window of 20 spaces above and below
-  // everything above is budget, everything below is prestige.
-
-  // pie = [fanciness-20; ]
-  return [numberOfBudget, numberOfPremium, numberOfPrestige];
-}
+//   return [numberOfBudget, numberOfPremium, numberOfPrestige];
+// }
 
 export function fancinessFunc(fanciness: number) : string {
   // Select whether the value should be budget, premium, or prestige, based on the fanciness input.

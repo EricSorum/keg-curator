@@ -3,7 +3,7 @@ import { selectBeers } from "./utils"
 
 export function createMenu(formResults: FormResultsClass, beerList: Beer[]) {
 
-  const { businessName, numberOfHandles, minnesotaOnly, craftOnly, fanciness } = formResults;
+  const { numberOfHandles, minnesotaOnly, craftOnly, fanciness } = formResults;
 
   if (minnesotaOnly) {
     beerList = beerList.filter((beer) => beer.region === "Minnesota")
