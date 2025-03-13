@@ -39,9 +39,10 @@ export function shuffle(arr: Beer[]) {
 
 // }
 
-export function selectBeers(style: string, num: number, beerList: Beer[], menu: Beer[], fanciness: number) : Beer[] {
+export function selectBeers(style: string, num: number, beerList: Beer[], fanciness: number) : Beer[] {
   // Selects a certain number of beers of a certain style, or miscellaneous beers.
   let styleList: Beer[] = [];
+
   if (style === "misc") {
     const standardStyles: String[] = ["IPA", "Hazy IPA", "Lager", "Light Lager", "International Lager"]
     styleList = beerList.filter((beer) => !standardStyles.includes(beer.style));

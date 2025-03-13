@@ -21,10 +21,10 @@ export function createMenu(formResults: FormResultsClass, beerList: Beer[]) {
 
   const basicStyles = ["IPA", "Hazy IPA", "Light Lager"];
 
-  basicStyles.forEach((style) => {menu.concat(selectBeers(style, numberOfBasics, beerList, menu, fanciness))})
+  basicStyles.forEach((style) => {menu.concat(selectBeers(style, numberOfBasics, beerList, fanciness))})
 
   const numberOfMiscBeers = numberOfHandles - menu.length;
-  menu = menu.concat(selectBeers("misc", numberOfMiscBeers, beerList, menu, fanciness));
+  menu = menu.concat(selectBeers("misc", numberOfMiscBeers, beerList, fanciness));
 
   return menu;
 }
