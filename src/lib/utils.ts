@@ -56,8 +56,6 @@ export function selectBeers(style: string, num: number, beerList: Beer[], fancin
   }
   const shuffleList: Beer[] = shuffle(styleList);
   const selections: Beer[] = shuffleList.slice(0, num);
-  console.log("style: " + style + "...");
-  selections.forEach((e) => console.log(e.name))
   return selections;
 }
 
