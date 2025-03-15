@@ -37,7 +37,7 @@ export async function BeerList(): Promise<Beer[]> {
   const response = await fetch(beerListSrc);
   const rawBeerList = await response.text();
 
-  let beers: Beer[] = [];
+  const beers: Beer[] = [];
   let beersArr: string[] = [];
   if (rawBeerList && typeof rawBeerList === 'string' && rawBeerList.length) {
    beersArr = rawBeerList.split(/\r?\n/).filter((e) => e.length);

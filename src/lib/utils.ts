@@ -44,7 +44,7 @@ export function selectBeers(style: string, num: number, beerList: Beer[], fancin
   let styleList: Beer[] = [];
 
   if (style === "misc") {
-    const standardStyles: String[] = ["IPA", "Hazy IPA", "Lager", "Light Lager", "International Lager"]
+    const standardStyles: string[] = ["IPA", "Hazy IPA", "Lager", "Light Lager", "International Lager"]
     styleList = beerList.filter((beer) => !standardStyles.includes(beer.style));
   } else {
     styleList = beerList.filter((beer) => beer.style === style);
