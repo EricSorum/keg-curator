@@ -1,14 +1,28 @@
 {
   "files": [],
   "references": [
-    { "path": "./tsconfig.app.json" },
-    { "path": "./tsconfig.node.json" }
+    { "path": "./tsconfig.app.json" }
   ],
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
       "@/*": ["./src/*"]
     },
-    "strict": true
-  }
+    "strict": true,
+    "plugins": [
+      {"name": "next"}
+    ]
+  },
+  "include": [
+    "./dist/types/**/*.ts",
+    "./next-env.d.ts"
+  ],
+  "exclude": [
+    "./node_modules"
+  ],
+  "esModuleInterop": true,
+  "jsx": "preserve",
+  "allowJs": true,
+  "forceConsistentCasingInFileNames": true,
+  "incremental": true,
 }
