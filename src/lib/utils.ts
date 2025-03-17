@@ -23,7 +23,7 @@ export function shuffle(arr: Beer[]) {
 //   // Filter out all beers that are already in the menu
 //   let styleList: Beer[] = beerList.filter((beer) => !menu.includes(beer));
   
-//   const standardStyles: String[] = ["IPA", "Hazy IPA", "Lager", "Light Lager", "International Lager"]
+//   const standardStyles: string[] = ["IPA", "Hazy IPA", "Lager", "Light Lager", "International Lager"]
 //   if (style === "misc") {
 //     styleList = beerList.filter((beer) => !standardStyles.includes(beer.style));
 //   } else {

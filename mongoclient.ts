@@ -1,12 +1,13 @@
 
 const { MongoClient, ServerApiVersion } = require('mongodb');
-const username = encodeURIComponent("ejsorum");
+const username = encodeURIComponent("ejsorum@gmail.com");
 const password = encodeURIComponent("#Dw$$96172");
 const cluster = "cluster0.6zoro.mongodb.net";
 // const authSource = "<authSource>";
 // const authMechanism = "<authMechanism>";
 const uri = `${username}:${password}@${cluster}/?retryWrites=true&w=majority&appName=Cluster01`;
-
+// const ur2 = `mongodb+srv://${username}:${password}@cluster0.6zoro.mongodb.net/`
+// const ur2 = `mongodb+srv://ejsorum:@cluster0.6zoro.mongodb.net/`
 // Create a MongoClient with a MongoClientOptions object to set the Stable API version
 const client = new MongoClient(uri, {
   serverApi: {
