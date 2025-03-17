@@ -1,21 +1,46 @@
 {
   "files": [],
   "references": [
-    { "path": "./tsconfig.app.json" }
+    {
+      "path": "./tsconfig.app.json"
+    }
   ],
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": [
+        "./src/*"
+      ]
     },
     "strict": true,
     "plugins": [
-      {"name": "next"}
-    ]
+      {
+        "name": "next"
+      }
+    ],
+    "target": "ES2017",
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
+    "allowJs": true,
+    "allowImportingTsExtensions": true,
+    "skipLibCheck": true,
+    "noEmit": true,
+    "incremental": true,
+    "module": "esnext",
+    "esModuleInterop": true,
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve"
   },
   "include": [
     "./dist/types/**/*.ts",
-    "./next-env.d.ts"
+    "./next-env.d.ts",
+    ".next/types/**/*.ts",
+    "./src/data/*"
   ],
   "exclude": [
     "./node_modules"
@@ -24,5 +49,5 @@
   "jsx": "preserve",
   "allowJs": true,
   "forceConsistentCasingInFileNames": true,
-  "incremental": true,
+  "incremental": true
 }
