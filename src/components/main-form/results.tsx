@@ -3,7 +3,6 @@ import BeerCard from '../beer/beercard'
 import { Beer, BeerList, FormResultsClass } from '@/lib/beers'
 // import {sortBeer} from '@/lib/sortbeer'
 import {createMenu} from '@/lib/createmenu'
-import { runMongo } from '@/lib/mongoclient'
 /*
 Next steps
 add more beers
@@ -27,13 +26,14 @@ export default function Results({formResults} : ResultsProps) {
   }, []);
 
   useEffect(() => {
-    const fetchMongoList = async () => {
-      const awaitList = await runMongo();
-      console.log(awaitList);
+    const fetchBeerList = async () => {
+      const response = await fetch('/api/beers'); // Fetch from the API route
+      const data = await response.json();
+      setBeerList(data);
     };
-    fetchMongoList();
-  })
-
+    fetchBeerList();
+  }, []);
+  
   useEffect(() => {
     setBeerMenu(createMenu(formResults, beerList))
   }, [beerList, formResults]);

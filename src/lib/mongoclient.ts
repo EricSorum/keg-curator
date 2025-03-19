@@ -1,14 +1,7 @@
 
 const { MongoClient, ServerApiVersion } = require('mongodb');
-const username = encodeURIComponent("ejsorum@gmail.com");
-const password = encodeURIComponent("#Dw$$96172");
-const cluster = "cluster0.6zoro.mongodb.net";
-// const authSource = "<authSource>";
-// const authMechanism = "<authMechanism>";
-const uri = `${username}:${password}@${cluster}/?retryWrites=true&w=majority&appName=Cluster01`;
-// const ur2 = `mongodb+srv://${username}:${password}@cluster0.6zoro.mongodb.net/`
-// const ur2 = `mongodb+srv://ejsorum:@cluster0.6zoro.mongodb.net/`
-// Create a MongoClient with a MongoClientOptions object to set the Stable API version
+
+const uri = process.env.MONGODB_URI; // Ensure you have this in your .env file
 const client = new MongoClient(uri, {
   serverApi: {
     version: ServerApiVersion.v1,
@@ -17,16 +10,16 @@ const client = new MongoClient(uri, {
   }
 });
 
-export async function runMongo() {
+export async function fetchMongoList() {
   try {
-    // Connect the client to the server	(optional starting in v4.7)
     await client.connect();
-    // Send a ping to confirm a successful connection
-    await client.db("admin").command({ ping: 1 });
-    console.log("Pinged your deployment. You successfully connected to MongoDB!");
+    const database = client.db("yourDatabaseName"); // Replace with your DB name
+    const collection = database.collection("yourCollectionName"); // Replace with your collection name
+    const beers = await collection.find().toArray();
+    return beers;
+  } catch (error) {
+    console.error("Error fetching data:", error);
   } finally {
-    // Ensures that the client will close when you finish/error
     await client.close();
   }
 }
-runMongo().catch(console.dir);
