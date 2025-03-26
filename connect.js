@@ -8,7 +8,13 @@ async function run() {
     try {
         await client.connect();
         console.log("Successfully connected to Atlas");
-
+        const db = client.db("keg_curator");
+        const rawBeers = db.collection("beer_list");
+        const filter = {"style": "IPA"}
+        const ipa = await rawBeers.findOne(filter);
+        // console.log("beer: " + JSON.stringify(ipa)
+        const allbeers = await rawBeers.find().toArray();
+        console.log(allbeers);
     } catch (err) {
         console.log(err.stack);
     }
