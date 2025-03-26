@@ -1,6 +1,6 @@
 The Keg Curator
 
-STATUS: Currently building back end to store data.
+STATUS: MongoDB has been successfully connected... sorting algorithm needs fixing.
 
 Some restaurans and bars struggle when it comes to choosing the best available beer to serve.  Many restauranteurs specialize in wine or cocktails, but not beer, and don't have the time to carefully curate a beer selection.
 
