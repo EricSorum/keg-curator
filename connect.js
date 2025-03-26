@@ -6,6 +6,7 @@ const client = new MongoClient(process.env.MONGODB_URI);
 
 async function run() {
     try {
+      console.log(typeof client)
         await client.connect();
         console.log("Successfully connected to Atlas");
         const db = client.db("keg_curator");
@@ -14,7 +15,7 @@ async function run() {
         const ipa = await rawBeers.findOne(filter);
         // console.log("beer: " + JSON.stringify(ipa)
         const allbeers = await rawBeers.find().toArray();
-        console.log(allbeers);
+        // console.log(allbeers);
     } catch (err) {
         console.log(err.stack);
     }

@@ -1,8 +1,9 @@
 import { useState, useEffect } from 'react'
 import BeerCard from '../beer/beercard'
-import { Beer, BeerList, FormResultsClass } from '@/lib/beers'
+import { Beer, FormResultsClass } from '@/lib/beers'
 // import {sortBeer} from '@/lib/sortbeer'
 import {createMenu} from '@/lib/createmenu'
+import { getBeers } from '@/pages/api/getbeers'
 /*
 Next steps
 add more beers
@@ -14,28 +15,35 @@ type ResultsProps = {
 }
 
 export default function Results({formResults} : ResultsProps) {
-  const [ beerList, setBeerList ] = useState<Beer[]>([]);
+  const [ beerList, setBeerList ] = useState<Beer[]>();
   const [ beerMenu, setBeerMenu ] = useState<Beer[]>([]);
 
-  useEffect(() => {
-    const fetchBeerList = async () => {
-      const awaitList = await BeerList();
-      setBeerList(awaitList);
-    };
-    fetchBeerList();
-  }, []);
+  // useEffect(() => {
+  //   const fetchBeerList = async () => {
+  //     const awaitList = await getBeers();
+  //     if (awaitList) {
+  //       setBeerList(awaitList);
+  //     }
+  //   };
+  //   fetchBeerList();
+  // }, []);
+
+
 
   useEffect(() => {
     const fetchBeerList = async () => {
       const response = await fetch('/api/beers'); // Fetch from the API route
       const data = await response.json();
-      setBeerList(data);
+      if (data) {
+        setBeerList(data);
+      }
+      console.log(data);
     };
     fetchBeerList();
   }, []);
   
   useEffect(() => {
-    setBeerMenu(createMenu(formResults, beerList))
+    setBeerMenu(createMenu(formResults, beerList || []))
   }, [beerList, formResults]);
 
   return(
