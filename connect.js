@@ -1,3 +1,5 @@
+// This file can be deleted; keeping it now for reference.
+
 import { MongoClient } from "mongodb";
 import dotenv from 'dotenv';
 dotenv.config();
