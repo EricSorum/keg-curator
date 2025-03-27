@@ -1,40 +1,9 @@
-export class Beer {
-  constructor(
-    public name: string,
-    public brewery: string,
-    public style: string,
-    public origin: string,
-    public region: string,
-    public value: string
-  ) {}
-}
-
-export class FormResultsClass {
-  constructor(
-    public businessName: string,
-    public numberOfHandles: number,
-    public minnesotaOnly: boolean,
-    public craftOnly: boolean,
-    public fanciness: number
-  ) {}
-}
-
-export const emptyBeer: Beer = {
-  name: "No beer selection could be found",
-  brewery: "",
-  style: "",
-  origin: "",
-  region: "",
-  value: "",
-}
-
-
-
-
-// Get the list of beers from beerlist.txt and return as JSON
+import { Beer } from '@/lib/beers';
+import { client } from './client';
+import { beertxt } from '@/lib/beertxt';
 export async function BeerList(): Promise<Beer[]> {
-  const beerListSrc = 'src/data/beerlist.txt';
-  const response = await fetch(beerListSrc);
+  // const beerListSrc = '/beerlist.txt';
+  const response = await fetch(beertxt);
   const rawBeerList = await response.text();
 
   const beers: Beer[] = [];
@@ -56,4 +25,18 @@ export async function BeerList(): Promise<Beer[]> {
     beers.push(newBeer);
   }
   return beers;
+}
+
+
+export default async function resetDatabase() {
+  const db = client.db("keg_curator");
+  const rawBeers = db.collection("beer_list");
+
+  // use drop() to remove all entries
+  // rawBeers.drop();
+
+  const completeList = await BeerList();    
+  console.log(typeof completeList, typeof rawBeers);        
+  // then bulkWrite() to add BeerList
+  // rawBeers.insertMany(completeList)
 }

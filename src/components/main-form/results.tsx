@@ -3,12 +3,6 @@ import BeerCard from '../beer/beercard'
 import { Beer, FormResultsClass } from '@/lib/beers'
 // import {sortBeer} from '@/lib/sortbeer'
 import {createMenu} from '@/lib/createmenu'
-import { getBeers } from '@/pages/api/getbeers'
-/*
-Next steps
-add more beers
-filter according to style...?
-*/
 
 type ResultsProps = {
   formResults: FormResultsClass

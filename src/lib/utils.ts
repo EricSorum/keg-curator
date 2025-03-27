@@ -49,11 +49,11 @@ export function selectBeers(style: string, num: number, beerList: Beer[], fancin
   } else {
     styleList = beerList.filter((beer) => beer.style === style);
   }
-  if (fanciness < 30) {
-    styleList = beerList.filter((beer) => beer.value === "Prestige");
-  } else if (fanciness > 80) {
-    styleList = beerList.filter((beer) => beer.value === "Budget");
-  }
+  // if (fanciness < 30) {
+  //   styleList = beerList.filter((beer) => beer.value === "Prestige");
+  // } else if (fanciness > 80) {
+  //   styleList = beerList.filter((beer) => beer.value === "Budget");
+  // }
   const shuffleList: Beer[] = shuffle(styleList);
   const selections: Beer[] = shuffleList.slice(0, num);
   return selections;
