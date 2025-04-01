@@ -12,4 +12,4 @@ The tech stack includes TypeScript, React.js, Shadcn UI components, and Tailwind
 
 The site can be viewed here:
 
-https://keg-curator-lgex47kx9-eric-sorums-projects.vercel.app/
+https://keg-curator.vercel.app/

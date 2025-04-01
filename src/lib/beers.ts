@@ -28,9 +28,6 @@ export const emptyBeer: Beer = {
   value: "",
 }
 
-
-
-
 // Get the list of beers from beerlist.txt and return as JSON
 export async function BeerList(): Promise<Beer[]> {
   const beerListSrc = 'src/data/beerlist.txt';
