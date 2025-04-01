@@ -31,7 +31,6 @@ export default function Results({formResults} : ResultsProps) {
       if (data) {
         setBeerList(data);
       }
-      console.log(data);
     };
     fetchBeerList();
   }, []);

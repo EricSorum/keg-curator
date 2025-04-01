@@ -15,7 +15,6 @@
 
 
 //   // const response = await beertxt;
-//   // console.log(response)
   
 //   const rawBeerList = "1";
 
@@ -49,7 +48,6 @@
 //   // rawBeers.drop();
 
 //   const completeList = await BeerList();    
-//   console.log(typeof completeList, typeof rawBeers);        
 //   // then bulkWrite() to add BeerList
 //   if (completeList) {
 //     rawBeers.insertMany(completeList);
