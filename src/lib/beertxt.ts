@@ -1,3 +1,6 @@
-import fs from 'fs';
+// import fs from 'fs';
+// import path from 'path';
 
-export const beertxt = fs.readFileSync('./beerlist.txt', 'utf-8');
+// const filePath = path.join(process.cwd(), 'src', 'lib', 'beerlist.txt');
+
+// export const beertxt = fs.readFileSync(filePath, 'utf-8');
