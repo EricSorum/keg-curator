@@ -21,7 +21,7 @@ import { Slider } from "@/components/ui/slider"
 
 /* Custom files */
 /*********************/
-// import Results from './results'
+import Results from './results'
 import { FormResultsClass } from '@/lib/beers'
 
 /*********************/
@@ -166,7 +166,7 @@ export function MainForm() {
           <Button type="submit">Submit</Button>
         </form>
       </Form>
-      {/* <Results formResults={formResults} /> */}
+      <Results formResults={formResults} />
     </div>
   )
 }
