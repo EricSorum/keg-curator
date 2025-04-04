@@ -39,8 +39,9 @@
   "include": [
     "./dist/types/**/*.ts",
     "./next-env.d.ts",
+    "./src/data/*",
     ".next/types/**/*.ts",
-    "./src/data/*"
+    "./next/types/**/*.ts"
   ],
   "exclude": [
     "./node_modules"
