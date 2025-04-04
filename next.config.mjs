@@ -1,6 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  distDir: '.next', // Changes the build output directory to `./dist/`.
+  // distDir: '.next',
 }
  
 export default nextConfig
