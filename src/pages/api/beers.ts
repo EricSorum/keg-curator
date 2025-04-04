@@ -1,6 +1,6 @@
 import { Beer } from '@/lib/beers';
 import { NextApiRequest, NextApiResponse } from 'next';
-import { client } from './client';
+import { client } from '../../lib/client';
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
     try {
@@ -24,4 +24,4 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     } finally {
         await client.close();
     }
-} 
+}

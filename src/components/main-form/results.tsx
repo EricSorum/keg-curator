@@ -26,17 +26,24 @@ export default function Results({formResults} : ResultsProps) {
 
   useEffect(() => {
     const fetchBeerList = async () => {
-      const response = await fetch('/api/beers'); // Fetch from the API route
-      const data = await response.json();
-      if (data) {
-        setBeerList(data);
+      try {
+        const response = await fetch('/api/beers');
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        const data = await response.json();
+        if (data) {
+          setBeerList(data);
+        }
+      } catch (error) {
+        console.error('Error fetching beers:', error);
       }
     };
     fetchBeerList();
   }, []);
   
   useEffect(() => {
-    setBeerMenu(createMenu(formResults, beerList || []))
+    setBeerMenu(createMenu(formResults, beerList || []));
   }, [beerList, formResults]);
 
   return(
