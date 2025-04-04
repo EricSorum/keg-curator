@@ -23,7 +23,7 @@ export default tseslint.config(
         'warn',
         { allowConstantExport: true },
       ],
-      allowImportingTsExtensions: true
+      allowImportingTsExtensions: "warn"
     },
   },
 )
