@@ -1,6 +1,6 @@
 import { clsx, type ClassValue } from "clsx"
 import { twMerge } from "tailwind-merge"
-import { Beer } from '@/lib/beers'
+import { type Beer } from '@/lib/beers'
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs))
@@ -13,6 +13,11 @@ export function shuffle(arr: Beer[]) {
     [arr[i], arr[j]] = [arr[j], arr[i]];
   }
   return arr;
+}
+
+export function randomIndex(length: number) : number {
+  const index = Math.floor(Math.random() * length);
+  return index;
 }
 
 // export function chooseBeer(style: string, beerList: Beer[], menu: Beer[], fanciness: number) : Beer {
@@ -39,7 +44,11 @@ export function shuffle(arr: Beer[]) {
 
 // }
 
-export function selectBeers(style: string, num: number, beerList: Beer[], fanciness: number) : Beer[] {
+/*
+New way to choose beers?
+*/
+
+export function selectBeers(style: string, num: number, beerList: Beer[], fanciness: number, menu: Beer[]) : Beer[] {
   // Selects a certain number of beers of a certain style, or miscellaneous beers.
   let styleList: Beer[] = [];
 
@@ -49,25 +58,16 @@ export function selectBeers(style: string, num: number, beerList: Beer[], fancin
   } else {
     styleList = beerList.filter((beer) => beer.style === style);
   }
-  // if (fanciness < 30) {
-  //   styleList = beerList.filter((beer) => beer.value === "Prestige");
-  // } else if (fanciness > 80) {
-  //   styleList = beerList.filter((beer) => beer.value === "Budget");
-  // }
+  if (fanciness < 30) {
+    styleList = beerList.filter((beer) => beer.value === "Prestige");
+  } else if (fanciness > 80) {
+    styleList = beerList.filter((beer) => beer.value === "Budget");
+  }
   const shuffleList: Beer[] = shuffle(styleList);
-  const selections: Beer[] = shuffleList.slice(0, num);
+  const filterMenu: Beer[] = shuffleList.filter((beer) => !menu.includes(beer))
+  const selections: Beer[] = filterMenu.slice(0, num);
   return selections;
 }
-
-  // turn number 1-100 into three pie sections/percentages
-// function fancinessConversion(fanciness: number) : number[] {
- 
-//   let numberOfBudget = fanciness/2;
-//   let numberOfPrestige = fanciness/2;
-//   let numberOfPremium = 100 - numberOfBudget - numberOfPrestige;
-
-//   return [numberOfBudget, numberOfPremium, numberOfPrestige];
-// }
 
 export function fancinessFunc(fanciness: number) : string {
   // Select whether the value should be budget, premium, or prestige, based on the fanciness input.
