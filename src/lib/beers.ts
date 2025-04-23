@@ -20,7 +20,7 @@ export class FormResultsClass {
 }
 
 export const emptyBeer: Beer = {
-  name: "No beer selection could be found",
+  name: "No beer selection found",
   brewery: "",
   style: "",
   origin: "",

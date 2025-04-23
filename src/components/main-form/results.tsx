@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import BeerCard from '../beer/beercard'
 import { Beer, FormResultsClass } from '@/lib/beers'
 // import {sortBeer} from '@/lib/sortbeer'
-import {createMenu} from '@/lib/createmenu'
+import createMenu from '@/lib/createmenu'
 
 type ResultsProps = {
   formResults: FormResultsClass

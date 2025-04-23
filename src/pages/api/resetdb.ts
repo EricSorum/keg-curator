@@ -1,11 +1,11 @@
 // import { Beer } from '@/lib/beers';
-// import { client } from './client';
+// import { client } from '@/lib/client';
 // // // import { beertxt } from '@/lib/beertxt';
 // // import fs from 'fs';
 // // import path from 'path';
 
 
-// export async function BeerList(): Promise<Beer[]> {
+// export async function getRawBeers(): Promise<Beer[]> {
 //   // const beerListSrc = '/beerlist.txt';
 
 
@@ -45,9 +45,13 @@
 //   const rawBeers = db.collection("beer_list");
 
 //   // use drop() to remove all entries
-//   // rawBeers.drop();
+//   rawBeers.drop();
+//   // recreate beer_list
+//   db.createCollection("beer_list");
 
-//   const completeList = await BeerList();    
+
+
+//   const completeList = await getRawBeers();    
 //   // then bulkWrite() to add BeerList
 //   if (completeList) {
 //     rawBeers.insertMany(completeList);
