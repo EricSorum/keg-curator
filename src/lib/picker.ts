@@ -17,7 +17,7 @@ export default function picker(style: string, beerList: Beer[], menu: Beer[], fa
   beerList = beerList.filter((beer) => beer.value === getFanciness);
 
   // Need utility to find a random index from an array of a certain length.
-  console.log("style list random index: " + randomIndex(beerList.length))
+  // console.log("style list random index: " + randomIndex(beerList.length))
 
   // Return one beer from the selected list or return empty beer
   // const returnedBeer = beerList[randomIndex(beerList.length)];

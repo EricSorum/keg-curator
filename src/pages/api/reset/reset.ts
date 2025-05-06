@@ -5,8 +5,13 @@ export default async function resetDatabase() {
   const db = client.db("keg_curator");
   const rawBeers = db.collection("beer_list");
 
+  
+
+
   // use drop() to remove all entries
-  rawBeers.drop();
+  if (rawBeers) {
+    rawBeers.drop();
+  }
   // recreate beer_list
   db.createCollection("beer_list");
 

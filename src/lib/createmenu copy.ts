@@ -25,7 +25,6 @@ export function createMenu(formResults: FormResultsClass, beerList: Beer[]) {
     menu.concat(selectBeers(style, numberOfBasics, beerList, fanciness, menu))})
 
   const numberOfMiscBeers = numberOfHandles - menu.length;
-  console.log(numberOfMiscBeers)
   let newBeers = selectBeers("misc", numberOfMiscBeers, beerList, fanciness, menu)
   menu = menu.concat(newBeers);
 
