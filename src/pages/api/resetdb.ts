@@ -2,19 +2,31 @@ import { client } from '@/lib/client';
 import { getRawBeers } from '@/lib/getrawbeers';
 
 export default async function resetDatabase() {
+  console.log("rest running")
+
   const db = client.db("keg_curator");
-  const rawBeers = db.collection("beer_list");
+  const beerCollection = db.collection("beer_list");
 
-  // use drop() to remove all entries
-  rawBeers.drop();
-  // recreate beer_list
-  db.createCollection("beer_list");
-
-
-
-  const completeList = await getRawBeers();    
-  // then bulkWrite() to add BeerList
-  if (completeList) {
-    rawBeers.insertMany(completeList);
+//   beerCollection.insertMany([{
+//     name: "Test beer",
+//     brewery: "test",
+//     style: "test",
+//     origin: "test",
+//     region: "test",
+//     value: "test",
+//   },
+//   {
+//   name: "Test beer2",
+//   brewery: "test",
+//   style: "test",
+//   origin: "test",
+//   region: "test",
+//   value: "test",
+// }
+// ])
+  
+  const rawBeers = await getRawBeers();    
+  if (rawBeers) {
+    beerCollection.insertMany(rawBeers);
   }
 }
