@@ -1,4 +1,4 @@
-import { Beer } from './beers';
+import { Beer } from '../../lib/beers';
 
 export async function getRawBeers() {
   // const beerListSrc = '/beerlist.txt';
@@ -42,8 +42,8 @@ export async function getRawBeers() {
         return;
     }
     console.log('File written successfully!');
-  fs.writeFile('beerlist.json', beerString, 'utf8', callback(err))
+  fs.writeFile('beerlist.json', beerString, 'utf8', callback(err));
   
-  console.log("getRawBeers...." + beers[0])
-  return beers;
+  // console.log("getRawBeers...." + beers[0])
+  }
 }
