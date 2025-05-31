@@ -20,7 +20,6 @@ export async function getRawBeers(): Promise<Beer[]> {
   }
   while (beersArr.length > 6) {  
     const newBeerArr:string[] = beersArr.splice(0, 6);
-    // const newBeer = new Beer(...newBeerArr); ------- results in ts error...?
     const newBeer = new Beer(
       newBeerArr[0], // name
       newBeerArr[1], // brewery
