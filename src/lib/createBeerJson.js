@@ -15,10 +15,6 @@ async function getRawBeers() {
     ) {}
   }
 
-  // const fs = require('fs');
-  // const beerListSrc = './beerlist.txt';
-  // const response = await fetch(beerListSrc);
-  // const rawBeerList = await response.text();
   const rawBeerList = await readTxtFile("./beerlist.txt")
   const beers = [];
   let beersArr = [];
@@ -41,19 +37,19 @@ async function getRawBeers() {
   }
 
   const beerString = JSON.stringify(beers);
-  const callback = (err) => {
-    if (err) {
+
+  try {
+    await writeFile('beerlist.json', beerString, 'utf8');
+    console.log('File written successfully!');  
+  }
+  catch {
+      if (err) {
         console.error('Error writing to file:', err);
         return;
     }
-    console.log('File written successfully!');
-    writeFile('beerlist.json', beerString, 'utf8', callback(err));
-  
-  // console.log("getRawBeers...." + beers[0])
   }
 }
 getRawBeers();
-// console.log("beers")
 
 async function readTxtFile(filename) {
   try {
