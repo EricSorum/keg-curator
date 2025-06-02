@@ -37,17 +37,8 @@ async function getRawBeers() {
   }
 
   const beerString = JSON.stringify(beers);
-
-  try {
-    await writeFile('beerlist.json', beerString, 'utf8');
-    console.log('File written successfully!');  
-  }
-  catch {
-      if (err) {
-        console.error('Error writing to file:', err);
-        return;
-    }
-  }
+  console.log(typeof beerString)
+  await writeJsonFile("./beerlist.json", beerString)
 }
 getRawBeers();
 
@@ -56,7 +47,22 @@ async function readTxtFile(filename) {
     const data = await readFile(filename, "utf8");
     return data;
   } catch (error) {
+    if (error) {
     console.error(`Error reading ${filename}: ${error}`);
     return [];
+    }
+  }
+}
+
+async function writeJsonFile(filename, data) {
+  try {
+    await writeFile(filename, data, 'utf8');
+    console.log('File written successfully!');  
+  }
+  catch (error) {
+    if (error) {
+      console.error('Error writing to file:', error);
+      return;
+    }
   }
 }
