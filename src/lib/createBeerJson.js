@@ -12,17 +12,25 @@ async function getRawBeers() {
       origin,
       region,
       value
-    ) {}
+    ) {
+      this.name = name;
+      this.brewery = brewery;
+      this.style = style;
+      this.origin = origin;
+      this.region = region;
+      this.value = value;
+    }
   }
 
   const rawBeerList = await readTxtFile("./beerlist.txt")
+  // console.log(rawBeerList.length)
   const beers = [];
   let beersArr = [];
 
   if (rawBeerList && rawBeerList.length) {
    beersArr = rawBeerList.split(/\r?\n/).filter((e) => e.length);
   }
-  
+  // console.log(beersArr)
   while (beersArr.length > 6) {  
     const newBeerArr = beersArr.splice(0, 6);
     const newBeer = new Beer(
@@ -35,10 +43,11 @@ async function getRawBeers() {
     );
     beers.push(newBeer);
   }
-
+  console.log(beers[0])
+  // console.log(JSON.stringify(beers[0]));
   const beerString = JSON.stringify(beers);
-  console.log(typeof beerString)
-  await writeJsonFile("./beerlist.json", beerString)
+  // console.log(beerString)
+  await writeJsonFile("./beerjson.json", beerString)
 }
 getRawBeers();
 
