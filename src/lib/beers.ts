@@ -28,29 +28,26 @@ export const emptyBeer: Beer = {
   value: "",
 }
 
-// Get the list of beers from beerlist.txt and return as JSON
-// export async function BeerList(): Promise<Beer[]> {
-//   const beerListSrc = 'src/data/beerlist.txt';
-//   const response = await fetch(beerListSrc);
-//   const rawBeerList = await response.text();
+// This class will store all the different combinations of style selections.
 
-//   const beers: Beer[] = [];
-//   let beersArr: string[] = [];
-//   if (rawBeerList && typeof rawBeerList === 'string' && rawBeerList.length) {
-//    beersArr = rawBeerList.split(/\r?\n/).filter((e) => e.length);
-//   }
-//   while (beersArr.length > 6) {  
-//     const newBeerArr:string[] = beersArr.splice(0, 6);
-//     // const newBeer = new Beer(...newBeerArr); ------- results in ts error...?
-//     const newBeer = new Beer(
-//       newBeerArr[0], // name
-//       newBeerArr[1], // brewery
-//       newBeerArr[2], // style
-//       newBeerArr[3], // origin
-//       newBeerArr[4], // region
-//       newBeerArr[5]  // value
-//     );
-//     beers.push(newBeer);
-//   }
-//   return beers;
-// }
+export class Styles {
+  constructor(
+    public lager: string,
+    public hazyIpa: string,
+    public ipa: string,
+    public wheat: string,
+    public dark: string,
+    public sour: string,
+    public cider: string,
+    public fruitedCider: string,
+    public misc: string,
+  ) {}
+}
+
+export const BreweryRanking = {
+  // Make a simple rank of all breweries.
+  // Sort function will privilege breweries with a higher rank.
+  // Then it will sort based on style privilege (ie single IPAs over double...?)
+  // But we also need to vary the brews.  So maybe it only allows one from a certain brewery
+  // at least to start...
+}
