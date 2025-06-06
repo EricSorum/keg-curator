@@ -1,50 +1,19 @@
 import { useState, useEffect } from 'react'
 import BeerCard from '../beer/beercard'
 import { Beer, FormResultsClass } from '@/lib/beers'
-// import {sortBeer} from '@/lib/sortbeer'
 import createMenu from '@/lib/createmenu'
+import beerJson from '@/lib/beerjson.json'
 
 type ResultsProps = {
   formResults: FormResultsClass
 }
 
 export default function Results({formResults} : ResultsProps) {
-  const [ beerList, setBeerList ] = useState<Beer[]>();
   const [ beerMenu, setBeerMenu ] = useState<Beer[]>([]);
-
-  // useEffect(() => {
-  //   const fetchBeerList = async () => {
-  //     const awaitList = await getBeers();
-  //     if (awaitList) {
-  //       setBeerList(awaitList);
-  //     }
-  //   };
-  //   fetchBeerList();
-  // }, []);
-
-
-
-  useEffect(() => {
-    const fetchBeerList = async () => {
-      try {
-        const response = await fetch('/api/beers');
-        if (!response.ok) {
-          throw new Error(`HTTP error! status: ${response.status}`);
-        }
-        const data = await response.json();
-        if (data) {
-          setBeerList(data);
-        }
-      } catch (error) {
-        console.error('Error fetching beers:', error);
-      }
-    };
-    fetchBeerList();
-  }, []);
   
   useEffect(() => {
-    setBeerMenu(createMenu(formResults, beerList || []));
-  }, [beerList, formResults]);
+    setBeerMenu(createMenu(formResults, beerJson || []));
+  }, [beerJson, formResults]);
 
   return(
     <div className="flex flex-col gap-6">     
