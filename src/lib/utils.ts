@@ -16,7 +16,7 @@ export function shuffle(arr: Beer[]) {
 }
 
 export function randomIndex(length: number) : number {
-  const index = Math.floor(Math.random() * length);
+  const index = Math.floor(Math.random() * (length * 0.99));
   return index;
 }
 
