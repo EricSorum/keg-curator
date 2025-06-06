@@ -32,9 +32,28 @@ export default function createMenu(formResults: FormResultsClass, beerList: Beer
         return 1;
       }
     }
+    function fancinessCallback(a: Beer, b: Beer): number {
+      function convertValue(value: string): number { 
+        let num = 0;
+        if (value === "Budget") {num = 1}
+        if (value === "Premium") {num = 2}
+        if (value === "Prestige") {num = 3}
+        return num;
+      }
+      const valueA = convertValue(a.value);
+      const valueB = convertValue(b.value);
+      if (valueA == valueB) {
+        return 0; 
+      } else if (valueA < valueB) {
+        return -1;
+      } else {
+        return 1;
+      }
+    }
 
-    list.sort((a, b) => regionCallback(a, b));
-    list.sort((a, b) => originCallback(a, b));
+    list.sort(regionCallback);
+    list.sort(originCallback);
+    list.sort(fancinessCallback);
     
     return list;
   }
