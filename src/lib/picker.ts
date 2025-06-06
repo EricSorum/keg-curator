@@ -11,7 +11,6 @@ export default function picker(style: string, beerList: Beer[], fanciness: numbe
 
   let newBeer: Beer = beerList[randomIndex(beerList.length)];
   const getFanciness = fancinessFunc(fanciness);
-  beerList = beerList.filter((beer) => beer.value === getFanciness);
 
   // so need various levels of specificity
   // the algorithm should increase likeliness of choosing a beer that fits the type
