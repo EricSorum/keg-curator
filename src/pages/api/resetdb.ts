@@ -1,5 +1,4 @@
 import { client } from '@/lib/client';
-// import { getRawBeers } from '@/lib/getrawbeers';
 import { Beer } from'@/lib/beers';
 import type { NextApiRequest, NextApiResponse } from 'next'
 import { readFile } from 'fs/promises';
@@ -45,8 +44,8 @@ export default async function resetDatabase(
     
     if (rawBeers && rawBeers.length > 0) {
       console.log('First beer object:', JSON.stringify(rawBeers[0], null, 2));
-      const result = await beerCollection.insertMany(rawBeers);
-      console.log('Inserted documents:', result.insertedCount);
+      // const result = await beerCollection.insertMany(rawBeers);
+      // console.log('Inserted documents:', result.insertedCount);
       res.status(200).json({ message: "Database reset successful" });
     } else {
       console.log('No beers found in the data');
