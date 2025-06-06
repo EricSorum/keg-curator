@@ -12,20 +12,41 @@ export default function createMenu(formResults: FormResultsClass, beerList: Beer
     beerList = beerList.filter((beer) => beer.origin === "Craft");
   }
 
-// instead of choosing same basic styles, just choose misc for now
-// then add a form to include custom beers the user requests
-// so a field where you can add cards for each style, and the card has a counter to increase
-// number of that style
+  function sortList(list: Beer[]): Beer[] {
 
-/// run one loop for each handle... guarantee that it will return a beer
-// use slice that will alter array each time it adds a beer...
+    function regionCallback(a: Beer, b: Beer): number {
+      if (a.region === b.region) {
+        return 0; 
+      } else if (a.region === "Minnesota") {
+        return -1;
+      } else {
+        return 1;
+      }
+    }
+    function originCallback(a: Beer, b: Beer): number {
+      if (a.origin === b.origin) {
+        return 0; 
+      } else if (a.origin === "Craft") {
+        return -1;
+      } else {
+        return 1;
+      }
+    }
+
+    list.sort((a, b) => regionCallback(a, b));
+    list.sort((a, b) => originCallback(a, b));
+    
+    return list;
+  }
+
+  const sortedList = sortList(beerList);
 
   let menu: Beer[] = [];
 
   for (let i = 0; i < numberOfHandles; i++) {
-    const newBeer = picker("misc", beerList, 0);
+    const newBeer = picker("misc", sortedList, 0);
     menu.push(newBeer);
-    beerList.splice(beerList.indexOf(newBeer), 1);
+    sortedList.splice(sortedList.indexOf(newBeer), 1);
   }
   
 
