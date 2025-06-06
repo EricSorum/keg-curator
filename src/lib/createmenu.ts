@@ -1,5 +1,4 @@
-import { Beer, FormResultsClass, emptyBeer } from "./beers"
-// import { selectBeers } from "./utils"
+import { Beer, FormResultsClass } from "./beers"
 import picker from "./picker";
 
 export default function createMenu(formResults: FormResultsClass, beerList: Beer[]) {
@@ -9,38 +8,27 @@ export default function createMenu(formResults: FormResultsClass, beerList: Beer
     beerList = beerList.filter((beer) => beer.region === "Minnesota");
   }
 
-  // filter by craft beer only?
   if (craftOnly) {
     beerList = beerList.filter((beer) => beer.origin === "Craft");
   }
-  // Filter by region/origin according to cuisine?
 
-  // Start off by choosing a few basic lagers and IPAs.
+// instead of choosing same basic styles, just choose misc for now
+// then add a form to include custom beers the user requests
+// so a field where you can add cards for each style, and the card has a counter to increase
+// number of that style
+
+/// run one loop for each handle... guarantee that it will return a beer
+// use slice that will alter array each time it adds a beer...
+
   let menu: Beer[] = [];
 
-  const basicStyles = ["IPA", "Hazy IPA", "Lager"];
-  const numberOfBasics = Math.floor(numberOfHandles/(basicStyles.length));
-  function selectStyles(num: number, style: string) {
-    for (let i = 0; i < num; i++) {
-      menu.push(picker(style, beerList, menu, fanciness));
-    }
+  for (let i = 0; i < numberOfHandles; i++) {
+    const newBeer = picker("misc", beerList, 0);
+    menu.push(newBeer);
+    beerList.splice(beerList.indexOf(newBeer), 1);
   }
-  basicStyles.forEach((style) => {
-    selectStyles(numberOfBasics, style);
-  });
+  
 
-  const numberOfMiscBeers = numberOfHandles - menu.length;
-
-  for (let i = 0; i < numberOfMiscBeers; i++) {
-    selectStyles(numberOfMiscBeers, "misc");
-
-  }
-
-  // can i just put it al in on for loop counting down the number of handles?
-
-  if (menu.length < numberOfHandles) {
-    selectStyles(menu.length - numberOfHandles, "misc")
-  }
 
   return menu;
 }
