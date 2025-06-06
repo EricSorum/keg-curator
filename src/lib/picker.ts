@@ -1,10 +1,17 @@
-import { Beer, emptyBeer } from './beers';
+import { Beer } from './beers';
 import { fancinessFunc, randomIndex } from './utils';
   
 export default function picker(style: string, beerList: Beer[], fanciness: number) : Beer {
+
+  // Ok so the array is sorted first.
+
+  // need to pick beer that's first of all the right style
+  // preferably the right fanciness.
+
+
   let newBeer: Beer = beerList[randomIndex(beerList.length)];
-  // const getFanciness = fancinessFunc(fanciness);
-  // beerList = beerList.filter((beer) => beer.value === getFanciness);
+  const getFanciness = fancinessFunc(fanciness);
+  beerList = beerList.filter((beer) => beer.value === getFanciness);
 
   // so need various levels of specificity
   // the algorithm should increase likeliness of choosing a beer that fits the type
@@ -12,14 +19,25 @@ export default function picker(style: string, beerList: Beer[], fanciness: numbe
   // if not then find one that at least fits the style.
   // if not then find anything
 
-  // so i can either eliminate them
+  // so i can either eliminate them or find first instance 
 
-  // maybe i should sort the array first? before using picker
+  function findBeer(): Beer {
+    // This makes an attempt to find a beer with both matching style and value.
+    let styleAndValue = beerList.slice(0, 15).find((beer) => beer.style === style && beer.value === getFanciness)
+    // Otherwise it just returns a matching style.
+    let styleOnly = beerList.find((beer) => beer.style === style);
+    let defaultSelection = beerList[0];
 
-  // maybe one big sort function?
-  // or several sort functions...
+    if (styleAndValue) {
+      return styleAndValue;
+    } else if (styleOnly) {
+      return styleOnly;
+    } else {
+      return defaultSelection;
+    }
+  }
 
-  
+  newBeer = findBeer();
 
   return newBeer;
 
