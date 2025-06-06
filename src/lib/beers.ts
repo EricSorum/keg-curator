@@ -19,14 +19,14 @@ export class FormResultsClass {
   ) {}
 }
 
-export const emptyBeer: Beer = {
-  name: "No beer selection found",
-  brewery: "",
-  style: "",
-  origin: "",
-  region: "",
-  value: "",
-}
+// export const emptyBeer: Beer = {
+//   name: "No beer selection found",
+//   brewery: "",
+//   style: "",
+//   origin: "",
+//   region: "",
+//   value: "",
+// }
 
 // This class will store all the different combinations of style selections.
 
