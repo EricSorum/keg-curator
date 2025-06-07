@@ -11,7 +11,8 @@ async function getRawBeers() {
       style,
       origin,
       region,
-      value
+      value,
+      cuisine
     ) {
       this.name = name;
       this.brewery = brewery;
@@ -19,6 +20,7 @@ async function getRawBeers() {
       this.origin = origin;
       this.region = region;
       this.value = value;
+      this.cuisine = cuisine;
     }
   }
 

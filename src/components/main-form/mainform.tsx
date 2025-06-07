@@ -18,12 +18,17 @@ import {
 import { Input } from "@/components/ui/input"
 import { Checkbox } from "@/components/ui/checkbox"
 import { Slider } from "@/components/ui/slider"
-
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select"
 /* Custom files */
 /*********************/
 import Results from './results'
 import { FormResultsClass } from '@/lib/beers'
-
 /*********************/
 
 const formSchema = z.object({
@@ -36,7 +41,8 @@ const formSchema = z.object({
    }),
   minnesotaOnly: z.boolean(),
   craftOnly: z.boolean(),
-  fanciness: z.number()
+  fanciness: z.number(),
+  cuisine: z.string(),
 })
 
 const defaultResults = new FormResultsClass("My Restaurant", 6, false, false, 30);
@@ -52,7 +58,7 @@ export function MainForm() {
       minnesotaOnly: false,
       craftOnly: false,
       fanciness: 30,
-      
+      cuisine: "",
     },
   });
 
@@ -60,7 +66,7 @@ export function MainForm() {
     if (values) {
       setFormResults(values);
     } else {
-      setFormResults(defaultResults); // or should it not change results?
+      setFormResults(defaultResults);
     }
   }
 
@@ -105,16 +111,54 @@ export function MainForm() {
           />
           <FormField
             control={form.control}
+            name="cuisine"
+            render={({ field }) => (
+              <FormItem>
+              <FormLabel>Cuisine</FormLabel>
+
+                <FormControl>
+                  <Select>
+              <SelectTrigger className="w-[280px]">
+                <SelectValue placeholder="Select a cuisine" />
+              </SelectTrigger>
+              <SelectContent>
+                  <SelectItem value="latin">Latin American</SelectItem>
+                  <SelectItem value="seasian">Southeast Asian</SelectItem>
+                  <SelectItem value="japanese">Japanese</SelectItem>
+                  <SelectItem value="chinese">Chinese/Korean</SelectItem>
+                  <SelectItem value="italian">Italian</SelectItem>
+                  <SelectItem value="greek">Greek/Southwest Asian</SelectItem>
+                  <SelectItem value="barbecue">Barbecue</SelectItem>
+                  <SelectItem value="elevated">Elevated Pub</SelectItem>
+                  <SelectItem value="american">Classic American</SelectItem>
+                  <SelectItem value="german">German</SelectItem>
+                  <SelectItem value="scandinavian">Scandinavian</SelectItem>
+                  <SelectItem value="ethiopian">Ethiopian</SelectItem>
+                  <SelectItem value="wafrican">West African</SelectItem>
+              </SelectContent>
+                  </Select>
+                        </FormControl>
+                <FormDescription>
+                  The type of food served at the restaurant.
+                </FormDescription>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+
+          <FormField
+            control={form.control}
             name="fanciness"
             render={({ field }) => (
               <FormItem>
+                <FormLabel>Fanciness</FormLabel>
+
                 <FormControl>
                 <Slider defaultValue={[30]} max={100} step={1} className={cn("w-[10%]")}
                   value={[field.value]}
                   onValueChange={(e) => field.onChange(e[0])}
                 />
                 </FormControl>
-                <FormLabel>Fanciness</FormLabel>
                 <FormDescription>
                   How fancy is the restaurant?
                 </FormDescription>
