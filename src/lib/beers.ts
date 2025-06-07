@@ -6,7 +6,14 @@ export class Beer {
     public origin: string,
     public region: string,
     public value: string
-  ) {}
+  ) {
+      this.name = name;
+      this.brewery = brewery;
+      this.style = style;
+      this.origin = origin;
+      this.region = region;
+      this.value = value;
+    }
 }
 
 export class FormResultsClass {
