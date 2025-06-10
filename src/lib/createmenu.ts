@@ -49,7 +49,5 @@ export default function createMenu(formResults: FormResultsClass, beerList: Beer
     sortedList.splice(sortedList.indexOf(newBeer), 1);
   }
   
-
-
   return menu;
 }
