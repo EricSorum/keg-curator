@@ -123,18 +123,20 @@ export function MainForm() {
               </SelectTrigger>
               <SelectContent>
                   <SelectItem value="latin">Latin American</SelectItem>
-                  <SelectItem value="seasian">Southeast Asian</SelectItem>
                   <SelectItem value="japanese">Japanese</SelectItem>
                   <SelectItem value="chinese">Chinese/Korean</SelectItem>
+                  <SelectItem value="seasian">Southeast Asian</SelectItem>
+                  <SelectItem value="scandinavian">Scandinavian</SelectItem>
+                  <SelectItem value="ethiopian">Ethiopian</SelectItem>
+                  <SelectItem value="wafrican">West African</SelectItem>
                   <SelectItem value="italian">Italian</SelectItem>
                   <SelectItem value="greek">Greek/Southwest Asian</SelectItem>
                   <SelectItem value="barbecue">Barbecue</SelectItem>
                   <SelectItem value="elevated">Elevated Pub</SelectItem>
                   <SelectItem value="american">Classic American</SelectItem>
+                  <SelectItem value="steakhouse">Steakhouse</SelectItem>
                   <SelectItem value="german">German</SelectItem>
-                  <SelectItem value="scandinavian">Scandinavian</SelectItem>
-                  <SelectItem value="ethiopian">Ethiopian</SelectItem>
-                  <SelectItem value="wafrican">West African</SelectItem>
+                  <SelectItem value="cafe">Cafe</SelectItem>
               </SelectContent>
                   </Select>
                         </FormControl>
