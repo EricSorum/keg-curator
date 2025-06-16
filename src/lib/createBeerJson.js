@@ -1,5 +1,3 @@
-// import { Beer } from './beers';
-
 import { readFile, writeFile } from "fs/promises";
 
 async function getRawBeers() {
@@ -25,14 +23,12 @@ async function getRawBeers() {
   }
 
   const rawBeerList = await readTxtFile("./beerlist.txt")
-  // console.log(rawBeerList.length)
   const beers = [];
   let beersArr = [];
 
   if (rawBeerList && rawBeerList.length) {
    beersArr = rawBeerList.split(/\r?\n/).filter((e) => e.length);
   }
-  // console.log(beersArr)
   while (beersArr.length > 6) {  
     const newBeerArr = beersArr.splice(0, 6);
     const newBeer = new Beer(
@@ -45,10 +41,8 @@ async function getRawBeers() {
     );
     beers.push(newBeer);
   }
-  console.log(beers[0])
-  // console.log(JSON.stringify(beers[0]));
+
   const beerString = JSON.stringify(beers);
-  // console.log(beerString)
   await writeJsonFile("./beerjson.json", beerString)
 }
 getRawBeers();

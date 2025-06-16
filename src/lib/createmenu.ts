@@ -4,13 +4,13 @@ import picker from "./picker";
 export default function createMenu(formResults: FormResultsClass, beerList: Beer[]) {
 
   const { numberOfHandles, minnesotaOnly, craftOnly, fanciness } = formResults;
-  if (minnesotaOnly) {
-    beerList = beerList.filter((beer) => beer.region === "Minnesota");
-  }
+  // if (minnesotaOnly) {
+  //   beerList = beerList.filter((beer) => beer.region === "Minnesota");
+  // }
 
-  if (craftOnly) {
-    beerList = beerList.filter((beer) => beer.origin === "Craft");
-  }
+  // if (craftOnly) {
+  //   beerList = beerList.filter((beer) => beer.origin === "Craft");
+  // }
 
   function sortList(list: Beer[]): Beer[] {
 
@@ -35,7 +35,7 @@ export default function createMenu(formResults: FormResultsClass, beerList: Beer
 
     list.sort(regionCallback);
     list.sort(originCallback);
-    
+    console.log(list.length)
     return list;
   }
 
