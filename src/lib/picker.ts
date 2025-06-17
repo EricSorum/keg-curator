@@ -1,10 +1,9 @@
 import { Beer } from './beers';
 import { fancinessFunc, randomIndex } from './utils';
   
-export default function picker(style: string, beerList: Beer[], fanciness: number) : Beer {
+export default function picker(style: string, beerList: Beer[], fanciness: number): Beer {
 
-  let newBeer: Beer = beerList[randomIndex(beerList.length)];
-  const getFanciness = fancinessFunc(fanciness);
+  const getFanciness: string = fancinessFunc(fanciness);
 
   function findBeer(): Beer {
     // This makes an attempt to find a beer with both matching style and value.
@@ -17,8 +16,8 @@ export default function picker(style: string, beerList: Beer[], fanciness: numbe
       return styleOnly ? styleOnly : beerList[0];
     }
   }
-  newBeer = findBeer();
+  let newBeer: Beer = findBeer();
 
-  return newBeer;
+  return newBeer ? newBeer : beerList[randomIndex(beerList.length)];
 
 }

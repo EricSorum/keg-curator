@@ -4,50 +4,49 @@ import picker from "./picker";
 export default function createMenu(formResults: FormResultsClass, beerList: Beer[]) {
 
   const { numberOfHandles, minnesotaOnly, craftOnly, fanciness } = formResults;
-  // if (minnesotaOnly) {
-  //   beerList = beerList.filter((beer) => beer.region === "Minnesota");
-  // }
 
-  // if (craftOnly) {
-  //   beerList = beerList.filter((beer) => beer.origin === "Craft");
-  // }
+  let list: Beer[] = [];
+  list = list.concat(beerList);  // list needs to be a new array with the values of beerList
 
-  function sortList(list: Beer[]): Beer[] {
-
-    function regionCallback(a: Beer, b: Beer): number {
-      if (a.region === b.region) {
-        return 0; 
-      } else if (a.region === "Minnesota") {
-        return -1;
-      } else {
-        return 1;
-      }
-    }
-    function originCallback(a: Beer, b: Beer): number {
-      if (a.origin === b.origin) {
-        return 0; 
-      } else if (a.origin === "Craft") {
-        return -1;
-      } else {
-        return 1;
-      }
-    }
-
-    list.sort(regionCallback);
-    list.sort(originCallback);
-    console.log(list.length)
-    return list;
+  if (minnesotaOnly) {
+    list.sort(regionCallback);    
   }
 
-  const sortedList = sortList(beerList);
+  if (craftOnly) {
+    list.sort(originCallback);
+  }
+    console.log(list.length)
 
   let menu: Beer[] = [];
 
   for (let i = 0; i < numberOfHandles; i++) {
-    const newBeer = picker("misc", sortedList, fanciness);
+    const newBeer = picker("misc", list, fanciness);
     menu.push(newBeer);
-    sortedList.splice(sortedList.indexOf(newBeer), 1);
+    // I avoid added duplicate beers by splicing each beer from the list.
+    list.splice(list.indexOf(newBeer), 1);  
   }
   
   return menu;
+}
+
+// Callback functions for sorting.
+
+function regionCallback(a: Beer, b: Beer): number { // Local/Minnesota only
+  if (a.region === b.region) {
+    return 0; 
+  } else if (a.region === "Minnesota") {
+    return -1;
+  } else {
+    return 1;
+  }
+}
+
+function originCallback(a: Beer, b: Beer): number { // Craft only
+  if (a.origin === b.origin) {
+    return 0; 
+  } else if (a.origin === "Craft") {
+    return -1;
+  } else {
+    return 1;
+  }
 }
