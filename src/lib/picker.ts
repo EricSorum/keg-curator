@@ -4,10 +4,13 @@ import { fancinessFunc, randomIndex } from './utils';
 export default function picker(style: string, beerList: Beer[], fanciness: number): Beer {
 
   const getFanciness: string = fancinessFunc(fanciness);
-
   function findBeer(): Beer {
     // This makes an attempt to find a beer with both matching style and value.
-    let styleAndValue = beerList.slice(0, 15).find((beer) => beer.style === style && beer.value === getFanciness)
+
+    // SOMETHING SEEMS TO BE WRONG WITH THE STYLE... NEED TO ADD STYLE ANYWAY.
+    // it never sorts by value because there is never a style value
+    // let styleAndValue = beerList.slice(0, 15).find((beer) => beer.style === style && beer.value === getFanciness)
+    let styleAndValue = beerList.slice(0, 15).find((beer) => beer.value === getFanciness)
     // Otherwise it just returns a matching style.
     if (styleAndValue) {
       return styleAndValue;
@@ -17,7 +20,7 @@ export default function picker(style: string, beerList: Beer[], fanciness: numbe
     }
   }
   let newBeer: Beer = findBeer();
-
+  console.log(newBeer)
   return newBeer ? newBeer : beerList[randomIndex(beerList.length)];
 
 }

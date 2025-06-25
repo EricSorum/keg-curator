@@ -5,17 +5,16 @@ export default function createMenu(formResults: FormResultsClass, beerList: Beer
 
   const { numberOfHandles, minnesotaOnly, craftOnly, fanciness } = formResults;
 
-  let list: Beer[] = [];
-  list = list.concat(beerList);  // list needs to be a new array with the values of beerList
+  let list: Beer[] = [...beerList]; // list needs to be a new array with the values of beerList
 
   if (minnesotaOnly) {
-    list.sort(regionCallback);    
+    list.sort(regionCallback);
   }
 
   if (craftOnly) {
     list.sort(originCallback);
   }
-    console.log(list.length)
+  // TRANSFORM CUISINE STRING INTO ARRAY .split("|", ...)
 
   let menu: Beer[] = [];
 

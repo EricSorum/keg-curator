@@ -5,7 +5,8 @@ export class Beer {
     public style: string,
     public origin: string,
     public region: string,
-    public value: string
+    public value: string,
+    public cuisine: string
   ) {
       this.name = name;
       this.brewery = brewery;
@@ -13,6 +14,7 @@ export class Beer {
       this.origin = origin;
       this.region = region;
       this.value = value;
+      this.cuisine = cuisine;
     }
 }
 
@@ -22,7 +24,8 @@ export class FormResultsClass {
     public numberOfHandles: number,
     public minnesotaOnly: boolean,
     public craftOnly: boolean,
-    public fanciness: number
+    public fanciness: number,
+    public cuisine: string,
   ) {}
 }
 

@@ -46,7 +46,7 @@ const formSchema = z.object({
   cuisine: z.string(),
 })
 
-const defaultResults = new FormResultsClass("My Restaurant", 6, false, false, 30);
+const defaultResults = new FormResultsClass("My Restaurant", 6, false, false, 30, "");
 
 export function MainForm() {
   const [ formResults, setFormResults ] = useState(defaultResults);
