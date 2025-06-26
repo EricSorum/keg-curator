@@ -29,8 +29,11 @@ async function getRawBeers() {
   if (rawBeerList && rawBeerList.length) {
    beersArr = rawBeerList.split(/\r?\n/).filter((e) => e.length);
   }
-  while (beersArr.length > 6) {  
-    const newBeerArr = beersArr.splice(0, 6);
+
+  const numberOfKeys = 7;
+
+  while (beersArr.length > numberOfKeys) {  
+    const newBeerArr = beersArr.splice(0, numberOfKeys);
     const newBeer = new Beer(
       newBeerArr[0], // name
       newBeerArr[1], // brewery
@@ -38,7 +41,7 @@ async function getRawBeers() {
       newBeerArr[3], // origin
       newBeerArr[4], // region
       newBeerArr[5],  // value
-      newBeerArr[6].split("|") // cuisine
+      newBeerArr[6] // cuisine
     );
     beers.push(newBeer);
   }
