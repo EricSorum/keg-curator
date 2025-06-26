@@ -4,6 +4,7 @@ Domestic Lager
 Domestic
 Wisconsin
 Budget
+Cuisine: Classic American, Pizza
 
 Venture Pils
 Bent Paddle Brewery
@@ -11,6 +12,7 @@ Pilsner
 Craft
 Minnesota
 Premium
+Cuisine: German, Eastern European
 
 Local 755
 BlackStack Brewing
@@ -18,6 +20,7 @@ IPA
 Craft
 Minnesota
 Premium
+Cuisine: Elevated Pub, Classic American, Pizza
 
 Modelo Especial
 Modelo Brewery
@@ -25,6 +28,7 @@ International Lager
 Import
 Mexico
 Premium
+Cuisine: Latin American
 
 Foggy Geezer
 War Pigs
@@ -32,6 +36,7 @@ Hazy IPA
 Craft
 Indiana
 Premium
+Cuisine: Elevated Pub, Classic American, Pizza
 
 Saga
 Summit
@@ -39,6 +44,7 @@ IPA
 Craft
 Minnesota
 Budget
+Cuisine: Classic American, Pizza
 
 Twins Pils
 Summit
@@ -46,6 +52,7 @@ Pilsener
 Craft
 Minnesota
 Budget
+Cuisine: Elevated Pub, Classic American, Pizza
 
 Black Ale
 Bent Paddle Brewery
@@ -53,6 +60,7 @@ Porter
 Craft
 Minnesota
 Premium
+Cuisine: Elevated Pub, Classic American, Pizza, Latin American, West African, Ethiopian, Elevated Pub, Irish/British
 
 Darkness
 Surly
@@ -60,6 +68,7 @@ Stout
 Craft
 Minnesota
 Prestige
+Cuisine: Elevated Pub, Irish/British
 
 Rain Drops
 Barrel Theory
@@ -67,6 +76,7 @@ Hazy IPA
 Craft
 Minnesota
 Prestige
+Cuisine: Elevated Pub, Classic American, Pizza
 
 Furious
 Surly
@@ -74,6 +84,7 @@ IPA
 Craft
 Minnesota
 Premium
+Cuisine: Elevated Pub, Classic American, Pizza, Barbecue
 
 Blue Moon Belgian White
 Blue Moon
@@ -81,6 +92,7 @@ Belgian White
 Domestic
 Colorado
 Premium
+Cuisine: French, Seafood, Southeast Asian, Indian
 
 Guinness Draught
 Guinness
@@ -88,6 +100,7 @@ Stout
 Import
 Ireland
 Premium
+Cuisine: Irish/British
 
 Stella Artois
 Stella Artois
@@ -95,6 +108,7 @@ International Lager
 Import
 Belgium
 Premium
+Cuisine: French, Cafe/Diner, Seafood
 
 Munich Gold
 Hacker-Pfschorr
@@ -102,6 +116,7 @@ Lager
 Import
 Germany
 Prestige
+Cuisine: German, Eastern European
 
 Tecate Original
 Tecate
@@ -109,6 +124,7 @@ International Lager
 Import
 Mexico
 Budget
+Cuisine: Latin American
 
 Hooey
 Lupulin Brewing
@@ -116,6 +132,7 @@ Hazy IPA
 Craft
 Minnesota
 Premium
+Cuisine: Elevated Pub, Classic American, Pizza
 
 Blissful Ignorance
 Lupulin Brewing
@@ -123,6 +140,7 @@ Hazy IPA
 Craft
 Minnesota
 Premium
+Cuisine: Elevated Pub, Classic American, Pizza
 
 Axe Man
 Surly Brewing
@@ -130,6 +148,7 @@ IPA
 Craft
 Minnesota
 Prestige
+Cuisine: Elevated Pub, Classic American, Pizza
 
 Fashion Mullet
 Lupulin Brewing
@@ -137,6 +156,7 @@ Hazy IPA
 Craft
 Minnesota
 Premium
+Cuisine: Elevated Pub, Classic American, Pizza
 
 Tropical Fun Pants
 Lupulin Brewing
@@ -144,6 +164,7 @@ Sour
 Craft
 Minnesota
 Premium
+Cuisine: 
 
 Pseudo Sue
 Toppling Goliath
@@ -151,6 +172,7 @@ Pale Ale
 Craft
 Minnesota
 Premium
+Cuisine: Elevated Pub, Classic American, Pizza
 
 King Sue
 Toppling Goliath
@@ -158,6 +180,7 @@ IPA
 Craft
 Minnesota
 Prestige
+Cuisine: Elevated Pub, Classic American, Pizza, Steakhouse
 
 Miller High Life
 Miller
@@ -165,6 +188,7 @@ Lager
 Domestic
 Wisconsin
 Budget
+Cuisine: Classic American, Pizza, Cafe/Diner
 
 Coors Light
 Coors
@@ -172,6 +196,7 @@ Lager
 Domestic
 Colorado
 Premium
+Cuisine: Classic American, Pizza, Cafe/Diner
 
 Michelob Golden Light
 Michelob
@@ -179,6 +204,7 @@ Light Lager
 Domestic
 Missouri
 Premium
+Cuisine: Classic American, Pizza, Cafe/Diner
 
 Miller Lite
 Miller
@@ -186,6 +212,7 @@ Light Lager
 Domestic
 Wisconsin
 Premium
+Cuisine: Classic American, Pizza, Cafe/Diner
 
 Busch Light
 Anheuser-Busch
@@ -193,6 +220,7 @@ Light Lager
 Domestic
 Missouri
 Budget
+Cuisine: Classic American, Pizza, Cafe/Diner
 
 Montucky Cold Snacks
 Montucky
@@ -200,6 +228,7 @@ Lager
 Domestic
 Montana
 Budget
+Cuisine: Classic American, Pizza, Cafe/Diner, Elevated Pub
 
 Supra Deluxe
 Modist
@@ -207,6 +236,7 @@ Lager
 Craft
 Minnesota
 Premium
+Cuisine: Japanese, Chinese/Korean, Southeast Asian
 
 Sapporo
 Sapporo
@@ -214,6 +244,7 @@ International Lager
 Import
 Japan
 Premium
+Cuisine: Japanese, Chinese/Korean, Southeast Asian
 
 Asahi Super Dry
 Asahi Breweries
@@ -221,6 +252,7 @@ International Lager
 Import
 Japan
 Budget
+Cuisine: Japanese, Chinese/Korean, Southeast Asian
 
 Big Doinks
 Fair State Brewing
@@ -228,6 +260,7 @@ IPA
 Craft
 Minnesota
 Premium
+Cuisine: Elevated Pub, Classic American, Pizza, Steakhouse
 
 Verbal Tip
 Falling Knife
@@ -235,6 +268,7 @@ Hazy IPA
 Craft
 Minnesota
 Premium
+Cuisine: Elevated Pub, Classic American, Pizza, Southeast Asian
 
 Kirin Ichiban
 Kirin 
@@ -242,6 +276,7 @@ International Lager
 Import
 Japan
 Premium
+Cuisine: Japanese, Chinese/Korean, Southeast Asian
 
 Ectogasm
 Drekker
@@ -249,6 +284,7 @@ Hazy IPA
 Craft
 North Dakota
 Prestige
+Cuisine: Elevated Pub, Classic American, Pizza, Southeast Asian
 
 Kold
 Fair State Brewing
@@ -256,6 +292,7 @@ Kolsch
 Craft
 Minnesota
 Premium
+Cuisine: German
 
 Pils
 Fair State Brewing
@@ -263,6 +300,7 @@ Pilsner
 Craft
 Minnesota
 Premium
+Cuisine: German, Eastern European
 
 Mirror Universe
 Fair State Brewing
@@ -270,6 +308,7 @@ Hazy IPA
 Craft
 Minnesota
 Premium
+Cuisine: 
 
 Party Forward
 Fair State Brewing
@@ -277,20 +316,21 @@ Hazy IPA
 Craft
 Minnesota
 Premium
+Cuisine: 
 
 Roselle
 Fair State Brewing
 Sour
 Craft
 Minnesota
-Premium
+Cuisine: Premium
 
 Day Tripper
 Indeed Brewing
 Pale Ale
 Craft
 Minnesota
-Premium
+Cuisine: Premium
 
 Mexican Honey Imperial Lager
 Indeed Brewing
@@ -298,6 +338,7 @@ Lager
 Craft
 Minnesota
 Premium
+Cuisine: Latin American
 
 Mexican Honey Light
 Indeed Brewing
@@ -305,6 +346,7 @@ Light Lager
 Craft
 Minnesota
 Premium
+Cuisine: Latin American
 
 Pistachio Cream Ale
 Indeed Brewing
@@ -312,6 +354,7 @@ Cream Ale
 Craft
 Minnesota
 Premium
+Cuisine: 
 
 Flavorwave
 Indeed Brewing
@@ -319,3 +362,4 @@ IPA
 Craft
 Minnesota
 Premium
+Cuisine: 
