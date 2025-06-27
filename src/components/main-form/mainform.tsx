@@ -115,29 +115,33 @@ export function MainForm() {
             name="cuisine"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Cuisine</FormLabel>
                 <FormControl>
-                  <Select>
+                  <Select
+                    value={field.value || ""}
+                    onValueChange={val => field.onChange(val)}
+                  >
                     <SelectTrigger className="w-[280px]">
                       <SelectValue placeholder="Select a cuisine" />
                     </SelectTrigger>
                     <SelectContent>
                       {/* Put cuisines into array, map over them with reusable components. */}
-                        <SelectItem value="latin">Latin American</SelectItem>
-                        <SelectItem value="japanese">Japanese</SelectItem>
-                        <SelectItem value="chinese">Chinese/Korean</SelectItem>
-                        <SelectItem value="seasian">Southeast Asian</SelectItem>
-                        <SelectItem value="scandinavian">Scandinavian</SelectItem>
-                        <SelectItem value="ethiopian">Ethiopian</SelectItem>
-                        <SelectItem value="wafrican">West African</SelectItem>
-                        <SelectItem value="italian">Italian</SelectItem>
-                        <SelectItem value="greek">Greek/Southwest Asian</SelectItem>
-                        <SelectItem value="barbecue">Barbecue</SelectItem>
-                        <SelectItem value="elevated">Elevated Pub</SelectItem>
-                        <SelectItem value="american">Classic American</SelectItem>
-                        <SelectItem value="steakhouse">Steakhouse</SelectItem>
-                        <SelectItem value="german">German</SelectItem>
-                        <SelectItem value="cafe">Cafe</SelectItem>
+                        <SelectItem value="Latin American">Latin American</SelectItem>
+                        <SelectItem value="Japanese">Japanese</SelectItem>
+                        <SelectItem value="Chinese/Korean">Chinese/Korean</SelectItem>
+                        <SelectItem value="Southeast Asian">Southeast Asian</SelectItem>
+                        <SelectItem value="Scandinavian">Scandinavian</SelectItem>
+                        <SelectItem value="Ethiopian">Ethiopian</SelectItem>
+                        <SelectItem value="West African">West African</SelectItem>
+                        <SelectItem value="Italian">Italian</SelectItem>
+                        <SelectItem value="greek">Greek</SelectItem>
+                        <SelectItem value="Southwest Asian">Southwest Asian</SelectItem>
+                        <SelectItem value="Barbecue">Barbecue</SelectItem>
+                        <SelectItem value="Elevated Pub">Elevated Pub</SelectItem>
+                        <SelectItem value="Classic American">Classic American</SelectItem>
+                        <SelectItem value="Steakhouse">Steakhouse</SelectItem>
+                        <SelectItem value="German">German</SelectItem>
+                        <SelectItem value="French">French</SelectItem>
+                        <SelectItem value="Cafe/Diner">Cafe/Diner</SelectItem>
                     </SelectContent>
                   </Select>
                 </FormControl>
