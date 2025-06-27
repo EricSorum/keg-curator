@@ -22,6 +22,14 @@ Minnesota
 Premium
 Cuisine: Elevated Pub, Classic American, Pizza
 
+Slopes
+BlackStack Brewing
+Pilsner
+Craft
+Minnesota
+Premium
+Cuisine: French
+
 Modelo Especial
 Modelo Brewery
 International Lager
@@ -60,7 +68,7 @@ Porter
 Craft
 Minnesota
 Premium
-Cuisine: Elevated Pub, Classic American, Pizza, Latin American, West African, Ethiopian, Elevated Pub, Irish/British
+Cuisine: Elevated Pub, Classic American, Pizza, Latin American, West African, Ethiopian, Irish/British
 
 Darkness
 Surly
