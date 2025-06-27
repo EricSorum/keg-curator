@@ -18,6 +18,7 @@ const BeerCard = ({index, beer}: BeerCardProps) => {
         <p>Origin: {beer.origin}</p>
         <p>Region: {beer.region}</p>
         <p>Value: {beer.value}</p>
+        <p>Cuisine: {beer.cuisine.toString()}</p>
       </div>
     </Card>
   );

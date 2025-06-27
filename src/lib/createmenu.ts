@@ -1,4 +1,5 @@
 import { Beer, FormResultsClass } from "./beers"
+import cuisineFunc from "./cuisine";
 import picker from "./picker";
 
 export default function createMenu(formResults: FormResultsClass, beerList: Beer[]) {
@@ -14,9 +15,15 @@ export default function createMenu(formResults: FormResultsClass, beerList: Beer
   if (craftOnly) {
     list.sort(originCallback);
   }
-  // TRANSFORM CUISINE STRING INTO ARRAY .split("|", ...)
+
+
 
   let menu: Beer[] = [];
+
+  // const cuisineSelections = cuisineFunc();
+
+  // maybe run cuisine just like picker... or maybe picker is what I need to be using here?
+  // menu.concat(cuisineFunc());
 
   for (let i = 0; i < numberOfHandles; i++) {
     const newBeer = picker("misc", list, fanciness);
@@ -45,6 +52,16 @@ function originCallback(a: Beer, b: Beer): number { // Craft only
     return 0; 
   } else if (a.origin === "Craft") {
     return -1;
+  } else {
+    return 1;
+  }
+}
+
+function cuisineCallback(a: Beer, b: Beer, cuisine: string): number { // Cuisine
+  if (a.cuisine === b.cuisine) {
+    return 0;
+   } else if (a.cuisine === cuisine) {
+  return -1;
   } else {
     return 1;
   }

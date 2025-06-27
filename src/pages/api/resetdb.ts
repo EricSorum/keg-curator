@@ -35,7 +35,7 @@ export default async function resetDatabase(
     const rawBeers = await getRawBeers();
     
     if (rawBeers && rawBeers.length > 0) {
-
+      
       const result = await beerCollection.insertMany(rawBeers);
       console.log('Inserted documents:', result.insertedCount);
       res.status(200).json({ message: "Database reset successful!" });
