@@ -1,10 +1,12 @@
 import { Beer, FormResultsClass } from "./beers"
-import cuisineFunc from "./cuisine";
+import cuisineFunc from "./cuisineFunc";
 import picker from "./picker";
 
 export default function createMenu(formResults: FormResultsClass, beerList: Beer[]) {
 
   const { numberOfHandles, minnesotaOnly, craftOnly, fanciness, cuisine } = formResults;
+
+  const chosenCuisine = cuisine;
 
   let list: Beer[] = [...beerList]; // list needs to be a new array with the values of beerList
 
@@ -17,9 +19,15 @@ export default function createMenu(formResults: FormResultsClass, beerList: Beer
   }
 
   if (cuisine.length) {
-    // list.sort(cuisineCallback(a: Beer, b: Beer, cuisine: string))
+    list.sort(cuisineCallback)
   }
-
+  function cuisineCallback(a: Beer, b: Beer): number { // Cuisine
+    if (a.cuisine.includes(chosenCuisine)) {
+    return -1;
+    } else {
+      return 1;
+    }
+  }
 
   let menu: Beer[] = [];
 
@@ -27,15 +35,14 @@ export default function createMenu(formResults: FormResultsClass, beerList: Beer
   // so then i can also splice each beer from list like i do in the while loop
   // but i shouldn't repeat the splice operation... how do i get it in one while loop?
 
-  const cuisineSelections: Beer[] = cuisineFunc(formResults); 
+  const cuisinePicks: Beer[] = cuisineFunc(formResults, list); 
 
-  while (menu.length < numberOfHandles) {
+  for (let i = 0; i < numberOfHandles; i++) {
 
     let newBeer: Beer;
 
-    if (cuisineSelections.length) {
-      newBeer = cuisineSelections[0];
-      cuisineSelections.splice(0, 1)
+    if (cuisinePicks.length) {
+      newBeer = cuisinePicks[i];
     } else {
       newBeer = picker("misc", list, fanciness);
     }
@@ -70,17 +77,4 @@ function originCallback(a: Beer, b: Beer): number { // Craft only
   }
 }
 
-function cuisineCallback(a: Beer, b: Beer, cuisine: string): number { // Cuisine
-  if (a.cuisine === b.cuisine) {
-    return 0;
-   } else if (a.cuisine.includes(cuisine)) {
-  return -1;
-  } else {
-    return 1;
-  }
-}
 
-function getCuisineSelection(arr: Beer[]) {
-  const returnBeer = arr[0];
-  arr
-}
