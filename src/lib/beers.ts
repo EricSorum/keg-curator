@@ -6,7 +6,7 @@ export class Beer {
     public origin: string,
     public region: string,
     public value: string,
-    public cuisine: string
+    public cuisine: string[]
   ) {
       this.name = name;
       this.brewery = brewery;
@@ -25,7 +25,7 @@ export class FormResultsClass {
     public minnesotaOnly: boolean,
     public craftOnly: boolean,
     public fanciness: number,
-    public cuisine: string,
+    public cuisine: string[],
   ) {}
 }
 
