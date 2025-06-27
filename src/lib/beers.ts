@@ -25,7 +25,7 @@ export class FormResultsClass {
     public minnesotaOnly: boolean,
     public craftOnly: boolean,
     public fanciness: number,
-    public cuisine: string[],
+    public cuisine: string,
   ) {}
 }
 
