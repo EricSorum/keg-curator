@@ -20,7 +20,6 @@ export default function picker(style: string, beerList: Beer[], fanciness: numbe
     }
   }
   let newBeer: Beer = findBeer();
-  console.log(newBeer)
   return newBeer ? newBeer : beerList[randomIndex(beerList.length)];
 
 }
