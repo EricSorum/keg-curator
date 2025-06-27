@@ -1,6 +1,9 @@
-import { Beer } from "./beers";
+import { Beer, FormResultsClass } from "./beers"
 
-export default function cuisineFunc(): Beer[] {
+export default function cuisineFunc(formResults: FormResultsClass): Beer[] {
+   const { numberOfHandles, minnesotaOnly, craftOnly, fanciness, cuisine } = formResults;
+
+   console.log( numberOfHandles, minnesotaOnly, craftOnly, fanciness, cuisine);
   // TRANSFORM CUISINE STRING INTO ARRAY .split("|", ...)
 
   // maybe a switch statement for cuisine - run a different func for each
