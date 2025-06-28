@@ -22,7 +22,45 @@ export function randomIndex(length: number) : number {
 
 export function fancinessFunc(fanciness: number) : string {
   // Select whether the value should be budget, premium, or prestige, based on the fanciness input.
-  const randomNum = Math.floor(Math.random() * 100 * fanciness);
+  
+  const randomNum = Math.floor(Math.random() * 100);
+
+
+  const prob = {
+    lower: 0,
+    upper: 100,
+    setOperands(delta: number) {
+      this.lower += delta;
+      this.upper -+ delta;
+    },
+    isAverage() {
+      return this.upper > this.lower;
+    },
+    isFancy() {
+      return this.upper < this.lower;
+    },
+    isNotFancy() {
+      return this.lower > this.upper;
+    }
+  }
+  // now just calculate lower and upper based on fanciness... 
+  // maybe divide fanciness by two
+  // then add it to lower and subtract it from upper?
+  // if lower is greater than upper, remove budget from consideration altogether
+
+
+  // Fanciness is 1-100
+  // need algorithm to turn a number between 1-100 into a probability
+  // between three options.
+
+  const delta: number = fanciness/2;
+  prob.setOperands(delta);
+  if (prob.lower < prob.upper) {
+  }
+  if (prob.upper - prob.lower > 0) {
+
+  }
+
 
   // need to make sure there is actually a beer selected
   if (fanciness < 10 || randomNum < 100) {
@@ -33,3 +71,7 @@ export function fancinessFunc(fanciness: number) : string {
     return "Premium";
   }
 }
+
+// if fanciness was a  num 1,2, or 3
+// we could use actuaal math right away... multiply by random num and then divide by some num 
+// where it will end up being 1, 2, or 3
