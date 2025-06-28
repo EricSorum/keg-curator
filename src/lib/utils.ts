@@ -55,10 +55,14 @@ export function fancinessFunc(fanciness: number) : string {
 
   const delta: number = fanciness/2;
   prob.setOperands(delta);
-  if (prob.lower < prob.upper) {
-  }
-  if (prob.upper - prob.lower > 0) {
-
+  let boo: boolean = true;
+  switch (boo) {
+    case prob.isAverage(): return "Premium";
+    break;
+    case prob.isFancy(): return "Prestige";
+    break;
+    case prob.isNotFancy(): return "Budget";
+    break;
   }
 
 
