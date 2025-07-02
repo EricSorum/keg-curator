@@ -1,3 +1,5 @@
+// turned this into a method on Beer
+
 import { Beer, FormResultsClass, preferredBreweries } from "./beers";
 import { fancinessFunc } from "./utils";
 

@@ -1,3 +1,5 @@
+import { fancinessFunc } from "./utils";
+
 export class Beer {
   constructor(
     public name: string,
@@ -6,7 +8,8 @@ export class Beer {
     public origin: string,
     public region: string,
     public value: string,
-    public cuisine: string[]
+    public cuisine: string[],
+    public score: number,
   ) {
       this.name = name;
       this.brewery = brewery;
@@ -16,6 +19,24 @@ export class Beer {
       this.value = value;
       this.cuisine = cuisine;
     }
+    
+  calculateScore(formResults: FormResultsClass) {
+    const { minnesotaOnly, craftOnly, fanciness, chosenCuisine } = formResults;
+  
+    const scoreObj = {
+      breweryScore: preferredBreweries.includes(this.brewery) ? 1 : 0,
+      originScore: craftOnly && origin === "Craft" ? 3 : 0,
+      regionScore: minnesotaOnly && this.region === "Minnesota" ? 3 : 0,
+      valueScore: this.value === fancinessFunc(fanciness) ? 2 : 0,
+      cuisineScore: this.cuisine.includes(chosenCuisine) ? 4 : 0,
+    };
+  
+    const score = Object.values(scoreObj).reduce((accumulator, currentValue) => {
+      return accumulator + currentValue;
+    });
+  
+    return score;
+  }
 }
 
 export class FormResultsClass {
