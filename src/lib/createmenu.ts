@@ -16,9 +16,9 @@ export default function createMenu(formResults: FormResultsClass, beerList: Beer
     list.sort(originCallback);
   }
 
-  if (chosenCuisine.length) {
-    list.sort(cuisineCallback)
-  }
+  // if (chosenCuisine.length) {
+  //   list.sort(cuisineCallback)
+  // }
   function cuisineCallback(a: Beer, b: Beer): number { // Cuisine
     if (a.cuisine.includes(chosenCuisine)) {
     return -1;
