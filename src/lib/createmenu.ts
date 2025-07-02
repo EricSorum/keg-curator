@@ -4,9 +4,7 @@ import picker from "./picker";
 
 export default function createMenu(formResults: FormResultsClass, beerList: Beer[]) {
 
-  const { numberOfHandles, minnesotaOnly, craftOnly, fanciness, cuisine } = formResults;
-
-  const chosenCuisine = cuisine;
+  const { numberOfHandles, minnesotaOnly, craftOnly, fanciness, chosenCuisine } = formResults;
 
   let list: Beer[] = [...beerList]; // list needs to be a new array with the values of beerList
 
@@ -18,7 +16,7 @@ export default function createMenu(formResults: FormResultsClass, beerList: Beer
     list.sort(originCallback);
   }
 
-  if (cuisine.length) {
+  if (chosenCuisine.length) {
     list.sort(cuisineCallback)
   }
   function cuisineCallback(a: Beer, b: Beer): number { // Cuisine
@@ -41,7 +39,7 @@ export default function createMenu(formResults: FormResultsClass, beerList: Beer
 
     let newBeer: Beer;
 
-    if (cuisinePicks.length) {
+    if (cuisinePicks.length > 0) {
       newBeer = cuisinePicks[i];
     } else {
       newBeer = picker("misc", list, fanciness);

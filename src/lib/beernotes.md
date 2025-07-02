@@ -7,10 +7,11 @@ BlackStack
 Junkyard
 Steel Toe
 Modist
-
-
-Pryes
 Summit
+
+So maybe user chooses a cuisine OR a set of styles
+or maybe checkbox for "use cuisine selection to determine style choices"
+
 
 Categories
 BEER Beer Name
@@ -36,5 +37,11 @@ Elevated Pub
 Classic American
 Steakhouse
 German
-Cafe
+Cafe/Diner
 Eastern European
+Indian
+French
+Irish/British
+Pizza
+Seafood
+Southern/Soul

@@ -98,13 +98,13 @@ export function MainForm() {
               <FormItem>
                 <FormLabel>Number of Draft Beers</FormLabel>
                 <FormControl>
-                  <Input type="number" {...field} 
+                  <Input type="number" {...field} required
                       // Convert the input value to a number
                     onChange={(e) => field.onChange(Number(e.target.value))}
                   />
                 </FormControl>
                 <FormDescription>
-                  Enter the number of draft beers to choose.
+                  Enter the number of draft beers to choose. (required)
                 </FormDescription>
                 <FormMessage />
               </FormItem>

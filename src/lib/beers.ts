@@ -25,7 +25,7 @@ export class FormResultsClass {
     public minnesotaOnly: boolean,
     public craftOnly: boolean,
     public fanciness: number,
-    public cuisine: string,
+    public chosenCuisine: string,
   ) {}
 }
 
@@ -61,3 +61,5 @@ export const BreweryRanking = {
   // But we also need to vary the brews.  So maybe it only allows one from a certain brewery
   // at least to start...
 }
+
+export const preferredBreweries: string[] = [];
