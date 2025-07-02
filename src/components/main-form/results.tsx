@@ -2,18 +2,27 @@ import { useState, useEffect } from 'react'
 import BeerCard from '../beer/beercard'
 import { Beer, FormResultsClass } from '@/lib/beers'
 import createMenu from '@/lib/createmenu'
-import beerJson from '@/lib/beerjson.json'
+// import beerJson from '@/lib/beerjson.json'
 
 type ResultsProps = {
   formResults: FormResultsClass
 }
 
 export default function Results({formResults} : ResultsProps) {
-  const [ beerMenu, setBeerMenu ] = useState<Beer[]>([]);
-  
+  const [beerJson, setBeerJson] = useState([]);
+  const [beerMenu, setBeerMenu] = useState<Beer[]>([]);
+
   useEffect(() => {
-    setBeerMenu(createMenu(formResults, beerJson || []));
-  }, [beerJson, formResults]);
+    fetch("/api/getdata")
+      .then(res => res.json())
+      .then(data => setBeerJson(data));
+  }, []);
+
+  useEffect(() => {
+    if (beerJson.length > 0) {
+      setBeerMenu(createMenu(formResults, beerJson));
+    }
+  }, [formResults, beerJson]);
 
   return(
     <div className="flex flex-col gap-6">     
