@@ -1,9 +1,9 @@
-import { Beer, FormResultsClass, preferredBreweries } from "./beers"
+import { Beer, FormResultsClass, preferredBreweries } from "./beers";
 import { fancinessFunc } from "./utils";
 
 export default function calculateScore(beer: Beer, formResults: FormResultsClass) {
-  const { name, brewery, style, origin, region, value, cuisine } = beer;
-  const { businessName, numberOfHandles, minnesotaOnly, craftOnly, fanciness, chosenCuisine } = formResults;
+  const { brewery, style, origin, region, value, cuisine } = beer;
+  const { minnesotaOnly, craftOnly, fanciness, chosenCuisine } = formResults;
 
   const scoreObj = {
     breweryScore: preferredBreweries.includes(brewery) ? 1 : 0,
@@ -13,9 +13,9 @@ export default function calculateScore(beer: Beer, formResults: FormResultsClass
     cuisineScore: cuisine.includes(chosenCuisine) ? 4 : 0,
   };
 
-  const score = Object.keys(scoreObj).reduce((accumulator, currentValue) => {
+  const score = Object.values(scoreObj).reduce((accumulator, currentValue) => {
     return accumulator + currentValue;
-  })
+  });
 
   return score;
 }
