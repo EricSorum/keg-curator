@@ -9,9 +9,9 @@ const japaneseBeers = {
 }
 
 export default function cuisineFunc(formResults: FormResultsClass, list: Beer[]): Beer[] {
-  const { numberOfHandles, minnesotaOnly, craftOnly, fanciness, cuisine } = formResults;
+  // const { numberOfHandles, minnesotaOnly, craftOnly, fanciness } = formResults;
 
-  console.log(numberOfHandles, minnesotaOnly, craftOnly, fanciness, cuisine);
+  // console.log(numberOfHandles, minnesotaOnly, craftOnly, fanciness, cuisine);
 
   // so we're returning an array of hand-picked beers, selected based on fanciness, etc.
 
@@ -29,7 +29,7 @@ export default function cuisineFunc(formResults: FormResultsClass, list: Beer[])
   let returnArr: Beer[] = [];
 
   if (
-    cuisine === "Japanese"
+    // cuisine === "Japanese"
     // Styles.includes("Lager")  // maybe I don't need style for now?
     // maybe I just need to control for local/craft inputs?
     // Let's try just the cuisine sort in createMenu first...
