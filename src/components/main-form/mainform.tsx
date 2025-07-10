@@ -148,7 +148,7 @@ export function MainForm() {
                   </Select>
                 </FormControl>
                 <FormDescription>
-                  The type of food served at the restaurant.
+                  The type of cuisine served at the restaurant.
                 </FormDescription>
                 <FormMessage />
               </FormItem>

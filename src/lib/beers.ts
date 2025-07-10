@@ -26,12 +26,28 @@ export class Beer {
 export function calculateScore(beer: Beer, formResults: FormResultsClass) {
   const { minnesotaOnly, craftOnly, fanciness, chosenCuisine } = formResults;
   const { name, brewery, origin, region, value, cuisine } = beer;
+
+  const calculateCuisineScore = (): number => {
+    let returnScore = 0;
+    const imports = ["Japanese", "Latin American", "German", "French", "Greek"];
+
+    // Shared makes sure that the above imports are exclusive.
+    // i.e. there won't likely be Japanese beers alongside Latin American beers.
+    const shared = imports.filter(e => cuisine.includes(e));
+    if (shared.length && !cuisine.includes(chosenCuisine)) {
+      returnScore = -2;
+    } else if (cuisine.includes(chosenCuisine)) {
+      returnScore = 2;
+    }
+    return returnScore;
+  }
+
   const scoreObj = {
     breweryScore: preferredBreweries.includes(brewery) ? 1 : 0,
     originScore: craftOnly && origin === "Craft" ? 3 : 0,
     regionScore: minnesotaOnly && region === "Minnesota" ? 3 : 0,
     valueScore: value === fancinessFunc(fanciness) ? 2 : 0,
-    cuisineScore: cuisine.includes(chosenCuisine) ? 4 : 0,
+    cuisineScore: calculateCuisineScore()
   };
   
   // Add up each value in scoreObj
@@ -40,6 +56,10 @@ export function calculateScore(beer: Beer, formResults: FormResultsClass) {
   });
 
   beer.score = score;
+}
+
+function considerImports() {
+
 }
 
 
@@ -81,7 +101,7 @@ export class FormResultsClass {
   ) {}
 }
 
-export const preferredBreweries: string[] = [];
+export const preferredBreweries: string[] = ["Lupulin Brewing", "Bent Paddle Brewery", "Fair State Brewing", ];
 
 function compareScore(a: Beer, b: Beer) {
   if (a.score > b.score) {
