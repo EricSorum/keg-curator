@@ -102,3 +102,82 @@ Minnesota
 Premium
 Cuisine: 
 
+Masala Mama
+Townhall Brewery
+IPA
+Craft
+Minnesota
+Premium
+Cuisine: Classic American, Pizza
+
+Size 7
+Steel Two Brewing
+IPA
+Craft
+Minnesota
+Premium
+Cuisine: Classic American, Pizza
+
+Provider
+Steel Two Brewing
+Golden Ale
+Craft
+Minnesota
+Premium
+Cuisine: 
+
+Size 4
+Steel Two Brewing
+Session IPA
+Craft
+Minnesota
+Premium
+Cuisine: Classic American, Pizza
+
+Sissel
+Steel Two Brewing
+Sour
+Craft
+Minnesota
+Premium
+Cuisine: 
+
+Devil's Kettle
+Voyageur Brewing
+IPA
+Craft
+Minnesota
+Premium
+Cuisine: Classic American, Pizza
+
+Trailbreaker
+Voyageur Brewing
+Belgian Wheat
+Craft
+Minnesota
+Premium
+Cuisine: Classic American, Pizza
+
+Palisade
+Voyageur Brewing
+Porter
+Craft
+Minnesota
+Premium
+Cuisine: Classic American, Pizza
+
+Boundary Waters Brunette
+Voyageur Brewing
+Brown Ale
+Craft
+Minnesota
+Premium
+Cuisine: Classic American, Pizza
+
+Finnegan's Amber
+Finnegan's Brew Co.
+Amber Ale
+Craft
+Minnesota
+Budget
+Cuisine: Irish/British

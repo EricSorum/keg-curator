@@ -1,3 +1,16 @@
+Insight??
+Ursa Minor??
+Bauhaus??
+Headflyer??
+Luce Line??
+Dual Citizen??
+Utepils??
+Pryes??
+Deschutes??
+Dogfish Head??
+Finnegan's - yes
+Add Irish category
+
 Bent Paddle
 Fair State
 Indeed
