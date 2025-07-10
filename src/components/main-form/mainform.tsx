@@ -1,5 +1,5 @@
 "use client"
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { useForm } from "react-hook-form"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { z } from "zod"
@@ -43,8 +43,10 @@ const formSchema = z.object({
   minnesotaOnly: z.boolean(),
   craftOnly: z.boolean(),
   fanciness: z.number(),
-  cuisine: z.string(),
+  chosenCuisine: z.string(),
 })
+
+
 
 const defaultResults = new FormResultsClass("My Restaurant", 6, false, false, 30, "");
 
@@ -59,7 +61,7 @@ export function MainForm() {
       minnesotaOnly: false,
       craftOnly: false,
       fanciness: 30,
-      cuisine: "",
+      chosenCuisine: "",
     },
   });
 
@@ -112,7 +114,7 @@ export function MainForm() {
           />
           <FormField
             control={form.control}
-            name="cuisine"
+            name="chosenCuisine"
             render={({ field }) => (
               <FormItem>
                 <FormControl>
