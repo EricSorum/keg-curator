@@ -1,6 +1,6 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useMemo } from 'react'
 import BeerCard from '../beer/beercard'
-import { Beer, FormResultsClass } from '@/lib/beers'
+import { FormResultsClass } from '@/lib/beers'
 import { sortMenu } from '@/lib/beers'
 
 type ResultsProps = {
@@ -9,7 +9,6 @@ type ResultsProps = {
 
 export default function Results({formResults} : ResultsProps) {
   const [beerJson, setBeerJson] = useState([]);
-  const [beerMenu, setBeerMenu] = useState<Beer[]>([]);
 
   useEffect(() => {
     fetch("/api/getdata")
@@ -17,12 +16,13 @@ export default function Results({formResults} : ResultsProps) {
       .then(data => setBeerJson(data));
   }, []);
 
-  useEffect(() => {
+  const beerMenu = useMemo(() => {
     if (beerJson.length > 0) {
-      // Either use createMenu or beers.ts-sortMenu
-      setBeerMenu(sortMenu(formResults, beerJson));
+      return sortMenu(formResults, beerJson);
     }
-  }, [formResults, beerJson]);
+    return [];
+  }, [beerJson, formResults]);
+
 
   return(
     <div className="flex flex-col gap-6">     
