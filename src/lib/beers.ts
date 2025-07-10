@@ -1,4 +1,5 @@
 import { fancinessFunc } from "./utils";
+// import picker from "./picker";
 
 export class Beer {
   constructor(
@@ -18,25 +19,54 @@ export class Beer {
       this.region = region;
       this.value = value;
       this.cuisine = cuisine;
+      this.score = 0;
     }
-    
-  calculateScore(formResults: FormResultsClass) {
-    const { minnesotaOnly, craftOnly, fanciness, chosenCuisine } = formResults;
+}
+
+export function calculateScore(beer: Beer, formResults: FormResultsClass) {
+  const { minnesotaOnly, craftOnly, fanciness, chosenCuisine } = formResults;
+  const { name, brewery, origin, region, value, cuisine } = beer;
+  const scoreObj = {
+    breweryScore: preferredBreweries.includes(brewery) ? 1 : 0,
+    originScore: craftOnly && origin === "Craft" ? 3 : 0,
+    regionScore: minnesotaOnly && region === "Minnesota" ? 3 : 0,
+    valueScore: value === fancinessFunc(fanciness) ? 2 : 0,
+    cuisineScore: cuisine.includes(chosenCuisine) ? 4 : 0,
+  };
   
-    const scoreObj = {
-      breweryScore: preferredBreweries.includes(this.brewery) ? 1 : 0,
-      originScore: craftOnly && origin === "Craft" ? 3 : 0,
-      regionScore: minnesotaOnly && this.region === "Minnesota" ? 3 : 0,
-      valueScore: this.value === fancinessFunc(fanciness) ? 2 : 0,
-      cuisineScore: this.cuisine.includes(chosenCuisine) ? 4 : 0,
-    };
-  
-    const score = Object.values(scoreObj).reduce((accumulator, currentValue) => {
-      return accumulator + currentValue;
-    });
-  
-    return score;
+  // Add up each value in scoreObj
+  const score = Object.values(scoreObj).reduce((accumulator, currentValue) => {
+    return accumulator + currentValue;
+  });
+
+  // console.log(name, score)
+
+  beer.score = score;
+}
+
+
+export function sortMenu(formResults: FormResultsClass, beerList: Beer[]): Beer[] {
+  const { numberOfHandles, minnesotaOnly, craftOnly, fanciness, chosenCuisine } = formResults;
+
+  let list = [...beerList]
+
+  list.forEach((beer) => {
+    calculateScore(beer, formResults)
+  })
+  // sort menu by score
+  list = list.sort(compareScore)
+
+  let menu: Beer[] = [];
+
+  for (let i = 0; i < numberOfHandles; i++) {
+    const newBeer = list[0];
+    menu.push(newBeer);
+    console.log(newBeer.name, newBeer.score)
+    // I avoid added duplicate beers by splicing each beer from the list.
+    list.splice(0, 1);
   }
+
+  return menu;
 }
 
 export class FormResultsClass {
@@ -50,37 +80,13 @@ export class FormResultsClass {
   ) {}
 }
 
-// export const emptyBeer: Beer = {
-//   name: "No beer selection found",
-//   brewery: "",
-//   style: "",
-//   origin: "",
-//   region: "",
-//   value: "",
-// }
-
-// This class will store all the different combinations of style selections.
-
-export class Styles {
-  constructor(
-    public lager: string,
-    public hazyIpa: string,
-    public ipa: string,
-    public wheat: string,
-    public dark: string,
-    public sour: string,
-    public cider: string,
-    public fruitedCider: string,
-    public misc: string,
-  ) {}
-}
-
-export const BreweryRanking = {
-  // Make a simple rank of all breweries.
-  // Sort function will privilege breweries with a higher rank.
-  // Then it will sort based on style privilege (ie single IPAs over double...?)
-  // But we also need to vary the brews.  So maybe it only allows one from a certain brewery
-  // at least to start...
-}
-
 export const preferredBreweries: string[] = [];
+
+function compareScore(a: Beer, b: Beer) {
+  if (a.score > b.score) {
+    return -1;
+  } else if (a.score < b.score) {
+    return 1;
+  }
+  return 0;
+}
