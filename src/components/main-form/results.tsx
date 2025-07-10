@@ -1,8 +1,7 @@
 import { useState, useEffect } from 'react'
 import BeerCard from '../beer/beercard'
 import { Beer, FormResultsClass } from '@/lib/beers'
-import createMenu from '@/lib/createmenu'
-// import beerJson from '@/lib/beerjson.json'
+import { sortMenu } from '@/lib/beers'
 
 type ResultsProps = {
   formResults: FormResultsClass
@@ -20,7 +19,8 @@ export default function Results({formResults} : ResultsProps) {
 
   useEffect(() => {
     if (beerJson.length > 0) {
-      setBeerMenu(createMenu(formResults, beerJson));
+      // Either use createMenu or beers.ts-sortMenu
+      setBeerMenu(sortMenu(formResults, beerJson));
     }
   }, [formResults, beerJson]);
 
