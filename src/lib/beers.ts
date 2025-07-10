@@ -44,8 +44,8 @@ export function calculateScore(beer: Beer, formResults: FormResultsClass) {
 
   const scoreObj = {
     breweryScore: preferredBreweries.includes(brewery) ? 1 : 0,
-    originScore: craftOnly && origin === "Craft" ? 3 : 0,
-    regionScore: minnesotaOnly && region === "Minnesota" ? 3 : 0,
+    originScore: craftOnly && origin === "Craft" ? 2 : 0,
+    regionScore: minnesotaOnly && region === "Minnesota" ? 2 : 0,
     valueScore: value === fancinessFunc(fanciness) ? 2 : 0,
     cuisineScore: calculateCuisineScore()
   };
@@ -57,11 +57,6 @@ export function calculateScore(beer: Beer, formResults: FormResultsClass) {
 
   beer.score = score;
 }
-
-function considerImports() {
-
-}
-
 
 export function sortMenu(formResults: FormResultsClass, beerList: Beer[]): Beer[] {
   const { numberOfHandles, minnesotaOnly, craftOnly, fanciness, chosenCuisine } = formResults;
