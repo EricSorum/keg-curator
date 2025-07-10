@@ -1,4 +1,4 @@
-import { fancinessFunc } from "./utils";
+import { fancinessFunc, shuffle } from "./utils";
 // import picker from "./picker";
 
 export class Beer {
@@ -39,16 +39,16 @@ export function calculateScore(beer: Beer, formResults: FormResultsClass) {
     return accumulator + currentValue;
   });
 
-  // console.log(name, score)
-
   beer.score = score;
 }
 
 
 export function sortMenu(formResults: FormResultsClass, beerList: Beer[]): Beer[] {
   const { numberOfHandles, minnesotaOnly, craftOnly, fanciness, chosenCuisine } = formResults;
-
-  let list = [...beerList]
+  
+  // We use a deep copy of beerList for sorting, so we can remove items as they are picked.
+  // We shuffle the list as well, to create enough variety.
+  let list = shuffle([...beerList]);
 
   list.forEach((beer) => {
     calculateScore(beer, formResults)
@@ -61,6 +61,7 @@ export function sortMenu(formResults: FormResultsClass, beerList: Beer[]): Beer[
   for (let i = 0; i < numberOfHandles; i++) {
     const newBeer = list[0];
     menu.push(newBeer);
+    // Why is Tropica Fun Pants scoring 4?
     console.log(newBeer.name, newBeer.score)
     // I avoid added duplicate beers by splicing each beer from the list.
     list.splice(0, 1);
