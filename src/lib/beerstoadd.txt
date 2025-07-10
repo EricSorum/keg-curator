@@ -1,0 +1,104 @@
+Firebrick
+Schell's Brewery
+Amber Lager
+Craft
+Minnesota
+Budget
+Cuisine: Classic American, German, Pizza, Latin American
+
+Notorious P.I.L.S.
+Schell's Brewery
+Pilsner
+Craft
+Minnesota
+Budget
+Cuisine: Classic American, Pizza, German, Eastern European
+
+Schell's Dark
+Schell's Brewery
+Munich Dark
+Craft
+Minnesota
+Budget
+Cuisine: Classic American, Pizza, Latin American, German, Eastern European
+
+No Frills
+Schell's Brewery
+Pilsner
+Craft
+Minnesota
+Budget
+Cuisine: Classic American, Pizza, German, Eastern European
+
+Northland Gold
+Schell's Brewery
+Light Lager
+Craft
+Minnesota
+Budget
+Cuisine: Classic American, Pizza, German, Eastern European
+
+Mosh Pit
+Surly Brewing
+Hazy IPA
+Craft
+Minnesota
+Premium
+Cuisine: Classic American, Pizza, Concert/Dance Venue
+
+Niiice
+Surly Brewing
+Light Ale
+Craft
+Minnesota
+Budget
+Cuisine: Classic American, Pizza, Concert/Dance Venue
+
+Hell
+Surly Brewing
+Helles Lager
+Craft
+Minnesota
+Premium
+Cuisine: Classic American, Pizza, German, Eastern European
+
+Grapefruit Ale
+Surly Brewing
+Fruited Ale
+Craft
+Minnesota
+Premium
+Cuisine:
+
+Due North
+Portage Brewing
+Light Lager
+Craft
+Minnesota
+Premium
+Cuisine: 
+
+Lake Fellow
+Portage Brewing
+Hazy IPA
+Craft
+Minnesota
+Premium
+Cuisine: 
+
+Coffeecake
+Portage Brewing
+Blonde Ale
+Craft
+Minnesota
+Premium
+Cuisine: Cafe/Diner
+
+Pine Line
+Portage Brewing
+IPA
+Craft
+Minnesota
+Premium
+Cuisine: 
+
