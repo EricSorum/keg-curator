@@ -56,7 +56,7 @@ Cuisine: Classic American, Pizza
 
 Twins Pils
 Summit
-Pilsener
+Pilsner
 Craft
 Minnesota
 Budget
@@ -69,22 +69,6 @@ Craft
 Minnesota
 Premium
 Cuisine: Elevated Pub, Classic American, Pizza, Latin American, West African, Ethiopian, Irish/British
-
-Darkness
-Surly
-Stout
-Craft
-Minnesota
-Prestige
-Cuisine: Elevated Pub, Irish/British
-
-Rain Drops
-Barrel Theory
-Hazy IPA
-Craft
-Minnesota
-Prestige
-Cuisine: Elevated Pub, Classic American, Pizza
 
 Furious
 Surly
@@ -108,7 +92,7 @@ Stout
 Import
 Ireland
 Premium
-Cuisine: Irish/British
+Cuisine: British/Irish
 
 Stella Artois
 Stella Artois
@@ -283,7 +267,7 @@ Kirin
 International Lager
 Import
 Japan
-Premium
+Prestige
 Cuisine: Japanese, Chinese/Korean, Southeast Asian
 
 Ectogasm
@@ -331,14 +315,16 @@ Fair State Brewing
 Sour
 Craft
 Minnesota
-Cuisine: Premium
+Premium
+Cuisine: 
 
 Day Tripper
 Indeed Brewing
 Pale Ale
 Craft
 Minnesota
-Cuisine: Premium
+Premium
+Cuisine: 
 
 Mexican Honey Imperial Lager
 Indeed Brewing
