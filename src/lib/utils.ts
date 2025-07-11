@@ -27,7 +27,7 @@ export function getRandomNum(): number {
 export function fancinessFunc(fanciness: number) : string {
   // Select whether the value should be budget, premium, or prestige, based on the fanciness input.
   
-  if (fanciness < 10) {
+  if (fanciness < 5) {
     return "Budget";
   } else if (fanciness > 95) {
     return "Prestige";
@@ -76,17 +76,28 @@ export function fancinessFunc(fanciness: number) : string {
   // need algorithm to turn a number between 1-100 into a probability
   // between three options.
 
+
+  // THIS LOGIC IS REVERSED... SHOULD PROBABLY USE IF STATEMENTS?
+  // if (prob.isAverage()) {} etc...
   const delta: number = Math.floor(fanciness/2);
   prob.setOperands(delta);
-  let boo: boolean = true;
-  switch (boo) {
-    case prob.isAverage(): prob.calcReturn(2);
-    break;
-    case prob.isFancy(): prob.calcReturn(3);
-    break;
-    case prob.isNotFancy(): prob.calcReturn(1);
-    break;
+  if (prob.isAverage()) {
+    prob.calcReturn(2);
+  } else if (prob.isFancy()) {
+    prob.calcReturn(3);
+  } else if (prob.isNotFancy()) {
+     prob.calcReturn(1);
   }
+
+  // let boo: boolean = true;
+  // switch (boo) {
+  //   case prob.isAverage(): prob.calcReturn(2);
+  //   break;
+  //   case prob.isFancy(): prob.calcReturn(3);
+  //   break;
+  //   case prob.isNotFancy(): prob.calcReturn(1);
+  //   break;
+  // }
 
   return returnValue;
   
