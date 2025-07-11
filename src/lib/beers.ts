@@ -29,12 +29,16 @@ export function calculateScore(beer: Beer, formResults: FormResultsClass) {
 
   const calculateCuisineScore = (): number => {
     let returnScore = 0;
-    const imports = ["Japanese", "Latin American", "German", "French", "Greek"];
+    const imports = ["Japanese", "Latin American", "German"];
 
     // Shared makes sure that the above imports are exclusive.
     // i.e. there won't likely be Japanese beers alongside Latin American beers.
+
+    // RIGHT NOW BEERS WITHOUT CUISINE ARE RANKING +2
     const shared = imports.filter(e => cuisine.includes(e));
-    if (shared.length && !cuisine.includes(chosenCuisine)) {
+    if (cuisine.length < 3 || chosenCuisine.length < 3) {
+      returnScore = 0;
+    } else if (shared.length && !cuisine.includes(chosenCuisine)) {
       returnScore = -2;
     } else if (cuisine.includes(chosenCuisine)) {
       returnScore = 2;
@@ -42,13 +46,17 @@ export function calculateScore(beer: Beer, formResults: FormResultsClass) {
     return returnScore;
   }
 
+  // maybe instead of fanciness func, we can just weight values here
+
   const scoreObj = {
-    breweryScore: preferredBreweries.includes(brewery) ? 1 : 0,
+    // breweryScore: preferredBreweries.includes(brewery) ? 1 : 0,
     originScore: craftOnly && origin === "Craft" ? 2 : 0,
     regionScore: minnesotaOnly && region === "Minnesota" ? 2 : 0,
     valueScore: value === fancinessFunc(fanciness) ? 2 : 0,
     cuisineScore: calculateCuisineScore()
   };
+
+  // console.log(name, scoreObj.originScore, scoreObj.regionScore, scoreObj.valueScore, scoreObj.cuisineScore)
   
   // Add up each value in scoreObj
   const score = Object.values(scoreObj).reduce((accumulator, currentValue) => {
@@ -64,7 +72,6 @@ export function sortMenu(formResults: FormResultsClass, beerList: Beer[]): Beer[
   // We use a deep copy of beerList for sorting, so we can remove items as they are picked.
   // We shuffle the list as well, to create enough variety.
   let list = shuffle([...beerList]);
-
   list.forEach((beer) => {
     calculateScore(beer, formResults)
   })
@@ -77,7 +84,7 @@ export function sortMenu(formResults: FormResultsClass, beerList: Beer[]): Beer[
     const newBeer = list[0];
     menu.push(newBeer);
     // Why is Tropica Fun Pants scoring 4?
-    console.log(newBeer.name, newBeer.score)
+    console.log(newBeer.name, newBeer.score, newBeer.cuisine)
     // I avoid added duplicate beers by splicing each beer from the list.
     list.splice(0, 1);
   }
