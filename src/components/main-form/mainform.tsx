@@ -144,6 +144,7 @@ export function MainForm() {
                         <SelectItem value="German">German</SelectItem>
                         <SelectItem value="French">French</SelectItem>
                         <SelectItem value="Cafe/Diner">Cafe/Diner</SelectItem>
+                        <SelectItem value="British/Irish">British/Irish</SelectItem>
                     </SelectContent>
                   </Select>
                 </FormControl>
