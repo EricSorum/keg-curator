@@ -1,5 +1,7 @@
 // import { useEffect, useState } from 'react'
-import { MainForm } from './components/main-form/mainform.tsx'
+import { MainForm } from './components/main-form/mainform'
+import Title from './components/layout/title'
+import Navbar from './components/layout/navbar'
 // import { number } from 'zod';
 
 
@@ -17,13 +19,15 @@ function App() {
   // }, []); // Empty dependency array to run once on mount
 
   return (
-    <div className="m-9 flex flex-col gap-9 max-w-3xl mx-auto">
-      <div>
-        <h1 className="text-center text-5xl font-bold m-3">Keg Curator</h1>
-        <p className="text-center text-lg">Create the best selection of beer to serve in your bar or restaurant.</p>
+    
+    <div className="m-9 max-w-4xl mx-auto">
+      <Navbar />
+
+      <div className="m-9 flex flex-col gap-9 max-w-3xl mx-auto">
+        <Title />
+        <hr></hr>
+        <MainForm />
       </div>
-      <hr></hr>
-      <MainForm />
     </div>
   )
 }
