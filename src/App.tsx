@@ -2,6 +2,7 @@
 import { MainForm } from './components/main-form/mainform'
 import Title from './components/layout/title'
 import Navbar from './components/layout/navbar'
+import Footer from './components/layout/Footer'
 // import { number } from 'zod';
 
 
@@ -27,6 +28,7 @@ function App() {
         <Title />
         <hr></hr>
         <MainForm />
+        <Footer />
       </div>
     </div>
   )
