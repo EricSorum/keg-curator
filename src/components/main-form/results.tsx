@@ -1,7 +1,7 @@
 import { useState, useEffect, useMemo } from 'react'
 import BeerCard from '../beer/beercard'
 import { FormResultsClass } from '@/lib/beers'
-import { sortMenu } from '@/lib/beers'
+import sortMenu from '@/lib/sortMenu'
 
 type ResultsProps = {
   formResults: FormResultsClass
