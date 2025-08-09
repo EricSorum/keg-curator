@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'Keg Curator',
-  description: 'Choose the best Minnesotan beer for your bar or restaurant.',
+  description: 'Create the best selection of beer to serve in your bar or restaurant.',
 }
 
 export default function RootLayout({
