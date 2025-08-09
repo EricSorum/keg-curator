@@ -29,15 +29,21 @@ export function calculateScore(beer: Beer, formResults: FormResultsClass) {
 
   const calculateCuisineScore = (): number => {
     let returnScore = 0;
-    const imports = ["Japanese", "Latin American", "German"];
+    const imports = ["Japanese", "Latin American"];
 
     // Shared makes sure that the above imports are exclusive.
     // i.e. there won't likely be Japanese beers alongside Latin American beers.
 
-    // RIGHT NOW BEERS WITHOUT CUISINE ARE RANKING +2
     const shared = imports.filter(e => cuisine.includes(e));
+
+    // need another filter:
+    // if the beer is not latin american, beers from mexico should not be included
     if (cuisine.length < 3 || chosenCuisine.length < 3) {
       returnScore = 0;
+    } else if (region === "Japan" && chosenCuisine !== "Japananese") {
+      return -2;
+    } else if (region === "Mexico" && chosenCuisine !== "Latin American") {
+      return -2;
     } else if (shared.length && !cuisine.includes(chosenCuisine)) {
       returnScore = -2;
     } else if (cuisine.includes(chosenCuisine)) {
