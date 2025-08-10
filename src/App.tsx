@@ -1,5 +1,6 @@
 // import { useEffect, useState } from 'react'
 import { MainForm } from './components/main-form/mainform'
+import Results from './components/main-form/results'
 import Title from './components/layout/title'
 import Navbar from './components/layout/navbar'
 import Footer from './components/layout/Footer'
@@ -27,7 +28,8 @@ function App() {
       <div className="m-9 flex flex-col gap-9 max-w-3xl mx-auto">
         <Title />
         <hr></hr>
-        <MainForm />
+        {/* <MainForm /> */}
+        <Results />
         <Footer />
       </div>
     </div>

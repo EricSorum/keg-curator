@@ -1,6 +1,7 @@
 "use client"
-import { useState, useEffect } from 'react'
+// import { useState } from 'react'
 import { useForm } from "react-hook-form"
+import { useStore } from "@/store"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { z } from "zod"
 import { cn } from "@/lib/utils"
@@ -28,8 +29,8 @@ import {
 
 /* Custom files */
 /*********************/
-import Results from './results'
-import { FormResultsClass } from '@/lib/beers'
+// import Results from './results'
+import { FormResultsClass, defaultResults } from '@/lib/beers'
 /*********************/
 
 const formSchema = z.object({
@@ -48,10 +49,10 @@ const formSchema = z.object({
 
 
 
-const defaultResults = new FormResultsClass("My Restaurant", 6, false, false, 30, "");
 
 export function MainForm() {
-  const [ formResults, setFormResults ] = useState(defaultResults);
+  // const [ formResults, setFormResults ] = useState(defaultResults);
+  // const { results, setResults } = useStore();
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -65,11 +66,15 @@ export function MainForm() {
     },
   });
 
+  const setResults = useStore((state) => state.setResults);
+
   function onSubmit(values: z.infer<typeof formSchema>) {
+    // e.preventDefault(); // probably handled by z?
     if (values) {
-      setFormResults(values);
+      // setResults(values);
+      setResults(values);
     } else {
-      setFormResults(defaultResults);
+      setResults(defaultResults);
     }
   }
 
@@ -220,7 +225,7 @@ export function MainForm() {
           <Button type="submit">Submit</Button>
         </form>
       </Form>
-      <Results formResults={formResults} />
+      {/* <Results formResults={formResults} /> */}
     </div>
   )
 }
