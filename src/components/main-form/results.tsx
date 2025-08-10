@@ -1,20 +1,27 @@
 import { useState, useEffect, useMemo } from 'react'
+import { useStore } from '@/store'
 import BeerCard from '../beer/beercard'
-import { FormResultsClass } from '@/lib/beers'
+// import { FormResultsClass } from '@/lib/beers'
 import sortMenu from '@/lib/sortMenu'
 
-type ResultsProps = {
-  formResults: FormResultsClass
-}
+// type ResultsProps = {
+//   formResults: FormResultsClass
+// }
 
-export default function Results({formResults} : ResultsProps) {
+export default function Results(
+  // {formResults} : ResultsProps
+) {
   const [beerJson, setBeerJson] = useState([]);
-
+  
   useEffect(() => {
     fetch("/api/getdata")
       .then(res => res.json())
       .then(data => setBeerJson(data));
   }, []);
+
+  const formResults = useStore((state) => state.results);
+
+
 
   const beerMenu = useMemo(() => {
     if (beerJson.length > 0) {
@@ -23,7 +30,10 @@ export default function Results({formResults} : ResultsProps) {
     return [];
   }, [beerJson, formResults]);
 
-
+  if (!formResults) {
+    return <p>No results yet.</p>;
+  }
+  
   return(
     <div className="flex flex-col gap-6">     
       <h1>Number of Draft Beers: {formResults.numberOfHandles}</h1>
