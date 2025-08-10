@@ -14,26 +14,7 @@ import {
   SidebarMenuItem,
 } from "@/components/ui/sidebar"
 
-// Menu items.
 const items = [
-  {
-    title: "Home",
-    url: "#",
-    icon: Home,
-  },
-  {
-    title: "About",
-    url: "#",
-    icon: Info,
-  },
-  {
-    title: "Settings",
-    url: "#",
-    icon: Settings,
-  },
-]
-
-const footer = [
   {
     title: "About",
     url: "#",
@@ -60,40 +41,20 @@ export function AppSidebar() {
   return (
     <Sidebar>
       <SidebarContent>
-        
-
-
+    
         <SidebarGroup className="h-full">
           <Title />
-          
           <SidebarGroupLabel className="my-4 text-xl">Design your beer menu:</SidebarGroupLabel>
           <SidebarGroupContent>
               <MainForm />
           </SidebarGroupContent>
         </SidebarGroup>
 
-                {/* <SidebarGroup>
-          <SidebarGroupContent>
-            <SidebarMenu>
-              {items.map((item) => (
-                <SidebarMenuItem key={item.title}>
-                  <SidebarMenuButton asChild>
-                    <a href={item.url}>
-                      <item.icon />
-                      <span>{item.title}</span>
-                    </a>
-                  </SidebarMenuButton>
-                </SidebarMenuItem>
-              ))}
-            </SidebarMenu>
-          </SidebarGroupContent>
-        </SidebarGroup> */}
-
         <SidebarGroup>
           {/* <SidebarGroupLabel>Application</SidebarGroupLabel> */}
           <SidebarGroupContent>
             <SidebarMenu className="">
-              {footer.map((item) => (
+              {items.map((item) => (
                 <SidebarMenuItem key={item.title}>
                   <SidebarMenuButton asChild>
                     <Link href={item.url} title={item.title} target="_blank" className="flex gap-2">

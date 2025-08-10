@@ -17,16 +17,10 @@ export default function RootLayout({
         <SidebarProvider>
           <AppSidebar />
           <main className="w-full">
-            {/* <div className="absolute z-[-5] "><img src="./interior.jpg" className="object-cover "></img></div> */}
             <SidebarTrigger className="bg-slate-200"/>
             <div id="root">{children}</div>
           </main>
         </SidebarProvider>
-
-
-
-        {/* <div id="root">{children}</div> */}
-        {/* <script type="module" src="/src/main.tsx"></script> */}
       </body>
     </html>
     )

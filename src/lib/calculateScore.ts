@@ -11,7 +11,6 @@ export default function calculateScore(beer: Beer, formResults: FormResultsClass
 
     // Shared makes sure that the above imports are exclusive.
     // i.e. there won't likely be Japanese beers alongside Latin American beers.
-
     const shared = imports.filter(e => cuisine.includes(e));
 
     // need another filter:
@@ -39,8 +38,6 @@ export default function calculateScore(beer: Beer, formResults: FormResultsClass
     valueScore: value === fancinessFunc(fanciness) ? 2 : 0,
     cuisineScore: calculateCuisineScore()
   };
-
-  // console.log(name, scoreObj.originScore, scoreObj.regionScore, scoreObj.valueScore, scoreObj.cuisineScore)
   
   // Add up each value in scoreObj
   const score = Object.values(scoreObj).reduce((accumulator, currentValue) => {

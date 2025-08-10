@@ -1,5 +1,4 @@
 "use client"
-// import { useState } from 'react'
 import { useForm } from "react-hook-form"
 import { useStore } from "@/state-storage/store"
 import { zodResolver } from "@hookform/resolvers/zod"
@@ -29,8 +28,7 @@ import {
 
 /* Custom files */
 /*********************/
-// import Results from './results'
-import { FormResultsClass, defaultResults } from '@/lib/beers'
+import { defaultResults } from '@/lib/beers'
 /*********************/
 
 const formSchema = z.object({

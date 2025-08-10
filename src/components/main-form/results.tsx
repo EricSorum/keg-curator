@@ -1,16 +1,9 @@
 import { useState, useEffect, useMemo } from 'react'
 import { useStore } from '@/state-storage/store'
 import BeerCard from '../beer/beercard'
-// import { FormResultsClass } from '@/lib/beers'
 import sortMenu from '@/lib/sortMenu'
 
-// type ResultsProps = {
-//   formResults: FormResultsClass
-// }
-
-export default function Results(
-  // {formResults} : ResultsProps
-) {
+export default function Results() {
   const [beerJson, setBeerJson] = useState([]);
   
   useEffect(() => {
@@ -20,8 +13,6 @@ export default function Results(
   }, []);
 
   const formResults = useStore((state) => state.results);
-
-
 
   const beerMenu = useMemo(() => {
     if (beerJson.length > 0) {
