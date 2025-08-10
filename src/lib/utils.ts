@@ -24,6 +24,15 @@ export function getRandomNum(): number {
   return Math.floor(Math.random() * 100);
 }
 
+export function compareScore(a: Beer, b: Beer) {
+  if (a.score > b.score) {
+    return -1;
+  } else if (a.score < b.score) {
+    return 1;
+  }
+  return 0;
+}
+
 export function fancinessFunc(fanciness: number) : string {
   // Select whether the value should be budget, premium, or prestige, based on the fanciness input.
   
@@ -34,7 +43,6 @@ export function fancinessFunc(fanciness: number) : string {
   }
 
   let returnValue: string = "Premium";
-
 
   const prob = {
     lower: 0,
@@ -52,7 +60,7 @@ export function fancinessFunc(fanciness: number) : string {
     isNotFancy() {
       return this.lower > this.upper;
     },
-    // maybe one method with parameter
+
     calcReturn(scale: number) {
       const randomNum: number = getRandomNum();
       const budget = scale === 3 ? 0 : 1;
@@ -66,19 +74,7 @@ export function fancinessFunc(fanciness: number) : string {
       }
     }
   }
-  // now just calculate lower and upper based on fanciness... 
-  // maybe divide fanciness by two
-  // then add it to lower and subtract it from upper?
-  // if lower is greater than upper, remove budget from consideration altogether
 
-
-  // Fanciness is 1-100
-  // need algorithm to turn a number between 1-100 into a probability
-  // between three options.
-
-
-  // THIS LOGIC IS REVERSED... SHOULD PROBABLY USE IF STATEMENTS?
-  // if (prob.isAverage()) {} etc...
   const delta: number = Math.floor(fanciness/2);
   prob.setOperands(delta);
   if (prob.isAverage()) {
@@ -89,33 +85,8 @@ export function fancinessFunc(fanciness: number) : string {
      prob.calcReturn(1);
   }
 
-  // let boo: boolean = true;
-  // switch (boo) {
-  //   case prob.isAverage(): prob.calcReturn(2);
-  //   break;
-  //   case prob.isFancy(): prob.calcReturn(3);
-  //   break;
-  //   case prob.isNotFancy(): prob.calcReturn(1);
-  //   break;
-  // }
 
   return returnValue;
-  
-  // but instead of returning the string simply i need to return a function.
-  // so write three function that randomizes it to tend towards one or the other
-  // but budget is excluded from is fancy and prestige from budget
-  // but there is still degrees of liklihood in each.
 
-  // need to make sure there is actually a beer selected
-  // if (fanciness < 10 || randomNum < 100) {
-  //   return "Budget";
-  // } else if (fanciness > 95 || randomNum > 1500) {
-  //   return "Prestige";
-  // } else {
-  //   return "Premium";
-  // }
 }
 
-// if fanciness was a  num 1,2, or 3
-// we could use actuaal math right away... multiply by random num and then divide by some num 
-// where it will end up being 1, 2, or 3

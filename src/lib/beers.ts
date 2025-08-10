@@ -32,13 +32,5 @@ export class FormResultsClass {
 }
 export const defaultResults = new FormResultsClass("My Restaurant", 6, false, false, 30, "");
 
-export const preferredBreweries: string[] = ["Lupulin Brewing", "Bent Paddle Brewery", "Fair State Brewing", ];
+export const preferredBreweries: string[] = ["Lupulin Brewing", "Bent Paddle Brewery", "Fair State Brewing"];
 
-export function compareScore(a: Beer, b: Beer) {
-  if (a.score > b.score) {
-    return -1;
-  } else if (a.score < b.score) {
-    return 1;
-  }
-  return 0;
-}
