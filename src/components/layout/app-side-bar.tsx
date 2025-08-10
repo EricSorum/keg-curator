@@ -1,6 +1,6 @@
-import { Home, Settings, SquareArrowOutUpRight, GitFork, Info } from "lucide-react"
+import { Home, Settings, SquareArrowOutUpRight, GitFork, Info, Braces } from "lucide-react"
 import Link from "next/link"
-import Title from "./Title"
+import Title from "./title"
 import { MainForm } from "../main-form/mainform"
 
 import {
@@ -35,6 +35,16 @@ const items = [
 
 const footer = [
   {
+    title: "About",
+    url: "#",
+    icon: Info,
+  },
+  {
+    title: "Tech Stack",
+    url: "#",
+    icon: Braces,
+  },
+  {
     title: "View on GitHub",
     url: "https://github.com/EricSorum/keg-curator",
     icon: GitFork,
@@ -62,14 +72,12 @@ export function AppSidebar() {
           </SidebarGroupContent>
         </SidebarGroup>
 
-                <SidebarGroup>
-          <SidebarGroupLabel>View Info:</SidebarGroupLabel>
+                {/* <SidebarGroup>
           <SidebarGroupContent>
             <SidebarMenu>
               {items.map((item) => (
                 <SidebarMenuItem key={item.title}>
                   <SidebarMenuButton asChild>
-                    {/* maybe this is where we put pop up links? */}
                     <a href={item.url}>
                       <item.icon />
                       <span>{item.title}</span>
@@ -79,12 +87,12 @@ export function AppSidebar() {
               ))}
             </SidebarMenu>
           </SidebarGroupContent>
-        </SidebarGroup>
+        </SidebarGroup> */}
 
         <SidebarGroup>
           {/* <SidebarGroupLabel>Application</SidebarGroupLabel> */}
           <SidebarGroupContent>
-            <SidebarMenu className="flex-row relative b-0">
+            <SidebarMenu className="">
               {footer.map((item) => (
                 <SidebarMenuItem key={item.title}>
                   <SidebarMenuButton asChild>

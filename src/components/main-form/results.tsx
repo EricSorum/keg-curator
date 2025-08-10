@@ -36,8 +36,8 @@ export default function Results(
   
   return(
     <div className="flex flex-col items-center gap-6 w-full">
-      <h1>Number of Draft Beers: {formResults.numberOfHandles}</h1>
-      <h1>Suggested Beer Menu for {formResults.businessName}</h1>
+      <h2 className="text-xl">Beer Menu for {formResults.businessName}</h2>
+      <div>Number of Draft Beers: {formResults.numberOfHandles}</div>
       <ul className="grid xl:grid-cols-3 gap-4">
         {beerMenu.map((beer, index) => {
           return (
