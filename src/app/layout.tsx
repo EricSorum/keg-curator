@@ -4,7 +4,7 @@ export const metadata: Metadata = {
   description: 'Create the best selection of beer to serve in your bar or restaurant.',
 }
 import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar"
-import { AppSidebar } from "@/components/layout/app-sidebar"
+import { AppSidebar } from "@/components/layout/AppSideBar"
 
 export default function RootLayout({
   children,
@@ -16,7 +16,7 @@ export default function RootLayout({
       <body>
         <SidebarProvider>
           <AppSidebar />
-          <main>
+          <main className="w-full">
             <SidebarTrigger />
             <div id="root">{children}</div>
           </main>
