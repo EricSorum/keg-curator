@@ -35,10 +35,10 @@ export default function Results(
   }
   
   return(
-    <div className="flex flex-col gap-6">     
+    <div className="flex flex-col items-center gap-6 w-full">
       <h1>Number of Draft Beers: {formResults.numberOfHandles}</h1>
       <h1>Suggested Beer Menu for {formResults.businessName}</h1>
-      <ul className="grid md:grid-cols-3 gap-4">
+      <ul className="grid xl:grid-cols-3 gap-4">
         {beerMenu.map((beer, index) => {
           return (
             <li key={index}><BeerCard index={index} beer={beer} /></li>
