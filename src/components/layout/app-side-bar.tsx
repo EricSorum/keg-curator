@@ -1,6 +1,6 @@
-import { Calendar, Home, Inbox, Search, Settings, SquareArrowOutUpRight, GitFork } from "lucide-react"
+import { Home, Settings, SquareArrowOutUpRight, GitFork, Info } from "lucide-react"
 import Link from "next/link"
-
+import Title from "./Title"
 import { MainForm } from "../main-form/mainform"
 
 import {
@@ -24,7 +24,7 @@ const items = [
   {
     title: "About",
     url: "#",
-    icon: Search,
+    icon: Info,
   },
   {
     title: "Settings",
@@ -50,7 +50,19 @@ export function AppSidebar() {
   return (
     <Sidebar>
       <SidebarContent>
-        <SidebarGroup>
+        
+
+
+        <SidebarGroup className="h-full">
+          <Title />
+          
+          <SidebarGroupLabel className="my-4 text-xl">Design your beer menu:</SidebarGroupLabel>
+          <SidebarGroupContent>
+              <MainForm />
+          </SidebarGroupContent>
+        </SidebarGroup>
+
+                <SidebarGroup>
           <SidebarGroupLabel>View Info:</SidebarGroupLabel>
           <SidebarGroupContent>
             <SidebarMenu>
@@ -66,13 +78,6 @@ export function AppSidebar() {
                 </SidebarMenuItem>
               ))}
             </SidebarMenu>
-          </SidebarGroupContent>
-        </SidebarGroup>
-
-        <SidebarGroup className="h-full">
-          <SidebarGroupLabel className="my-4 text-xl">Design your beer menu:</SidebarGroupLabel>
-          <SidebarGroupContent>
-              <MainForm />
           </SidebarGroupContent>
         </SidebarGroup>
 
