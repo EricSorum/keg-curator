@@ -1,8 +1,7 @@
 // import { useEffect, useState } from 'react'
-import { MainForm } from './components/main-form/mainform'
 import Results from './components/main-form/results'
-import Title from './components/layout/title'
-import Navbar from './components/layout/navbar'
+import Title from './components/layout/Title'
+import Navbar from './components/layout/Navbar'
 import Footer from './components/layout/Footer'
 // import { number } from 'zod';
 
