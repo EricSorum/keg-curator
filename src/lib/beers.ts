@@ -1,6 +1,3 @@
-import { fancinessFunc, shuffle } from "./utils";
-// import picker from "./picker";
-
 export class Beer {
   constructor(
     public name: string,
@@ -22,10 +19,6 @@ export class Beer {
       this.score = 0;
     }
 }
-
-
-
-
 
 export class FormResultsClass {
   constructor(
