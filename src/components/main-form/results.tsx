@@ -1,5 +1,5 @@
 import { useState, useEffect, useMemo } from 'react'
-import { useStore } from '@/store'
+import { useStore } from '@/state-storage/store'
 import BeerCard from '../beer/beercard'
 // import { FormResultsClass } from '@/lib/beers'
 import sortMenu from '@/lib/sortMenu'

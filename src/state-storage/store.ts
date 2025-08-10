@@ -1,5 +1,5 @@
 import { create } from "zustand"
-import { FormResultsClass, defaultResults } from "./lib/beers"
+import { FormResultsClass, defaultResults } from "@/lib/beers"
 
 export interface ResultsState {
   results: FormResultsClass,
