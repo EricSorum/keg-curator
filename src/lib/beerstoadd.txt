@@ -46,14 +46,6 @@ Minnesota
 Premium
 Cuisine: Classic American, Pizza, Concert/Dance Venue
 
-Niiice
-Surly Brewing
-Light Ale
-Craft
-Minnesota
-Budget
-Cuisine: Classic American, Pizza, Concert/Dance Venue
-
 Hell
 Surly Brewing
 Helles Lager
@@ -180,4 +172,52 @@ Amber Ale
 Craft
 Minnesota
 Budget
-Cuisine: Irish/British
+Cuisine: British/Irish
+
+Dead Poet
+Finnegan's Brew Co.
+Stout
+Craft
+Minnesota
+Budget
+Cuisine: British/Irish
+
+Cream Ale
+Castle Danger
+Cream Ale
+Craft
+Minnesota
+Premium
+Cuisine:
+
+Hunter George's Stout
+Castle Danger Brewery
+Stout
+Craft
+Minnesota
+Premium
+Cuisine: 
+
+Wonderstuff
+Bauhaus Brew Labs
+Pilsner
+Craft
+Minnesota
+Premium
+Cuisine: German
+
+Foggy Bottom
+Luce Lice Brewing
+Hazy IPA
+Craft
+Minnesota
+Premium
+Cuisine: 
+
+Ecstatic Static
+Luce Line Brewing
+IPA
+Craft
+Minnesota
+Premium
+Cuisine: 
