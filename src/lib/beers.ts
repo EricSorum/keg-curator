@@ -37,6 +37,7 @@ export class FormResultsClass {
     public chosenCuisine: string,
   ) {}
 }
+export const defaultResults = new FormResultsClass("My Restaurant", 6, false, false, 30, "");
 
 export const preferredBreweries: string[] = ["Lupulin Brewing", "Bent Paddle Brewery", "Fair State Brewing", ];
 
