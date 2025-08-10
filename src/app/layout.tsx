@@ -17,7 +17,8 @@ export default function RootLayout({
         <SidebarProvider>
           <AppSidebar />
           <main className="w-full">
-            <SidebarTrigger />
+            {/* <div className="absolute z-[-5] "><img src="./interior.jpg" className="object-cover "></img></div> */}
+            <SidebarTrigger className="bg-slate-200"/>
             <div id="root">{children}</div>
           </main>
         </SidebarProvider>

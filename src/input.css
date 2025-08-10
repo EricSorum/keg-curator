@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+  background-image: url("/interior.jpg");
+  background-position: top;
+  background-size: cover;
+}
+
 /* ... */
 
 @layer base {
