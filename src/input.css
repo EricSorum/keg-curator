@@ -6,6 +6,7 @@ body {
   background-image: url("/interior.jpg");
   background-position: top;
   background-size: cover;
+  background-attachment: fixed;
 }
 
 /* ... */
