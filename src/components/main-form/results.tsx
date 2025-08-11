@@ -26,9 +26,11 @@ export default function Results() {
   }
   
   return(
-    <div className="flex flex-col items-center gap-6 w-full">
-      <h2 className="text-xl">Beer Menu for {formResults.businessName}</h2>
-      <div>Number of Draft Beers: {formResults.numberOfHandles}</div>
+    <div className="flex flex-col items-center gap-6 bg-white p-6 min-h-[60vh]">
+      <div className="text-white">
+        <h2 className="text-xl">Beer Menu for {formResults.businessName}</h2>
+        <p>Number of Draft Beers: {formResults.numberOfHandles}</p>
+      </div>
       <ul className="grid xl:grid-cols-3 gap-4">
         {beerMenu.map((beer, index) => {
           return (
@@ -36,6 +38,7 @@ export default function Results() {
           )
         })}
       </ul>
+      <div className="paperOverlay"></div>
     </div>
   )
 }
