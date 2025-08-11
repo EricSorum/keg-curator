@@ -1,6 +1,7 @@
-import { Home, Settings, SquareArrowOutUpRight, GitFork, Info, Braces } from "lucide-react"
+import { SquareArrowOutUpRight, GitFork, Info, Braces } from "lucide-react"
 import Link from "next/link"
 import { MainForm } from "../main-form/mainform"
+import Title from "./title"
 
 import {
   Sidebar,
@@ -13,9 +14,6 @@ import {
   SidebarMenuItem,
   SidebarSeparator,
 } from "@/components/ui/sidebar"
-import { Separator } from "@/components/ui/separator"
-// import SidebarSeparator from "./sidebar-separator"
-import Title from "./title"
 
 const items = [
   {

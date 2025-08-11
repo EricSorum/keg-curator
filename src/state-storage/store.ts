@@ -10,5 +10,3 @@ export const useStore = create<ResultsState>((set) => ({
   results: defaultResults,
   setResults: (values) => set({ results: values }),
 }))
-
-// results needs to be set to default results
