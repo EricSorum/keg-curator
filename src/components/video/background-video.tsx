@@ -1,10 +1,13 @@
 export default function BackgroundVideo() {
+
+  // download lower-resolution video for bandwidth.
+  // use https://next-video.dev/#get-started
   return (
-    <video preload="none" loop autoPlay
+    <video loop autoPlay muted
       className="
       fixed
-      right-[0]
-      bottom-[0]
+      inset-y-0 
+      right-0
       min-w-full
       min-h-full
       object-cover
@@ -12,12 +15,6 @@ export default function BackgroundVideo() {
       "
     >
       <source src="/background.mp4" type="video/mp4" />
-      {/* <track
-        src="/path/to/captions.vtt"
-        kind="subtitles"
-        srcLang="en"
-        label="English"
-      /> */}
       Your browser does not support the video tag.
     </video>
   )
