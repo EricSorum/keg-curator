@@ -5,10 +5,11 @@
 /* ... */
 
 body {
-  background-image: url("/interior.jpg");
+  /* Maybe set opacity transition to reveal video as it loads...?*/
+  /* background-image: url("/interior.jpg");
   background-position: top;
   background-size: cover;
-  background-attachment: fixed;
+  background-attachment: fixed; */
 }
 
 @layer base {
