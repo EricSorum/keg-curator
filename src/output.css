@@ -656,10 +656,6 @@ body {
   bottom: 0px;
 }
 
-.bottom-\[0\] {
-  bottom: 0;
-}
-
 .left-0 {
   left: 0px;
 }
@@ -684,10 +680,6 @@ body {
   right: 1rem;
 }
 
-.right-\[0\] {
-  right: 0;
-}
-
 .top-0 {
   top: 0px;
 }
@@ -702,6 +694,10 @@ body {
 
 .top-4 {
   top: 1rem;
+}
+
+.top-\[40px\] {
+  top: 40px;
 }
 
 .-z-10 {
@@ -835,6 +831,10 @@ body {
   height: 2.25rem;
 }
 
+.h-\[120px\] {
+  height: 120px;
+}
+
 .h-\[1px\] {
   height: 1px;
 }
@@ -925,6 +925,10 @@ body {
 
 .min-w-5 {
   min-width: 1.25rem;
+}
+
+.min-w-\[200px\] {
+  min-width: 200px;
 }
 
 .min-w-\[8rem\] {
@@ -1080,6 +1084,10 @@ body {
   white-space: nowrap;
 }
 
+.rounded-\[3rem\] {
+  border-radius: 3rem;
+}
+
 .rounded-full {
   border-radius: 9999px;
 }
@@ -1196,6 +1204,11 @@ body {
 .object-cover {
   -o-object-fit: cover;
      object-fit: cover;
+}
+
+.object-right {
+  -o-object-position: right;
+     object-position: right;
 }
 
 .p-0 {
