@@ -48,7 +48,7 @@ export function AppSidebar() {
         <SidebarSeparator />
 
         <SidebarGroup className="h-full">
-          <SidebarGroupLabel className="my-4 text-xl">Design your beer menu:</SidebarGroupLabel>
+          <SidebarGroupLabel className="my-4 text-xl">Create your beer menu:</SidebarGroupLabel>
           <SidebarGroupContent>
             <MainForm />
           </SidebarGroupContent>
