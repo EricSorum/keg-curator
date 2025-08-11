@@ -5,7 +5,8 @@
   "type": "module",
   "scripts": {
     "lint": "eslint .",
-    "dev": "next dev",
+    "dev": "next dev & pnpm run watch:css",
+    "watch:css": "tailwindcss -i ./src/input.css -o ./src/output.css --watch",
     "build": "next build",
     "start": "next start"
   },
