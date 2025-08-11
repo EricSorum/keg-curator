@@ -10,7 +10,7 @@ const BeerCard = ({index, beer}: BeerCardProps) => {
   // Increase index so it's not zero-indexed.
   index++;
   return (
-    <Card>
+    <Card className="min-h-full">
       <div className="m-3">
         <h2>{index}. {beer.name}</h2> 
         <p>Brewery: {beer.brewery}</p>
