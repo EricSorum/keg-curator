@@ -5,6 +5,7 @@ export const metadata: Metadata = {
 }
 import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar"
 import { AppSidebar } from "@/components/sidebar/app-side-bar"
+import BackgroundVideo from '@/components/video/background-video';
 
 export default function RootLayout({
   children,
@@ -20,6 +21,7 @@ export default function RootLayout({
             <SidebarTrigger className="bg-slate-200"/>
             <div id="root">{children}</div>
           </main>
+          <BackgroundVideo />
         </SidebarProvider>
       </body>
     </html>
