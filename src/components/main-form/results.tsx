@@ -26,9 +26,9 @@ export default function Results() {
   }
   
   return(
-    <div className="flex flex-col items-center gap-6 bg-white p-[4rem] min-h-[60vh]">
-      <div className="text-center">
-        <h2 className="text-xl font-bold tracking-tight text-gray-700 m-3">Beer Menu for {formResults.businessName}</h2>
+    <div className="flex flex-col items-center gap-6">
+      <div className="text-center text-white">
+        <h2 className="text-2xl font-bold tracking-tight m-3">Beer Menu for {formResults.businessName}</h2>
         <p>Number of Draft Beers: {formResults.numberOfHandles}</p>
       </div>
       <ul className="grid xl:grid-cols-3 gap-4">
@@ -38,7 +38,7 @@ export default function Results() {
           )
         })}
       </ul>
-      <div className="paperOverlay"></div>
+      {/* <div className="paperOverlay"></div> */}
     </div>
   )
 }
