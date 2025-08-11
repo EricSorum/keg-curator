@@ -11,6 +11,7 @@ export default function BackgroundVideo() {
       min-w-full
       min-h-full
       object-cover
+      object-right
       -z-10
       "
     >
