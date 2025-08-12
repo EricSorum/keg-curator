@@ -32,7 +32,7 @@ const items = [
     icon: GitFork,
   },
   {
-    title: "Go to Portfolio site",
+    title: "Go to EricSorum.com",
     url: "https://ericsorum.com",
     icon: SquareArrowOutUpRight,
   }
