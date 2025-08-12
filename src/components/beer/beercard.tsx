@@ -17,7 +17,7 @@ const BeerCard = ({index, beer}: BeerCardProps) => {
         width={60}
         height={120}
         alt="Beer Selection"
-        className="mx-auto"
+        className="mx-auto drop-shadow-lg"
       />
       <Card className="rounded-[3rem] h-[120px] absolute top-[40px] w-full">
         <div className="m-3 text-center">
