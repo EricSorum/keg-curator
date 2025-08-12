@@ -2,6 +2,7 @@ import { useState, useEffect, useMemo } from 'react'
 import { useStore } from '@/state-storage/store'
 import BeerCard from '../beer/beercard'
 import sortMenu from '@/lib/sortMenu'
+import { Button } from '../ui/button'
 
 export default function Results() {
   const [beerJson, setBeerJson] = useState([]);
@@ -24,7 +25,16 @@ export default function Results() {
   if (!formResults) {
     return <p>No results yet.</p>;
   }
-  
+
+  // Copies the beer menu to the clipboard.
+  const handleCopy = () => {
+    let menuText: string = "";
+    beerMenu.forEach((beer) => {
+      menuText += `${beer.name}\n${beer.brewery}\n${beer.style}\n\n`
+    })
+    navigator.clipboard.writeText(menuText);
+  }
+
   return(
     <div className="flex flex-col items-center gap-6">
       <div className="text-center text-white">
@@ -38,7 +48,7 @@ export default function Results() {
           )
         })}
       </ul>
-      {/* <div className="paperOverlay"></div> */}
+      <Button variant="outline" onClick={handleCopy}>Copy to Clipboard</Button>
     </div>
   )
 }
