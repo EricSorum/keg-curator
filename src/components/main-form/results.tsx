@@ -53,8 +53,8 @@ export default function Results() {
 
   return(
     <div className="flex flex-col items-center gap-6">
-      <div className="text-center drop-shadow-xl bg-white">
-        <div className="p-3">
+      <div className="text-center drop-shadow-xl">
+        <div className="p-3 bg-amber-300 border-amber-950 border-b-[4px] border-r-[4px] rounded-[20%] ">
           <h2 className="text-4xl xs:text-2xl font-bold tracking-tight m-3">Beer Menu for {formResults.businessName}</h2>
           <p>Number of Draft Beers: {formResults.numberOfHandles}</p>
         </div>
