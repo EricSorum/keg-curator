@@ -19,10 +19,7 @@ const BeerCard = ({index, beer}: BeerCardProps) => {
         alt="Beer Selection"
         className="mx-auto drop-shadow-lg"
       />
-      <Card className="rounded-[20%] h-[120px] absolute top-[40px] w-full bg-amber-300 border-amber-950
-      border-b-[4px] border-r-[4px]
-      
-      ">
+      <Card className="rounded-[20%] h-[120px] absolute top-[40px] w-full bg-amber-300 border-amber-950 border-b-[4px] border-r-[4px]">
         <div className="m-3 text-center font-serif text-amber-950">
           <h3 className="text-xl text-bold tracking-tight">
             {beer.name}
@@ -32,7 +29,6 @@ const BeerCard = ({index, beer}: BeerCardProps) => {
           <p>{beer.style}</p>
         </div>
       </Card>
-
     </div>
   );
 };
