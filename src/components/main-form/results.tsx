@@ -32,6 +32,7 @@ export default function Results() {
   // Creates a formatted string of the menu for copying/download.
   const menuCopy = () => {
     let menuText: string = "";
+    menuText += `Beer Menu for ${formResults.businessName}\n\n`
     beerMenu.forEach((beer) => {
       menuText += `${beer.name}\n${beer.brewery}\n${beer.style}\n\n`
     })
@@ -52,8 +53,8 @@ export default function Results() {
 
   return(
     <div className="flex flex-col items-center gap-6">
-      <div className="text-center text-white">
-        <h2 className="text-2xl font-bold tracking-tight m-3">Beer Menu for {formResults.businessName}</h2>
+      <div className="text-center text-white drop-shadow-xl">
+        <h2 className="text-4xl xs:text-2xl font-bold tracking-tight m-3">Beer Menu for {formResults.businessName}</h2>
         <p>Number of Draft Beers: {formResults.numberOfHandles}</p>
       </div>
       <ul className="grid xl:grid-cols-3 gap-4">
@@ -67,7 +68,7 @@ export default function Results() {
       <div className="absolute top-[40px] right-[40px] w-[100px] flex gap-2">
         <Tooltip >
           <TooltipTrigger asChild>
-            <Button variant="outline" onClick={handleCopy}>
+            <Button variant="outline" onClick={handleCopy} className="w-[36px]">
               <Copy />
             </Button>
           </TooltipTrigger>
@@ -77,7 +78,7 @@ export default function Results() {
         </Tooltip>
         <Tooltip>
           <TooltipTrigger asChild>
-            <Button variant="outline" onClick={handlePdf}>
+            <Button variant="outline" onClick={handlePdf} className="w-[36px]">
               <FileDown />
             </Button>
           </TooltipTrigger>
