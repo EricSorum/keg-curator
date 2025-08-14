@@ -700,6 +700,10 @@ body {
   top: 40px;
 }
 
+.right-\[40px\] {
+  right: 40px;
+}
+
 .-z-10 {
   z-index: -10;
 }
@@ -917,6 +921,10 @@ body {
 
 .w-full {
   width: 100%;
+}
+
+.w-\[100px\] {
+  width: 100px;
 }
 
 .min-w-0 {

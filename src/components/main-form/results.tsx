@@ -4,6 +4,8 @@ import BeerCard from '../beer/beercard'
 import sortMenu from '@/lib/sortMenu'
 import { Button } from '../ui/button'
 import { jsPDF } from 'jspdf';
+import { Tooltip, TooltipTrigger, TooltipContent } from '@/components/ui/tooltip'
+import { FileDown, Copy } from 'lucide-react';
 
 export default function Results() {
   const [beerJson, setBeerJson] = useState([]);
@@ -27,7 +29,7 @@ export default function Results() {
     return <p>No results yet.</p>;
   }
 
-
+  // Creates a formatted string of the menu for copying/download.
   const menuCopy = () => {
     let menuText: string = "";
     beerMenu.forEach((beer) => {
@@ -35,11 +37,13 @@ export default function Results() {
     })
     return menuText;
   }
+
   // Copies the beer menu to the clipboard.
   const handleCopy = () => {
     navigator.clipboard.writeText(menuCopy());
   }
 
+  // Downloads a PDF of the menu.
   const handlePdf = () => {
     const doc = new jsPDF();
     doc.text(menuCopy(), 10, 10);
@@ -59,8 +63,30 @@ export default function Results() {
           )
         })}
       </ul>
-      <Button variant="outline" onClick={handleCopy}>Copy to Clipboard</Button>
-      <Button variant="outline" onClick={handlePdf}>Download PDF</Button>
+
+      <div className="absolute top-[40px] right-[40px] w-[100px] flex gap-2">
+        <Tooltip >
+          <TooltipTrigger asChild>
+            <Button variant="outline" onClick={handleCopy}>
+              <Copy />
+            </Button>
+          </TooltipTrigger>
+          <TooltipContent side="bottom">
+            Copy menu to clipboard.
+          </TooltipContent>
+        </Tooltip>
+        <Tooltip>
+          <TooltipTrigger asChild>
+            <Button variant="outline" onClick={handlePdf}>
+              <FileDown />
+            </Button>
+          </TooltipTrigger>
+          <TooltipContent side="bottom">
+            Download menu as PDF.
+          </TooltipContent>
+        </Tooltip>
+      </div>
+      
     </div>
   )
 }
