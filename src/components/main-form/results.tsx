@@ -53,9 +53,11 @@ export default function Results() {
 
   return(
     <div className="flex flex-col items-center gap-6">
-      <div className="text-center text-white drop-shadow-xl">
-        <h2 className="text-4xl xs:text-2xl font-bold tracking-tight m-3">Beer Menu for {formResults.businessName}</h2>
-        <p>Number of Draft Beers: {formResults.numberOfHandles}</p>
+      <div className="text-center drop-shadow-xl bg-white">
+        <div className="p-3">
+          <h2 className="text-4xl xs:text-2xl font-bold tracking-tight m-3">Beer Menu for {formResults.businessName}</h2>
+          <p>Number of Draft Beers: {formResults.numberOfHandles}</p>
+        </div>
       </div>
       <ul className="grid xl:grid-cols-3 gap-4">
         {beerMenu.map((beer, index) => {
