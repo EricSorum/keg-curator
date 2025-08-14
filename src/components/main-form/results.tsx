@@ -3,6 +3,7 @@ import { useStore } from '@/state-storage/store'
 import BeerCard from '../beer/beercard'
 import sortMenu from '@/lib/sortMenu'
 import { Button } from '../ui/button'
+import { jsPDF } from 'jspdf';
 
 export default function Results() {
   const [beerJson, setBeerJson] = useState([]);
@@ -26,13 +27,23 @@ export default function Results() {
     return <p>No results yet.</p>;
   }
 
-  // Copies the beer menu to the clipboard.
-  const handleCopy = () => {
+
+  const menuCopy = () => {
     let menuText: string = "";
     beerMenu.forEach((beer) => {
       menuText += `${beer.name}\n${beer.brewery}\n${beer.style}\n\n`
     })
-    navigator.clipboard.writeText(menuText);
+    return menuText;
+  }
+  // Copies the beer menu to the clipboard.
+  const handleCopy = () => {
+    navigator.clipboard.writeText(menuCopy());
+  }
+
+  const handlePdf = () => {
+    const doc = new jsPDF();
+    doc.text(menuCopy(), 10, 10);
+    doc.save(`Beer Menu for ${formResults.businessName}`);
   }
 
   return(
@@ -49,6 +60,7 @@ export default function Results() {
         })}
       </ul>
       <Button variant="outline" onClick={handleCopy}>Copy to Clipboard</Button>
+      <Button variant="outline" onClick={handlePdf}>Download PDF</Button>
     </div>
   )
 }

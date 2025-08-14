@@ -24,6 +24,7 @@
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "dotenv": "^16.6.1",
+    "jspdf": "^3.0.1",
     "lucide-react": "^0.469.0",
     "mongodb": "^6.18.0",
     "next": "^15.4.6",
