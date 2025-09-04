@@ -39,7 +39,7 @@ Premium
 Cuisine: Latin American
 
 Foggy Geezer
-War Pigs
+War Pigs Brewing
 Hazy IPA
 Craft
 Indiana
@@ -71,7 +71,7 @@ Premium
 Cuisine: Elevated Pub, Classic American, Pizza, Latin American, West African, Ethiopian, Irish/British
 
 Furious
-Surly
+Surly Brewing
 IPA
 Craft
 Minnesota
@@ -79,7 +79,7 @@ Premium
 Cuisine: Elevated Pub, Classic American, Pizza, Barbecue
 
 Blue Moon Belgian White
-Blue Moon
+Blue Moon Brewing
 Belgian White
 Domestic
 Colorado
@@ -87,7 +87,7 @@ Premium
 Cuisine: French, Seafood, Southeast Asian, Indian
 
 Guinness Draught
-Guinness
+St. James's Gate
 Stout
 Import
 Ireland
@@ -111,7 +111,7 @@ Prestige
 Cuisine: German, Eastern European
 
 Tecate Original
-Tecate
+Cuauhtémoc Moctezuma
 International Lager
 Import
 Mexico
@@ -344,6 +344,230 @@ Cuisine:
 
 Flavorwave
 Indeed Brewing
+IPA
+Craft
+Minnesota
+Premium
+Cuisine: 
+
+Firebrick
+Schell's Brewery
+Amber Lager
+Craft
+Minnesota
+Budget
+Cuisine: Classic American, German, Pizza, Latin American
+
+Notorious P.I.L.S.
+Schell's Brewery
+Pilsner
+Craft
+Minnesota
+Budget
+Cuisine: Classic American, Pizza, German, Eastern European
+
+Schell's Dark
+Schell's Brewery
+Munich Dark
+Craft
+Minnesota
+Budget
+Cuisine: Classic American, Pizza, Latin American, German, Eastern European
+
+No Frills
+Schell's Brewery
+Pilsner
+Craft
+Minnesota
+Budget
+Cuisine: Classic American, Pizza, German, Eastern European
+
+Northland Gold
+Schell's Brewery
+Light Lager
+Craft
+Minnesota
+Budget
+Cuisine: Classic American, Pizza, German, Eastern European
+
+Mosh Pit
+Surly Brewing
+Hazy IPA
+Craft
+Minnesota
+Premium
+Cuisine: Classic American, Pizza, Concert/Dance Venue
+
+Hell
+Surly Brewing
+Helles Lager
+Craft
+Minnesota
+Premium
+Cuisine: Classic American, Pizza, German, Eastern European
+
+Grapefruit Ale
+Surly Brewing
+Fruited Ale
+Craft
+Minnesota
+Premium
+Cuisine:
+
+Due North
+Portage Brewing
+Light Lager
+Craft
+Minnesota
+Premium
+Cuisine: 
+
+Lake Fellow
+Portage Brewing
+Hazy IPA
+Craft
+Minnesota
+Premium
+Cuisine: 
+
+Coffeecake
+Portage Brewing
+Blonde Ale
+Craft
+Minnesota
+Premium
+Cuisine: Cafe/Diner
+
+Pine Line
+Portage Brewing
+IPA
+Craft
+Minnesota
+Premium
+Cuisine: 
+
+Masala Mama
+Townhall Brewery
+IPA
+Craft
+Minnesota
+Premium
+Cuisine: Classic American, Pizza
+
+Size 7
+Steel Toe Brewing
+IPA
+Craft
+Minnesota
+Premium
+Cuisine: Classic American, Pizza
+
+Provider
+Steel Toe Brewing
+Golden Ale
+Craft
+Minnesota
+Premium
+Cuisine: 
+
+Size 4
+Steel Toe Brewing
+Session IPA
+Craft
+Minnesota
+Premium
+Cuisine: Classic American, Pizza
+
+Sissel
+Steel Toe Brewing
+Sour
+Craft
+Minnesota
+Premium
+Cuisine: 
+
+Devil's Kettle
+Voyageur Brewing
+IPA
+Craft
+Minnesota
+Premium
+Cuisine: Classic American, Pizza
+
+Trailbreaker
+Voyageur Brewing
+Belgian Wheat
+Craft
+Minnesota
+Premium
+Cuisine: Classic American, Pizza
+
+Palisade
+Voyageur Brewing
+Porter
+Craft
+Minnesota
+Premium
+Cuisine: Classic American, Pizza
+
+Boundary Waters Brunette
+Voyageur Brewing
+Brown Ale
+Craft
+Minnesota
+Premium
+Cuisine: Classic American, Pizza
+
+Finnegan's Amber
+Finnegan's Brew Co.
+Amber Ale
+Craft
+Minnesota
+Budget
+Cuisine: British/Irish
+
+Dead Poet
+Finnegan's Brew Co.
+Stout
+Craft
+Minnesota
+Budget
+Cuisine: British/Irish
+
+Cream Ale
+Castle Danger Brewery
+Cream Ale
+Craft
+Minnesota
+Premium
+Cuisine:
+
+Hunter George's Stout
+Castle Danger Brewery
+Stout
+Craft
+Minnesota
+Premium
+Cuisine: 
+
+Wonderstuff
+Bauhaus Brew Labs
+Pilsner
+Craft
+Minnesota
+Premium
+Cuisine: German
+
+Foggy Bottom
+Luce Line Brewing
+Hazy IPA
+Craft
+Minnesota
+Premium
+Cuisine: 
+
+Ecstatic Static
+Luce Line Brewing
 IPA
 Craft
 Minnesota

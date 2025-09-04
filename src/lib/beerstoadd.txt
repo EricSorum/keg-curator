@@ -103,7 +103,7 @@ Premium
 Cuisine: Classic American, Pizza
 
 Size 7
-Steel Two Brewing
+Steel Toe Brewing
 IPA
 Craft
 Minnesota
@@ -111,7 +111,7 @@ Premium
 Cuisine: Classic American, Pizza
 
 Provider
-Steel Two Brewing
+Steel Toe Brewing
 Golden Ale
 Craft
 Minnesota
@@ -119,7 +119,7 @@ Premium
 Cuisine: 
 
 Size 4
-Steel Two Brewing
+Steel Toe Brewing
 Session IPA
 Craft
 Minnesota
@@ -127,7 +127,7 @@ Premium
 Cuisine: Classic American, Pizza
 
 Sissel
-Steel Two Brewing
+Steel Toe Brewing
 Sour
 Craft
 Minnesota
