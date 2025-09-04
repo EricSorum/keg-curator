@@ -59,7 +59,7 @@ export default function Results() {
           <p>Number of Draft Beers: {formResults.numberOfHandles}</p>
         </div>
       </div>
-      <ul className="grid xl:grid-cols-3 gap-4">
+      <ul className="grid xl:grid-cols-3 grid-cols-2 gap-4">
         {beerMenu.map((beer, index) => {
           return (
             <li key={index}><BeerCard index={index} beer={beer} /></li>
@@ -67,7 +67,7 @@ export default function Results() {
         })}
       </ul>
 
-      <div className="absolute top-[40px] right-[40px] w-[100px] flex gap-2">
+      <div className="absolute top-[20px] right-[20px] w-[100px] flex gap-2">
         <Tooltip >
           <TooltipTrigger asChild>
             <Button variant="outline" onClick={handleCopy} className="w-[36px]">

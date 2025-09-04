@@ -680,8 +680,8 @@ body {
   right: 1rem;
 }
 
-.right-\[40px\] {
-  right: 40px;
+.right-\[20px\] {
+  right: 20px;
 }
 
 .top-0 {
@@ -698,6 +698,10 @@ body {
 
 .top-4 {
   top: 1rem;
+}
+
+.top-\[20px\] {
+  top: 20px;
 }
 
 .top-\[40px\] {
@@ -1030,6 +1034,10 @@ body {
           user-select: none;
 }
 
+.grid-cols-2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
 .flex-col {
   flex-direction: column;
 }
@@ -1233,26 +1241,6 @@ body {
 
 .bg-transparent {
   background-color: transparent;
-}
-
-.bg-white {
-  --tw-bg-opacity: 1;
-  background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1));
-}
-
-.bg-amber-100 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(254 243 199 / var(--tw-bg-opacity, 1));
-}
-
-.bg-amber-200 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(253 230 138 / var(--tw-bg-opacity, 1));
-}
-
-.bg-amber-50 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(255 251 235 / var(--tw-bg-opacity, 1));
 }
 
 .object-cover {
