@@ -7,9 +7,18 @@ type BeerCardProps = {
   beer: Beer;
 };
 
+
 const BeerCard = ({index, beer}: BeerCardProps) => {
   // Increase index so it's not zero-indexed.
   index++;
+
+
+  // find posiiton of first space
+  // splice on that index.
+  const breweryName = ""
+  const imgSrc: string = "/brewery-logos/" + {breweryName} + ""
+  const altString = beer.brewery + " logo"
+
   return (
     <div className="relative min-w-[200px]">
       <Image
@@ -19,8 +28,15 @@ const BeerCard = ({index, beer}: BeerCardProps) => {
         alt="Beer Selection"
         className="mx-auto drop-shadow-lg"
       />
-      <Card className="rounded-[20%] h-[120px] absolute top-[40px] w-full bg-amber-300 border-amber-950 border-b-[4px] border-r-[4px]">
+      <Card className="rounded-[20%] absolute top-[40px] w-full bg-amber-300 border-amber-950 border-b-[4px] border-r-[4px]">
         <div className="m-3 text-center font-serif text-amber-950">
+          <Image 
+            src={imgSrc}
+            width={60}
+            height={50}
+            alt={altString}
+            className="mx-auto drop-shadow-lg"
+          />
           <h3 className="text-xl text-bold tracking-tight">
             {beer.name}
           </h3>
