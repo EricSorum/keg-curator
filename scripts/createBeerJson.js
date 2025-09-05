@@ -22,7 +22,7 @@ async function getRawBeers() {
     }
   }
 
-  const rawBeerList = await readTxtFile("./beerlist.txt")
+  const rawBeerList = await readTxtFile("../src/lib/beerlist.txt")
   const beers = [];
   let beersArr = [];
 
@@ -47,7 +47,7 @@ async function getRawBeers() {
   }
 
   const beerString = JSON.stringify(beers);
-  await writeJsonFile("./beerjson.json", beerString)
+  await writeJsonFile("../src/lib/beerjson.json", beerString)
 }
 getRawBeers();
 
