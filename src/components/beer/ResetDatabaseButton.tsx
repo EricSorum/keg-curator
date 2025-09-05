@@ -2,7 +2,7 @@
 
 export default function ResetDatabaseButton() {
   async function handleClick() {
-    const res = await fetch("/api/restreset", {
+    const res = await fetch("/api/reset", {
       method: "POST",
     });
 
