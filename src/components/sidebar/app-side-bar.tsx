@@ -2,6 +2,7 @@ import { SquareArrowOutUpRight, GitFork, Info, Braces } from "lucide-react"
 import Link from "next/link"
 import { MainForm } from "../main-form/mainform"
 import Title from "./title"
+import ResetDatabaseButton from "../beer/ResetDatabaseButton"
 
 import {
   Sidebar,
@@ -37,7 +38,7 @@ const items = [
     icon: SquareArrowOutUpRight,
   }
 ]
-
+// const isDev: boolean = process.env.NODE_ENV === "development";
 export function AppSidebar() {
   return (
     <Sidebar>
@@ -55,6 +56,9 @@ export function AppSidebar() {
         </SidebarGroup>
 
         <SidebarSeparator />
+
+        {/* Reset API call button is available only in development*/} 
+        {/* {isDev && <ResetDatabaseButton />} */}
 
         <SidebarGroup>
           {/* <SidebarGroupLabel>Application</SidebarGroupLabel> */}
