@@ -8,7 +8,9 @@
     "dev": "next dev & pnpm run watch:css",
     "watch:css": "tailwindcss -i ./src/input.css -o ./src/output.css --watch",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "convertimg": "node scripts/convertImages.js",
+    "beerjson": "node scripts/createBeerJson.js"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.10.0",
@@ -31,6 +33,7 @@
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-hook-form": "^7.62.0",
+    "sharp": "^0.34.3",
     "tailwind-merge": "^2.6.0",
     "tailwindcss-animate": "^1.0.7",
     "zod": "3.25.0-canary.20241210T225910",
