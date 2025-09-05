@@ -40,7 +40,7 @@ async function getRawBeers() {
       newBeerArr[2], // style
       newBeerArr[3], // origin
       newBeerArr[4], // region
-      newBeerArr[5],  // value
+      newBeerArr[5], // value
       newBeerArr[6].replace("Cuisine: ", "").split(", ") // cuisine
     );
     beers.push(newBeer);
