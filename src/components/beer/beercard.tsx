@@ -12,11 +12,9 @@ const BeerCard = ({index, beer}: BeerCardProps) => {
   // Increase index so it's not zero-indexed.
   index++;
 
-
-  // find posiiton of first space
-  // splice on that index.
-  const breweryName = ""
-  const imgSrc: string = "/brewery-logos/" + {breweryName} + ""
+  // CURRENTLY FINDING WAY TO DYNAMICALLY RENDER IMAGE SOURCE
+  const breweryName = beer.brewery.trim();
+  const imgSrc: string = "./public/brewery-logos/" + {breweryName} + ".webp"
   const altString = beer.brewery + " logo"
 
   return (
