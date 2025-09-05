@@ -11,7 +11,7 @@ export default function Results() {
   const [beerJson, setBeerJson] = useState([]);
   
   useEffect(() => {
-    fetch("/api/getdata")
+    fetch("/api/jsondata")
       .then(res => res.json())
       .then(data => setBeerJson(data));
   }, []);
