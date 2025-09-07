@@ -1,4 +1,5 @@
 import { readFile, writeFile } from "fs/promises";
+import path from "path";
 
 async function getRawBeers() {
 
@@ -22,7 +23,7 @@ async function getRawBeers() {
     }
   }
 
-  const rawBeerList = await readTxtFile(path.join(process.cwd(), './data/beerlist.txt'))
+  const rawBeerList = await readTxtFile(path.join(process.cwd(), 'scripts', 'data', 'beerlist.txt'))
   const beers = [];
   let beersArr = [];
 
@@ -47,7 +48,7 @@ async function getRawBeers() {
   }
 
   const beerString = JSON.stringify(beers);
-  await writeJsonFile("./data/beerjson.json", beerString)
+  await writeJsonFile(path.join(process.cwd(), 'scripts', 'data', 'beerjson.json'), beerString)
 }
 getRawBeers();
 
