@@ -175,7 +175,7 @@ Prestige
 Cuisine: Elevated Pub, Classic American, Pizza, Steakhouse
 
 Miller High Life
-Miller
+Anheuser-Busch
 Lager
 Domestic
 Wisconsin
@@ -183,7 +183,7 @@ Budget
 Cuisine: Classic American, Pizza, Cafe/Diner
 
 Coors Light
-Coors
+Coors Brewing
 Lager
 Domestic
 Colorado
@@ -199,7 +199,7 @@ Premium
 Cuisine: Classic American, Pizza, Cafe/Diner
 
 Miller Lite
-Miller
+Anheuser-Busch
 Light Lager
 Domestic
 Wisconsin
@@ -215,7 +215,7 @@ Budget
 Cuisine: Classic American, Pizza, Cafe/Diner
 
 Cold Snacks
-Montucky
+Montucky Brewing
 Lager
 Domestic
 Montana
@@ -223,7 +223,7 @@ Budget
 Cuisine: Classic American, Pizza, Cafe/Diner, Elevated Pub
 
 Supra Deluxe
-Modist
+Modist Brewing
 Lager
 Craft
 Minnesota
@@ -231,7 +231,7 @@ Premium
 Cuisine: Japanese, Chinese/Korean, Southeast Asian
 
 Sapporo
-Sapporo
+Sapporo Breweries
 International Lager
 Import
 Japan
@@ -255,7 +255,7 @@ Premium
 Cuisine: Elevated Pub, Classic American, Pizza, Steakhouse
 
 Verbal Tip
-Falling Knife
+Falling Knife Brewing
 Hazy IPA
 Craft
 Minnesota
@@ -263,7 +263,7 @@ Premium
 Cuisine: Elevated Pub, Classic American, Pizza, Southeast Asian
 
 Kirin Ichiban
-Kirin 
+Kirin Brewery
 International Lager
 Import
 Japan
@@ -271,7 +271,7 @@ Prestige
 Cuisine: Japanese, Chinese/Korean, Southeast Asian
 
 Ectogasm
-Drekker
+Drekker Brewing
 Hazy IPA
 Craft
 North Dakota
