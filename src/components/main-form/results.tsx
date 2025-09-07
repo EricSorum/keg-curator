@@ -53,11 +53,9 @@ export default function Results() {
 
   return(
     <div className="flex flex-col items-center gap-6">
-      <div className="text-center drop-shadow-xl">
-        <div className="p-3 bg-amber-300 border-amber-950 border-b-[4px] border-r-[4px] rounded-[20%] ">
-          <h2 className="text-4xl xs:text-2xl font-bold tracking-tight m-3">Beer Menu for {formResults.businessName}</h2>
-          <p>Number of Draft Beers: {formResults.numberOfHandles}</p>
-        </div>
+      <div className="p-3 bg-card text-cetner border-amber-950 border-b-[4px] border-r-[4px] rounded-[20%] ">
+        <h2 className="text-4xl xs:text-2xl font-bold tracking-tight m-3">Beer Menu for {formResults.businessName}</h2>
+        <p className="text-center">Number of Draft Beers: {formResults.numberOfHandles}</p>
       </div>
       <ul className="grid xl:grid-cols-3 grid-cols-2 gap-4">
         {beerMenu.map((beer, index) => {
@@ -70,7 +68,7 @@ export default function Results() {
       <div className="absolute top-[20px] right-[20px] w-[100px] flex gap-2">
         <Tooltip >
           <TooltipTrigger asChild>
-            <Button variant="outline" onClick={handleCopy} className="w-[36px]">
+            <Button variant="outline" onClick={handleCopy} className="w-[36px] bg-card">
               <Copy />
             </Button>
           </TooltipTrigger>
@@ -80,7 +78,7 @@ export default function Results() {
         </Tooltip>
         <Tooltip>
           <TooltipTrigger asChild>
-            <Button variant="outline" onClick={handlePdf} className="w-[36px]">
+            <Button variant="outline" onClick={handlePdf} className="w-[36px] bg-card">
               <FileDown />
             </Button>
           </TooltipTrigger>

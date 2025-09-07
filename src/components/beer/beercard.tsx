@@ -7,30 +7,18 @@ type BeerCardProps = {
   beer: Beer;
 };
 
-
 const BeerCard = ({index, beer}: BeerCardProps) => {
   // Increase index so it's not zero-indexed.
   index++;
-    // const breweryName = "montucky"
 
-  // CURRENTLY FINDING WAY TO DYNAMICALLY RENDER IMAGE SOURCE
+  // Transform brewery name into slug for logo image.
   const brewerySlug = beer.brewery.toLowerCase().replace(/[^a-z]/gi, "");
-  console.log(brewerySlug)
   const imgSrc = `/brewery-logos/${brewerySlug}.webp`;
   const altString = `${beer.brewery} logo`;
 
-
-
   return (
-    <div className="relative w-[200px]">
-      <Image
-        src="/pubhandle.png"
-        width={60}
-        height={120}
-        alt="Beer Selection"
-        className="mx-auto drop-shadow-lg w-full"
-      />
-      <Card className="h-[220px] rounded-[20%] absolute top-[40px] w-full bg-amber-300 border-amber-950 border-b-[4px] border-r-[4px]">
+    <div className="relative">
+      <Card className="flex flex-col content-center align-center w-[250px] h-[250px] rounded-[20%] bg-white border-amber-950 border-b-[4px] border-r-[4px]">
         <div className="m-3 text-center font-serif text-amber-950">
           {brewerySlug.length && 
           <Image 
@@ -38,7 +26,7 @@ const BeerCard = ({index, beer}: BeerCardProps) => {
             width={120}
             height={90}
             alt={altString}
-            className="mx-auto my-[5px]"
+            className="mx-auto my-[5px] w-[120] h-[90px] object-contain"
           />}
           <h3 className="text-xl text-bold tracking-tight">
             {beer.name}
