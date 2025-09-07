@@ -38,17 +38,14 @@ const items = [
     icon: SquareArrowOutUpRight,
   }
 ]
-// const isDev: boolean = process.env.NODE_ENV === "development";
+const isDev: boolean = process.env.NODE_ENV === "development";
 export function AppSidebar() {
   return (
     <Sidebar>
-      <SidebarContent>
-
+      <SidebarContent className="flex flex-col h-full">
         <Title />
-
         <SidebarSeparator />
-
-        <SidebarGroup className="h-full">
+        <SidebarGroup>
           <SidebarGroupLabel className="my-4 text-xl">Create your beer menu:</SidebarGroupLabel>
           <SidebarGroupContent>
             <MainForm />
@@ -58,10 +55,9 @@ export function AppSidebar() {
         <SidebarSeparator />
 
         {/* Reset API call button is available only in development*/} 
-        {/* {isDev && <ResetDatabaseButton />} */}
+        {isDev && <ResetDatabaseButton />}
 
-        <SidebarGroup>
-          {/* <SidebarGroupLabel>Application</SidebarGroupLabel> */}
+        <SidebarGroup className="flex-1">
           <SidebarGroupContent>
             <SidebarMenu className="">
               {items.map((item) => (
