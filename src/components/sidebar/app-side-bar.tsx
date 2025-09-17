@@ -18,13 +18,18 @@ import {
 
 const items = [
   {
+    title: "Home",
+    url: "/",
+    icon: Info,
+  },
+  {
     title: "About",
-    url: "#",
+    url: "/about",
     icon: Info,
   },
   {
     title: "Tech Stack",
-    url: "#",
+    url: "/tech",
     icon: Braces,
   },
   {
@@ -63,7 +68,12 @@ export function AppSidebar() {
               {items.map((item) => (
                 <SidebarMenuItem key={item.title}>
                   <SidebarMenuButton asChild>
-                    <Link href={item.url} title={item.title} target="_blank" className="flex gap-2">
+                    <Link 
+                      href={item.url} 
+                      title={item.title} 
+                      target={item.url.startsWith('http') ? "_blank" : undefined}
+                      className="flex gap-2"
+                    >
                       <item.icon />
                       {item.title} 
                     </Link>

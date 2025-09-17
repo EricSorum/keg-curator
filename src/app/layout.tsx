@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import '../output.css';
 export const metadata: Metadata = {
   title: 'Keg Curator',
   description: 'Create the best selection of beer to serve in your bar or restaurant.',
