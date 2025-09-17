@@ -11,9 +11,20 @@ export default function Results() {
   const [beerJson, setBeerJson] = useState([]);
   
   useEffect(() => {
-    fetch("/api/jsondata")
-      .then(res => res.json())
-      .then(data => setBeerJson(data));
+    const getBeerJson = async () => {
+      try {
+        const res = await fetch("api/jsondata");
+        if (!res.ok) {
+          throw new Error(`HTTP error! status: ${res.status}`);
+        }
+        const data = await res.json();
+        setBeerJson(data);
+      } catch (error) {
+        console.error("Failed to fetch /api/jsondata:", error)
+      }
+    }
+
+    getBeerJson();
   }, []);
 
   const formResults = useStore((state) => state.results);
@@ -21,9 +32,11 @@ export default function Results() {
   const beerMenu = useMemo(() => {
     if (beerJson.length > 0) {
       return sortMenu(formResults, beerJson);
+    } else {
+      console.log('No beer data found');
+      return [];
     }
-    return [];
-  }, [beerJson, formResults]);
+  }, [formResults]);
 
   if (!formResults) {
     return <p>No results yet.</p>;

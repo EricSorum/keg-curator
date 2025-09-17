@@ -1,8 +1,8 @@
+import { NextResponse } from 'next/server';
 import { Beer } from '@/lib/beers';
-import { NextApiRequest, NextApiResponse } from 'next';
-import { client } from '../../lib/client';
+import { client } from '@/lib/client';
 
-export default async function handler(req: NextApiRequest, res: NextApiResponse) {
+export async function GET() {
     try {
       await client.connect();
       const db = client.db("keg_curator");
@@ -17,10 +17,10 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       // Sendinging beers through the API here would take away any methods on the Beer class.
       // I could rehydrate the method on the other end, 
       // but I might as well use a utility function instead of a method.
-      res.status(200).json(beers);
+      return NextResponse.json(beers)
   } catch (error) {
-      res.status(500).json({ error: 'Failed to fetch beers' });
+    return NextResponse.json({ error: 'Failed to fetch beers' }, { status: 500 })
   } finally {
-      await client.close();
+    await client.close();
   }
 }
