@@ -1,6 +1,6 @@
 export default function About() {
   return (
-    <div className="flex flex-col items-center gap-6 p-8">
+    <div className="flex flex-col items-center gap-6 p-8 text-white">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold text-center mb-8">About Keg Curator</h1>
         
