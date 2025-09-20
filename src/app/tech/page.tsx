@@ -23,6 +23,7 @@ export default function Tech() {
             <li><strong>Database: </strong>MongoDB Atlas</li>
             <li><strong>State Management: </strong>Zustand</li>
             <li><strong>Form Validation: </strong> React Hook Form with Zod</li>
+            <li><strong>Testing: </strong>Unit and integration tests with Vitest</li>
           </ul> 
           </article>
         </CardContent>
