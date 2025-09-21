@@ -70,7 +70,7 @@ export default function Results() {
         <h2 className="text-3xl xs:text-xl font-bold tracking-tight m-3">Beer Menu for {formResults.businessName}</h2>
         <p className="text-center">Number of Draft Beers: {formResults.numberOfHandles}</p>
       </div>
-      <ul className="grid xl:grid-cols-3 grid-cols-2 gap-4">
+      <ul className="grid grid-cols-2 xl:grid-cols-3 gap-10">
         {beerMenu.map((beer, index) => {
           return (
             <li key={index}><BeerCard index={index} beer={beer} /></li>
