@@ -43,13 +43,18 @@ const items = [
     icon: SquareArrowOutUpRight,
   }
 ]
+
+// Boolean to check if we are running in dev environment.
 const isDev: boolean = process.env.NODE_ENV === "development";
+
 export function AppSidebar() {
   return (
     <Sidebar>
-      <SidebarContent className="flex flex-col h-full">
+      <SidebarContent className="flex flex-col h-full p-6">
+
         <Title />
         <SidebarSeparator />
+
         <SidebarGroup>
           <SidebarGroupLabel className="my-4 text-xl">Create your beer menu:</SidebarGroupLabel>
           <SidebarGroupContent>
