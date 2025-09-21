@@ -4,7 +4,7 @@ import { useStore } from "@/state-storage/store"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { z } from "zod"
 import { cn } from "@/lib/utils"
-
+import { Switch } from "@/components/ui/switch"
 import { Button } from "@/components/ui/button"
 import {
   Form,
@@ -186,12 +186,12 @@ export function MainForm() {
             render={({ field }) => (
               <FormItem>
                 <FormControl>
-                  <Checkbox
+                  <Switch
                     checked={field.value}
                     onCheckedChange={field.onChange}  
                   />
                 </FormControl>
-                <FormLabel>Local only</FormLabel>
+                <FormLabel className="pl-3">Local only</FormLabel>
                 <FormDescription>
                   Choose only Minnesota-made beer.
                 </FormDescription>
@@ -206,12 +206,12 @@ export function MainForm() {
             render={({ field }) => (
               <FormItem>
                 <FormControl>
-                  <Checkbox
+                  <Switch
                     checked={field.value}
-                    onCheckedChange={field.onChange}  
+                    onCheckedChange={field.onChange}
                   />
                 </FormControl>
-                <FormLabel>Craft only</FormLabel>
+                <FormLabel className="pl-3">Craft only</FormLabel>
                 <FormDescription>
                   Choose only craft beer.
                 </FormDescription>
