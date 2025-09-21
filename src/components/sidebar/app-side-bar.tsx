@@ -1,4 +1,4 @@
-import { SquareArrowOutUpRight, GitFork, Info, Braces } from "lucide-react"
+import { SquareArrowOutUpRight, GitFork, Info, Braces, Home } from "lucide-react"
 import Link from "next/link"
 import { MainForm } from "../main-form/mainform"
 import Title from "./title"
@@ -20,7 +20,7 @@ const items = [
   {
     title: "Home",
     url: "/",
-    icon: Info,
+    icon: Home,
   },
   {
     title: "About",
