@@ -2,7 +2,7 @@ import { SquareArrowOutUpRight, GitFork, Info, Braces, Home } from "lucide-react
 import Link from "next/link"
 import { MainForm } from "../main-form/mainform"
 import Title from "./title"
-import ResetDatabaseButton from "../beer/ResetDatabaseButton"
+import ResetDatabaseButton from "../main-form/ResetDatabaseButton"
 
 import {
   Sidebar,
