@@ -29,11 +29,11 @@ export default function Results() {
 
   const formResults = useStore((state) => state.results);
 
+  // Creates the menu as a memoized value.
   const beerMenu = useMemo(() => {
     if (beerJson.length > 0) {
       return sortMenu(formResults, beerJson);
     } else {
-      console.log('No beer data found');
       return [];
     }
   }, [formResults, beerJson]);
