@@ -36,7 +36,7 @@ export default function Results() {
       console.log('No beer data found');
       return [];
     }
-  }, [formResults]);
+  }, [formResults, beerJson]);
 
   if (!formResults) {
     return <p>No results yet.</p>;
