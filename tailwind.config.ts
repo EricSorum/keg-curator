@@ -4,6 +4,10 @@ export default {
     content: ["./src/**/*.{html,js,ts,jsx,tsx}"],
   theme: {
   	extend: {
+      backgroundImage: {
+        'radial': 'radial-gradient(circle at bottom, var(--tw-gradient-stops))',
+        'radial-tl': 'radial-gradient(circle at top left, var(--tw-gradient-stops))',
+      },
   		borderRadius: {
   			lg: 'var(--radius)',
   			md: 'calc(var(--radius) - 2px)',

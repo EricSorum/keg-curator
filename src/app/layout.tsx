@@ -17,7 +17,7 @@ export default function RootLayout({
       <body>
         <SidebarProvider>
           <AppSidebar />
-          <main className="w-full bg-gradient-to-b from-amber-50 to-white">
+          <main className="w-full bg-radial from-amber-50 to-transparent">
             <SidebarTrigger className="bg-slate-200"/>
             <div id="root">{children}</div>
           </main>
