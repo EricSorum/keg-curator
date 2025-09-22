@@ -35,7 +35,6 @@ export function compareScore(a: Beer, b: Beer) {
 
 export function fancinessFunc(fanciness: number) : string {
   // Select whether the value should be budget, premium, or prestige, based on the fanciness input.
-  
   if (fanciness < 5) {
     return "Budget";
   } else if (fanciness > 95) {
@@ -84,9 +83,6 @@ export function fancinessFunc(fanciness: number) : string {
   } else if (prob.isNotFancy()) {
      prob.calcReturn(1);
   }
-
-
   return returnValue;
-
 }
 
