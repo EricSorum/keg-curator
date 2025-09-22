@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest'
 import { render, screen } from '@testing-library/react'
-import BeerCard from '@/components/beer/beercard'
+import BeerCard from '@/components/cards/beercard'
 import { Beer } from '@/lib/beers'
 
 describe('BeerCard', () => {
