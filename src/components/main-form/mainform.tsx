@@ -16,7 +16,6 @@ import {
   FormMessage,
 } from "@/components/ui/form"
 import { Input } from "@/components/ui/input"
-import { Checkbox } from "@/components/ui/checkbox"
 import { Slider } from "@/components/ui/slider"
 import {
   Select,
@@ -28,7 +27,7 @@ import {
 
 /* Custom files */
 /*********************/
-import { defaultResults } from '@/lib/beers'
+import { defaultResults } from '@/lib/constants'
 /*********************/
 
 const formSchema = z.object({
@@ -45,12 +44,7 @@ const formSchema = z.object({
   chosenCuisine: z.string(),
 })
 
-
-
-
 export function MainForm() {
-  // const [ formResults, setFormResults ] = useState(defaultResults);
-  // const { results, setResults } = useStore();
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -67,9 +61,7 @@ export function MainForm() {
   const setResults = useStore((state) => state.setResults);
 
   function onSubmit(values: z.infer<typeof formSchema>) {
-    // e.preventDefault(); // probably handled by z?
     if (values) {
-      // setResults(values);
       setResults(values);
     } else {
       setResults(defaultResults);
@@ -223,7 +215,6 @@ export function MainForm() {
           <Button type="submit">Submit</Button>
         </form>
       </Form>
-      {/* <Results formResults={formResults} /> */}
     </div>
   )
 }

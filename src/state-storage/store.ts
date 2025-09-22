@@ -1,5 +1,6 @@
 import { create } from "zustand"
-import { FormResultsClass, defaultResults } from "@/lib/beers"
+import FormResultsClass from "@/models/FormResults";
+import { defaultResults } from "@/lib/constants"
 
 export interface ResultsState {
   results: FormResultsClass,

@@ -1,8 +1,8 @@
 import { client } from '@/lib/client';
 import { NextResponse } from 'next/server';
-import { Beer } from '@/lib/beers';
 import { readFile } from 'fs/promises';
 import path from 'path';
+import Beer from '@/models/Beer';
 
 // REST API to reset the database with new data
 

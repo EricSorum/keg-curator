@@ -1,5 +1,6 @@
 import { fancinessFunc } from "./utils";
-import { Beer, FormResultsClass } from "./beers";
+import Beer from "@/models/Beer";
+import FormResultsClass from "@/models/FormResults";
 
 export default function calculateScore(beer: Beer, formResults: FormResultsClass) {
   const { minnesotaOnly, craftOnly, fanciness, chosenCuisine } = formResults;

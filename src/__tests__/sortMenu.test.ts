@@ -1,6 +1,7 @@
 import { describe, it, expect } from 'vitest'
 import sortMenu from '@/lib/sortMenu'
-import { Beer, FormResultsClass } from '@/lib/beers'
+import Beer from '@/models/Beer'
+import FormResultsClass from '@/models/FormResults'
 
 describe('sortMenu', () => {
   const mockBeers: Beer[] = [

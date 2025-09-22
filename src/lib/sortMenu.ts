@@ -1,5 +1,6 @@
 import { shuffle, compareScore } from "./utils";
-import { Beer, FormResultsClass } from "./beers";
+import Beer from "@/models/Beer";
+import FormResultsClass from "@/models/FormResults";
 import calculateScore from "./calculateScore";
 
 export default function sortMenu(formResults: FormResultsClass, beerList: Beer[]): Beer[] {
@@ -17,11 +18,15 @@ export default function sortMenu(formResults: FormResultsClass, beerList: Beer[]
   // Sort menu by score
   list = list.sort(compareScore)
 
+  for (let i = 0; i < 40; i++) {
+    console.log(list[i].name, list[i].score)
+  }
+
   let menu: Beer[] = [];
 
   for (let i = 0; i < numberOfHandles; i++) {
     const newBeer = list[0];
-
+    
     // Add the beer to the menu.
     menu.push(newBeer);
 

@@ -10,7 +10,7 @@ import { FileDown, Copy } from 'lucide-react';
 
 export default function Results() {
   const [beerJson, setBeerJson] = useState([]);
-  
+
   useEffect(() => {
     const getBeerJson = async () => {
       try {
@@ -29,7 +29,9 @@ export default function Results() {
   }, []);
 
   const formResults = useStore((state) => state.results);
-
+  let menuTitle = `Beer menu for ${formResults.businessName}`
+  let menuSubtitle = `Number of Draft Beers: ${formResults.numberOfHandles}`;
+  
   // Creates the menu as a memoized value.
   const beerMenu = useMemo(() => {
     if (beerJson.length > 0) {
@@ -43,8 +45,6 @@ export default function Results() {
     return <p>No results yet.</p>;
   }
 
-  let menuTitle = `Beer menu for ${formResults.businessName}`
-  let menuSubtitle = `Number of Draft Beers: ${formResults.numberOfHandles}`;
 
   // Creates a formatted string of the menu for copying/download.
   const menuCopy = () => {

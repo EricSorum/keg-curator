@@ -1,4 +1,4 @@
-import { Beer } from '@/lib/beers';
+import Beer from '@/models/Beer';
 import { Card } from '../ui/card';
 import Image from 'next/image';
 
@@ -17,7 +17,6 @@ const BeerCard = ({index, beer}: BeerCardProps) => {
   const altString = `${beer.brewery} logo`;
 
   return (
-    // <div className="relative">
       <Card className="transition-colors duration-300 hover:border-amber-200 hover:shadow-md
       flex flex-col content-center align-center w-[250px] h-[250px] rounded-[20%]">
         <div className="m-3 text-center font-serif text-amber-950">
@@ -36,10 +35,10 @@ const BeerCard = ({index, beer}: BeerCardProps) => {
           <div className="text-muted-foreground">
             <p>{beer.brewery}</p>
             <p>{beer.style}</p>
+            <p>{beer.score}</p>
           </div>
         </div>
       </Card>
-    // </div>
   );
 };
 
