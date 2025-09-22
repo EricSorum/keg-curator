@@ -1,6 +1,7 @@
 import { useState, useEffect, useMemo } from 'react'
 import { useStore } from '@/state-storage/store'
-import BeerCard from '../beer/beercard'
+import BeerCard from '../cards/beercard'
+import TitleCard from '../cards/titlecard'
 import sortMenu from '@/lib/sortMenu'
 import { Button } from '../ui/button'
 import { jsPDF } from 'jspdf';
@@ -42,10 +43,13 @@ export default function Results() {
     return <p>No results yet.</p>;
   }
 
+  let menuTitle = `Beer menu for ${formResults.businessName}`
+  let menuSubtitle = `Number of Draft Beers: ${formResults.numberOfHandles}`;
+
   // Creates a formatted string of the menu for copying/download.
   const menuCopy = () => {
     let menuText: string = "";
-    menuText += `Beer Menu for ${formResults.businessName}\n\n`
+    menuText += `${menuTitle}\n\n`
     beerMenu.forEach((beer) => {
       menuText += `${beer.name}\n${beer.brewery}\n${beer.style}\n\n`
     })
@@ -64,12 +68,11 @@ export default function Results() {
     doc.save(`Beer Menu for ${formResults.businessName}`);
   }
 
+
+
   return(
     <div className="flex flex-col items-center gap-6">
-      <div className="p-3 bg-card text-cetner border-amber-950 border-b-[4px] border-r-[4px] rounded-[20%] ">
-        <h2 className="text-3xl xs:text-xl font-bold tracking-tight m-3">Beer Menu for {formResults.businessName}</h2>
-        <p className="text-center">Number of Draft Beers: {formResults.numberOfHandles}</p>
-      </div>
+      <TitleCard title={menuTitle} subtitle={menuSubtitle} />
       <ul className="grid grid-cols-2 xl:grid-cols-3 gap-10">
         {beerMenu.map((beer, index) => {
           return (

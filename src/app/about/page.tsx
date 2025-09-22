@@ -1,14 +1,12 @@
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
+import TitleCard from "@/components/cards/titlecard"
 
 export default function Tech() {
 
   
   return (
     <div className="flex flex-col items-center gap-6 max-w-[80%] mx-auto">
-      <div className="p-3 bg-card text-center border-amber-950 border-b-[4px] border-r-[4px] rounded-[20%] ">
-        <h2 className="text-3xl xs:text-xl font-bold tracking-tight m-3">About Keg Curator</h2>
-        {/* <p className="text-center">About Keg Curator</p> */}
-      </div>
+      <TitleCard title="About Keg Curator" subtitle="" />
       <Card className="w-full">
         {/* <CardHeader>
           <CardTitle className="text-3xl">Tools</CardTitle>
