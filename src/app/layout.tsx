@@ -22,7 +22,7 @@ export default function RootLayout({
             <SidebarTrigger className="bg-slate-200"/>
             <div id="root">{children}</div>
           </main>
-          <BackgroundVideo />
+          {/* <BackgroundVideo /> */}
         </SidebarProvider>
       </body>
     </html>
