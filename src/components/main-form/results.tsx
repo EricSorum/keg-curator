@@ -1,4 +1,4 @@
-import { useState, useEffect, useMemo } from 'react'
+import { useState, useEffect, useMemo, Suspense } from 'react'
 import { useStore } from '@/state-storage/store'
 import BeerCard from '../cards/beercard'
 import TitleCard from '../cards/titlecard'
@@ -7,6 +7,7 @@ import { Button } from '../ui/button'
 import { jsPDF } from 'jspdf';
 import { Tooltip, TooltipTrigger, TooltipContent } from '@/components/ui/tooltip'
 import { FileDown, Copy } from 'lucide-react';
+import LoadingIcon from '../loading/LoadingIcon'
 
 export default function Results() {
   const [beerJson, setBeerJson] = useState([]);
@@ -51,6 +52,7 @@ export default function Results() {
     let menuText: string = "";
     menuText += `${menuTitle}\n\n`
     beerMenu.forEach((beer) => {
+      menuText += `\n\n`
       menuText += `${beer.name}\n${beer.brewery}\n${beer.style}\n\n`
     })
     return menuText;
@@ -68,18 +70,22 @@ export default function Results() {
     doc.save(`Beer Menu for ${formResults.businessName}`);
   }
 
-
-
   return(
     <div className="flex flex-col items-center gap-6">
+
       <TitleCard title={menuTitle} subtitle={menuSubtitle} />
-      <ul className="grid grid-cols-2 xl:grid-cols-3 gap-10">
-        {beerMenu.map((beer, index) => {
-          return (
-            <li key={index}><BeerCard index={index} beer={beer} /></li>
-          )
-        })}
-      </ul>
+
+      {beerMenu.length === 0 ? (
+        <LoadingIcon />
+      ) : (
+        <ul className="grid grid-cols-2 xl:grid-cols-3 gap-10">
+          {beerMenu.map((beer, index) => {
+            return (
+              <li key={index}><BeerCard index={index} beer={beer} /></li>
+            )
+          })}
+        </ul>
+      )}
 
       <div className="absolute top-[20px] right-[20px] w-[100px] flex gap-2">
         <Tooltip >
