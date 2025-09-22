@@ -1016,6 +1016,14 @@ body {
   width: 100%;
 }
 
+.w-\[40\%\] {
+  width: 40%;
+}
+
+.w-\[80\%\] {
+  width: 80%;
+}
+
 .min-w-0 {
   min-width: 0px;
 }
