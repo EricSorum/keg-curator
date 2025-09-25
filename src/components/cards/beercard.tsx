@@ -35,7 +35,7 @@ const BeerCard = ({index, beer}: BeerCardProps) => {
           <div className="text-muted-foreground">
             <p>{beer.brewery}</p>
             <p>{beer.style}</p>
-            <p>{beer.score}</p>
+            {/* <p>{beer.score}</p> */}
           </div>
         </div>
       </Card>
