@@ -1,7 +1,7 @@
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import TitleCard from "@/components/cards/titlecard"
 
-export default function Tech() {
+export default function About() {
 
   
   return (
