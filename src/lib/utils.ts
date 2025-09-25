@@ -33,56 +33,14 @@ export function compareScore(a: Beer, b: Beer) {
   return 0;
 }
 
-export function fancinessFunc(fanciness: number) : string {
-  // Select whether the value should be budget, premium, or prestige, based on the fanciness input.
-  if (fanciness < 5) {
-    return "Budget";
-  } else if (fanciness > 95) {
-    return "Prestige";
+export function compareArr(arr1: string[], arr2: string[]) {
+  // Returns true if the arrays contain any matching elements.
+  for (let i = 0; i < arr1.length; i++) {
+    if (arr1.includes(arr2[i])) return true;
   }
-
-  let returnValue: string = "Premium";
-
-  const prob = {
-    lower: 0,
-    upper: 100,
-    setOperands(delta: number) {
-      this.lower += delta;
-      this.upper -+ delta;
-    },
-    isAverage() {
-      return this.upper > this.lower;
-    },
-    isFancy() {
-      return this.upper < this.lower;
-    },
-    isNotFancy() {
-      return this.lower > this.upper;
-    },
-
-    calcReturn(scale: number) {
-      const randomNum: number = getRandomNum();
-      const budget = scale === 3 ? 0 : 1;
-      const prestige = scale === 1 ? 0 : 1;
-      if (budget && randomNum > fanciness) {
-        returnValue = "Budget";
-      } else if (prestige && randomNum < fanciness) {
-        returnValue = "Prestige";
-      } else {
-        returnValue = "Premium";
-      }
-    }
-  }
-
-  const delta: number = Math.floor(fanciness/2);
-  prob.setOperands(delta);
-  if (prob.isAverage()) {
-    prob.calcReturn(2);
-  } else if (prob.isFancy()) {
-    prob.calcReturn(3);
-  } else if (prob.isNotFancy()) {
-     prob.calcReturn(1);
-  }
-  return returnValue;
+  return false;
 }
 
+export function bonus(margin: number) {
+  return getRandomNum() > margin ? 2 : 0;
+}
