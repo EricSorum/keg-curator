@@ -100,7 +100,7 @@ International Lager
 Import
 Belgium
 Premium
-Cuisine: French, Cafe/Diner, Seafood
+Cuisine: French, Seafood
 
 Munich Gold
 Hacker-Pfschorr
@@ -180,7 +180,7 @@ Lager
 Domestic
 Wisconsin
 Budget
-Cuisine: Classic American, Pizza, Cafe/Diner
+Cuisine: Classic American, Pizza
 
 Coors Light
 Coors Brewing
@@ -188,7 +188,7 @@ Lager
 Domestic
 Colorado
 Premium
-Cuisine: Classic American, Pizza, Cafe/Diner
+Cuisine: Classic American, Pizza
 
 Michelob Golden Light
 Michelob
@@ -196,7 +196,7 @@ Light Lager
 Domestic
 Missouri
 Premium
-Cuisine: Classic American, Pizza, Cafe/Diner
+Cuisine: Classic American, Pizza
 
 Miller Lite
 Anheuser-Busch
@@ -204,7 +204,7 @@ Light Lager
 Domestic
 Wisconsin
 Premium
-Cuisine: Classic American, Pizza, Cafe/Diner
+Cuisine: Classic American, Pizza
 
 Busch Light
 Anheuser-Busch
@@ -212,7 +212,7 @@ Light Lager
 Domestic
 Missouri
 Budget
-Cuisine: Classic American, Pizza, Cafe/Diner
+Cuisine: Classic American, Pizza
 
 Cold Snacks
 Montucky Brewing
@@ -220,7 +220,7 @@ Lager
 Domestic
 Montana
 Budget
-Cuisine: Classic American, Pizza, Cafe/Diner, Elevated Pub
+Cuisine: Classic American, Pizza, Elevated Pub
 
 Supra Deluxe
 Modist Brewing
@@ -245,14 +245,6 @@ Import
 Japan
 Budget
 Cuisine: Japanese, Chinese/Korean, Southeast Asian
-
-Big Doinks
-Fair State Brewing
-IPA
-Craft
-Minnesota
-Premium
-Cuisine: Elevated Pub, Classic American, Pizza, Steakhouse
 
 Verbal Tip
 Falling Knife Brewing
@@ -436,7 +428,7 @@ Blonde Ale
 Craft
 Minnesota
 Premium
-Cuisine: Cafe/Diner
+Cuisine: Breakfast
 
 Pine Line
 Portage Brewing
