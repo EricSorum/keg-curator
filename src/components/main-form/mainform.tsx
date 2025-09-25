@@ -159,7 +159,7 @@ export function MainForm() {
                 <FormLabel>Fanciness</FormLabel>
 
                 <FormControl>
-                <Slider defaultValue={[30]} max={100} step={1} className={cn("w-[80%]")}
+                <Slider defaultValue={[50]} max={100} step={1} className={cn("w-[80%]")}
                   value={[field.value]}
                   onValueChange={(e) => field.onChange(e[0])}
                 />
