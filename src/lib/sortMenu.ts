@@ -18,10 +18,6 @@ export default function sortMenu(formResults: FormResultsClass, beerList: Beer[]
   // Sort menu by score
   list = list.sort(compareScore)
 
-  for (let i = 0; i < 40; i++) {
-    console.log(list[i].name, list[i].score)
-  }
-
   let menu: Beer[] = [];
 
   for (let i = 0; i < numberOfHandles; i++) {
