@@ -1,0 +1,15 @@
+Stout
+Porter
+Something Dark
+Pilsner
+Cream Ale
+Blonde/Golden Ale
+A Light Craft Beer
+American Lager
+American Light Lager
+IPA
+Hazy IPA
+Pale Ale
+Double IPA
+Hazy Double IPA
+International Lager
