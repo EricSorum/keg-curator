@@ -1,4 +1,5 @@
 "use client"
+
 import { useForm } from "react-hook-form"
 import { useStore } from "@/state-storage/store"
 import { zodResolver } from "@hookform/resolvers/zod"
@@ -28,6 +29,7 @@ import {
 /* Custom files */
 /*********************/
 import { defaultResults } from '@/lib/constants'
+import StyleBox from "./StyleBox"
 /*********************/
 
 const formSchema = z.object({
@@ -106,6 +108,7 @@ export function MainForm() {
                 <FormMessage />
               </FormItem>
             )}
+            
           />
           <FormField
             control={form.control}
@@ -211,6 +214,8 @@ export function MainForm() {
               </FormItem>
             )}
           />
+
+          <StyleBox />
 
           <Button type="submit">Submit</Button>
         </form>
