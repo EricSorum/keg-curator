@@ -1,5 +1,5 @@
 import FormResultsClass from "@/models/FormResults";
-import StyleType from "@/models/StyleType";
+import { StyleType } from "@/models/StyleType";
 
 export const defaultResults = new FormResultsClass("My Restaurant", 6, false, false, 30, "");
 
