@@ -14,7 +14,7 @@ export default function About() {
         </CardHeader> */}
         <CardContent>
           <article><br />
-            <p>Some restaurans and bars struggle when it comes to choosing the best available beer to serve.  Many restauranteurs specialize in wine or cocktails, but not beer, and don't have the time to carefully curate a beer selection.</p><br />
+            <p>Some restaurants and bars struggle when it comes to choosing the best available beer to serve.  Many restauranteurs specialize in wine or cocktails, but not beer, and don't have the time to carefully curate a beer selection.</p><br />
 
             <p>Nevertheless, good beer is a key area of profit, and an expectation for many customers.  Even a small beer selection of just the right beer can complement any cuisine and keep customers coming back.</p><br />
 
