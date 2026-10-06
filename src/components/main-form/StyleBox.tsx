@@ -22,10 +22,17 @@ import StyleCard from "../cards/StyleCard"
 import { styles } from "@/lib/constants"
 import { StyleType } from "@/models/StyleType"
 
+
+
 export default function StyleBox() {
   const [open, setOpen] = React.useState(false)
   const [value, setValue] = React.useState("")
   const [chosenStyles, setChoice] = React.useState<StyleType[]>([])
+  const [tempStyles, setTempStyles] = React.useState<StyleType[]>(styles.filter((e) => !chosenStyles.includes(e)))
+  // Need temp style list so we can remove ones already selected.
+
+  // So just use the results store for the main form 
+  // add style array to results type, form type/class
 
   return (
     <div className="w-full mb-4">
@@ -63,7 +70,7 @@ export default function StyleBox() {
             <CommandList>
               <CommandEmpty>No styles found.</CommandEmpty>
               <CommandGroup>
-                {styles.map((style) => (
+                {tempStyles.map((style) => (
                   <CommandItem
                     key={style.value}
                     value={style.value}
@@ -73,8 +80,10 @@ export default function StyleBox() {
                       if (currentValue === value) {
                         return;
                       } else {
-                        setChoice([...chosenStyles, style])
+                        setChoice([...chosenStyles, style]);
+                        setTempStyles(tempStyles.filter((e) => styles.filter((e) => !chosenStyles.includes(e))));
                       }
+                      
 
                     }}
                   >
