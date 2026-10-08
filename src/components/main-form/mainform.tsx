@@ -1,7 +1,7 @@
 "use client"
 
 import { useForm } from "react-hook-form"
-import { useStore } from "@/state-storage/store"
+import { ResultsState, useResultsStore } from "@/state-storage/store"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { z } from "zod"
 import { cn } from "@/lib/utils"
@@ -29,6 +29,7 @@ import {
 /* Custom files */
 /*********************/
 import { defaultResults } from '@/lib/constants'
+import FormResultsClass from "@/models/FormResults"
 import StyleBox from "./StyleBox"
 /*********************/
 
@@ -60,7 +61,7 @@ export function MainForm() {
     },
   });
 
-  const setResults = useStore((state) => state.setResults);
+  const setResults = useResultsStore((state: ResultsState) => state.setResults);
 
   function onSubmit(values: z.infer<typeof formSchema>) {
     if (values) {

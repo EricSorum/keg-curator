@@ -1,5 +1,5 @@
 import { useState, useEffect, useMemo, Suspense } from 'react'
-import { useStore } from '@/state-storage/store'
+import { useResultsStore } from '@/state-storage/store'
 import BeerCard from '../cards/beercard'
 import TitleCard from '../cards/titlecard'
 import sortMenu from '@/lib/sortMenu'
@@ -29,7 +29,7 @@ export default function Results() {
     getBeerJson();
   }, []);
 
-  const formResults = useStore((state) => state.results);
+  const formResults = useResultsStore((state) => state.results);
   let menuTitle = `Beer menu for ${formResults.businessName}`
   let menuSubtitle = `Number of Draft Beers: ${formResults.numberOfHandles}`;
   
