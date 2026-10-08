@@ -1,4 +1,5 @@
 export type StyleType = {
   value: string,
-  label: string
+  label: string,
+  quantity: number,
 }

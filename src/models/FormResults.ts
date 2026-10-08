@@ -1,3 +1,5 @@
+import { StyleType } from "./StyleType";
+
 export default class FormResultsClass {
   constructor(
     public businessName: string,
@@ -6,5 +8,6 @@ export default class FormResultsClass {
     public craftOnly: boolean,
     public fanciness: number,
     public chosenCuisine: string,
+    public styles: StyleType[],
   ) {}
 }
