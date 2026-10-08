@@ -81,7 +81,7 @@ export default function StyleBox() {
                         return;
                       } else {
                         setChoice([...chosenStyles, style]);
-                        setTempStyles(tempStyles.filter((e) => styles.filter((e) => !chosenStyles.includes(e))));
+                        setTempStyles(tempStyles.filter((e) => !chosenStyles.includes(e)));
                       }
                       
 
