@@ -20,7 +20,7 @@ export default function About() {
 
             <p>This app takes my 8 years of experience in the beer industry to create suggested menus based on a restaurant's needs.  I provide suggestions from the best craft beeer available in Minnesota, as well as essential macro and import beers.  The app makes selections based on a form input and creates a menu from algorithms.</p><br />
 
-            <p>The tech stack includes TypeScript, React.js, Shadcn UI components, and Tailwind CSS.  Hosted on Vercel.</p>
+            <p>The tech stack includes TypeScript, Next.js, React.js, Shadcn UI components, and Tailwind CSS.  Hosted on Vercel.</p>
           </article>
         </CardContent>
       </Card>
