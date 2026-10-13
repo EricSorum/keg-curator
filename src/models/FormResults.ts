@@ -1,4 +1,4 @@
-import { StyleType } from "./StyleType";
+// import { StyleType } from "./StyleType";
 
 export default class FormResultsClass {
   constructor(
@@ -8,6 +8,6 @@ export default class FormResultsClass {
     public craftOnly: boolean,
     public fanciness: number,
     public chosenCuisine: string,
-    public styles: StyleType[],
+    public chosenStyles: string[],
   ) {}
 }

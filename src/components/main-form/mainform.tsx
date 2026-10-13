@@ -1,7 +1,6 @@
 "use client"
 
 import { useForm } from "react-hook-form"
-import { ResultsState, useResultsStore } from "@/state-storage/store"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { z } from "zod"
 import { cn } from "@/lib/utils"
@@ -28,8 +27,9 @@ import {
 
 /* Custom files */
 /*********************/
+import { ResultsState, useResultsStore } from "@/state-storage/store"
 import { defaultResults } from '@/lib/constants'
-import FormResultsClass from "@/models/FormResults"
+// import FormResultsClass from "@/models/FormResults"
 import StyleBox from "./StyleBox"
 /*********************/
 
@@ -45,20 +45,24 @@ const formSchema = z.object({
   craftOnly: z.boolean(),
   fanciness: z.number(),
   chosenCuisine: z.string(),
+  chosenStyles: z.array(z.string()),
 })
 
 export function MainForm() {
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
-    defaultValues: {
-      businessName: "My Restaurant",
-      numberOfHandles: 6,
-      minnesotaOnly: false,
-      craftOnly: false,
-      fanciness: 30,
-      chosenCuisine: "",
-    },
+    
+    defaultValues: defaultResults
+    // {
+    //   businessName: "My Restaurant",
+    //   numberOfHandles: 6,
+    //   minnesotaOnly: false,
+    //   craftOnly: false,
+    //   fanciness: 30,
+    //   chosenCuisine: "",
+    //   chosenStyles: [],
+    // },
   });
 
   const setResults = useResultsStore((state: ResultsState) => state.setResults);

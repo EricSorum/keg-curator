@@ -3,7 +3,7 @@ import { type HTMLMotionProps, motion, type SpringOptions } from "motion/react"
 import * as React from "react"
 import { Button, type ButtonProps } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
-import { SlidingNumber, type SlidingNumberProps } from "@/packages/text/sliding-number"
+import { SlidingNumber, type SlidingNumberProps } from "@/components/ui/sliding-number"
 
 export interface CounterProps extends Omit<HTMLMotionProps<"div">, "children"> {
   number: number
