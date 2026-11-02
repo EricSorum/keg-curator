@@ -18,9 +18,12 @@ import {
 } from "@/components/ui/popover"
 import { CheckIcon, ChevronsUpDownIcon } from "lucide-react" 
 import { FormLabel, FormDescription } from "../ui/form"
+
 import StyleCard from "../cards/StyleCard"
 import { styles } from "@/lib/constants"
 import { StyleType } from "@/models/StyleType"
+import { useState, useEffect } from 'react';
+import { ResultsState, useResultsStore } from "@/state-storage/store"
 
 
 
@@ -33,6 +36,19 @@ export default function StyleBox() {
 
   // So just use the results store for the main form 
   // add style array to results type, form type/class
+  // const addStyle = useResultsStore((state: ResultsState) => state.addStyle);
+    const setStyles = useResultsStore((state: ResultsState) => state.setStyles)
+
+  useEffect(() => {
+    // add the style to form results here
+    // need to control quantity in Counter component
+    // setResults({ chosenStyles: })
+
+    // const setResults = useResultsStore((state: ResultsState) => state.setResults);
+    setStyles(chosenStyles);
+    
+  }, [chosenStyles])
+
 
   return (
     <div className="w-full mb-4">
