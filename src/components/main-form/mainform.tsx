@@ -31,6 +31,7 @@ import { ResultsState, useResultsStore } from "@/state-storage/store"
 import { defaultResults } from '@/lib/constants'
 // import FormResultsClass from "@/models/FormResults"
 import StyleBox from "./StyleBox"
+import { StyleType } from '@/models/StyleType';
 /*********************/
 
 const formSchema = z.object({
@@ -45,24 +46,20 @@ const formSchema = z.object({
   craftOnly: z.boolean(),
   fanciness: z.number(),
   chosenCuisine: z.string(),
-  chosenStyles: z.array(z.string()),
-})
+  chosenStyles: z.array(z.object(
+    {
+      value: z.string(),
+      label: z.string(),
+      quantity: z.number(),
+    }
+  ) satisfies z.ZodType<StyleType>
+)});
 
 export function MainForm() {
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
-    
     defaultValues: defaultResults
-    // {
-    //   businessName: "My Restaurant",
-    //   numberOfHandles: 6,
-    //   minnesotaOnly: false,
-    //   craftOnly: false,
-    //   fanciness: 30,
-    //   chosenCuisine: "",
-    //   chosenStyles: [],
-    // },
   });
 
   const setResults = useResultsStore((state: ResultsState) => state.setResults);
